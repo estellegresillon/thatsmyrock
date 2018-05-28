@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.4.4'
 
+gem 'faker'
+gem 'jquery-rails'
+
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'figaro'
