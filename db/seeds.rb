@@ -1,72 +1,65 @@
 require 'csv'
 
+# Parsing options
 csv_options = {
-  col_sep: ',',
+  col_sep: ';',
   quote_char: '"',
-  headers: :first_row
+  headers: :first_row,
+  header_converters: :symbol
 }
 
-filepath    = 'artists.csv'
-CSV.open(filepath, 'wb', csv_options) do |csv|
-  csv << ['name',
-           'country',
-           'facebook_url',
-           'instagram_url',
-           'twitter_url',
-           'website_url',
-           'wiki_url',
-           'bio',
-           'photo'
-   ]
+puts "Cleaning database..."
+Artist.destroy_all
 
+puts "Creating artists..."
+filepath = Rails.root.join('db/fixtures/csv/artists.csv')
 
-csv_options = {
-  col_sep: ',',
-  quote_char: '"',
-  headers: :first_row
-}
-
-filepath    = 'albums.csv'
-CSV.open(filepath, 'wb', csv_options) do |csv|
-  csv << ['artist', 'rank', 'name', 'year', 'music_style', 'wiki_url', 'photo_cover', 'description']
-
-csv_options = {
-  col_sep: ',',
-  quote_char: '"',
-  headers: :first_row
-}
-
-filepath    = 'tracklists.csv'
-CSV.open(filepath, 'wb', csv_options) do |csv|
-  csv << ['album', 'tracklist_order', 'name', 'duration']
+CSV.foreach(filepath, csv_options) do |row|
+  Artist.create!(
+    name: row[:name],
+    country: row[:country],
+    facebook_url: row[:facebook_url],
+    instagram_url: row[:instagram_url],
+    twitter_url: row[:twitter_url],
+    website_url: row[:website_url],
+    wiki_url: row[:wiki_url],
+    bio: row[:bio],
+    # photo: row[:photo]
+  )
 end
 
+puts "Creating albums..."
+filepath = Rails.root.join('db/fixtures/csv/albums.csv')
 
+CSV.foreach(filepath, csv_options) do |row|
+  # 1) Trouver l'artiste correspondatn au nom d'artiste dans le csv
+  artist = Artist.find_by(name: row[:artist])
+  # 2) Créer un album avec l'artiste_id correspondant
+  Album.create!(
+    artist: artist,
+    rank: row[:rank],
+    name: row[:name],
+    year: row[:year],
+    music_style: row[:music_style],
+    wiki_url: row[:wiki_url],
+    description: row[:description]
+    # photo_cover: row[:photo_cover'],
+    # photo_cover: row[:photo_show'],
+  )
+end
 
-# artists
-# name;country;facebook_url;instagram_url;twitter_url;website_url;wiki_url;bio;photo
-#     t.string "name"
-#     t.string "facebook_url"
-#     t.string "wiki_url"
-#     t.text "bio"
-#     t.string "instagram_url"
-#     t.string "twitter_url"
-#     t.string "photo"
-#     t.string "country"
+puts "Creating tracklists..."
+filepath = Rails.root.join('db/fixtures/csv/tracklists.csv')
 
-# albums
-# artist;rank;name;year;music_style;wiki_url;photo_cover;description
-#     t.string "name"
-#     t.text "description"
-#     t.string "music_style"
-#     t.integer "year"
-#     t.integer "rank"
-#     t.string "wiki_url"
-#     t.string "photo_cover"
-#     t.string "photo_show"
+CSV.foreach(filepath, csv_options) do |row|
+  album = Album.find_by(name: row[:album])
 
-# trakclists
-# album;tracklist_order;name;duration
-#     t.string "name"
-#     t.bigint "album_id"
-#     t.integer "duration"
+  Track.create!(
+    album: album,
+    tracklist_order: row[:tracklist_order],
+    name: row[:name],
+    duration: row[:duration],
+    )
+end
+
+puts "Finished!"
