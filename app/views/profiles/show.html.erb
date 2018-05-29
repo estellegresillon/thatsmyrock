@@ -6,7 +6,7 @@
       <% else %>
         <%= image_tag "avatar_default.jpg", class: "img-circle" %>
       <% end  %>
-        <h2>Hello, <%= current_user.name %></h2>
+        <h2>Hello, <%= current_user.name.capitalize %></h2>
 
     </div>
     <div class="tabs">
@@ -19,7 +19,6 @@
     </div>
   </div>
 </div>
-
 
 
 
