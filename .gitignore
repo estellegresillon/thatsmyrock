@@ -15,5 +15,3 @@ yarn-error.log
 
 # Ignore application configuration
 /config/application.yml
-
-CLOUDINARY_URL: "cloudinary://451523863911724:g41VFuq_DT-gR92ZnNgHCnaxMXE@ore"
