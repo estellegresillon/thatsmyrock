@@ -15,7 +15,7 @@ puts "Creating artists..."
 filepath = Rails.root.join('db/fixtures/csv/artists.csv')
 
 CSV.foreach(filepath, csv_options) do |row|
-  Artist.create!(
+  artist = Artist.new(
     name: row[:name],
     country: row[:country],
     facebook_url: row[:facebook_url],
@@ -23,19 +23,29 @@ CSV.foreach(filepath, csv_options) do |row|
     twitter_url: row[:twitter_url],
     website_url: row[:website_url],
     wiki_url: row[:wiki_url],
-    bio: row[:bio],
-    # photo: row[:photo]
+    bio: row[:bio]
   )
+  # regex = /( |.|;)/
+  begin
+    photo_title = "#{row[:name].downcase.gsub(' ', '-')}"
+    photo = Cloudinary::Uploader.upload("db/fixtures/images/artists/#{photo_title}.jpg", :use_filename => true, :folder => "thatsmyrock/artists")
+    artist.remote_photo_url = photo['url']
+  rescue
+    puts "No photo for #{row[:name]}"
+  end
+    artist.save!
 end
 
 puts "Creating albums..."
 filepath = Rails.root.join('db/fixtures/csv/albums.csv')
 
 CSV.foreach(filepath, csv_options) do |row|
+  # album-name-artist-name.jpg
+
   # 1) Trouver l'artiste correspondatn au nom d'artiste dans le csv
   artist = Artist.find_by(name: row[:artist])
   # 2) Créer un album avec l'artiste_id correspondant
-  Album.create!(
+  album = Album.new(
     artist: artist,
     rank: row[:rank],
     name: row[:name],
@@ -46,6 +56,16 @@ CSV.foreach(filepath, csv_options) do |row|
     # photo_cover: row[:photo_cover'],
     # photo_cover: row[:photo_show'],
   )
+  begin
+    photo_title = "#{row[:name]}-#{row[:artist]}".downcase.gsub(' ', '-')
+    photo_cover = Cloudinary::Uploader.upload("db/fixtures/images/artists/#{photo_title}.jpg", :use_filename => true, :folder => "thatsmyrock/albums")
+    album.remote_photo_cover_url = photo_cover['url']
+    photo_show = Cloudinary::Uploader.upload("db/fixtures/images/artists/#{photo_title}-show.jpg", :use_filename => true, :folder => "thatsmyrock/albums")
+    album.remote_photo_show_url = photo_show['url']
+  rescue
+    puts "No album photo for #{row[:name]}"
+  end
+    album.save!
 end
 
 puts "Creating tracklists..."
