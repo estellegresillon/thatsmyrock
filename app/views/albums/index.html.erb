@@ -5,10 +5,10 @@
     <div class="searchbar-index">
     <div class="searchbar-home animate fadeIn">
       <%= form_tag albums_path, method: "get" do %>
-        <%= text_field_tag :name , params[:name], class: "form-control", placeholder: "Name", class: 'datepicker', id: 'searchbar-band' %>
-        <%= text_field_tag :artist , params[:artist], class: "form-control", placeholder: "Artist", id: 'band_address' %>
+        <%= text_field_tag :name , params[:name], class: "form-control", placeholder: "Name or Artist", id: 'searchbar-band' %>
+        <%# text_field_tag :artist , params[:artist], class: "form-control", placeholder: "Artist", id: 'band_address' %>
         <%= text_field_tag :music_style , params[:music_style], class: "form-control", placeholder: "Genre", id: 'band_address' %>
-        <%= text_field_tag :decade , params[:decade], class: "form-control", placeholder: "Decade", id: 'searchbar-band' %>
+        <%= text_field_tag :year , params[:year], class: "form-control", placeholder: "Year", id: 'searchbar-band' %>
         <%= submit_tag "Discover", class: "btn-search" %>
       <% end %>
     </div>
