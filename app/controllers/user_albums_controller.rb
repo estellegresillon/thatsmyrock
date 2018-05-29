@@ -1,16 +1,11 @@
 class UserAlbumsController < ApplicationController
   before_action :set_user_album, only: [:show, :update, :destroy]
 
-  def index
-    @user_albums = UserAlbum.all
-  end
-
-  def show
-    @user_album = UserAlbum.find(params[:id])
-  end
-
   def create
+    @album = Album.find(params[:album_id])
     @user_album = UserAlbum.new(user_album_params)
+    @user_album.user = current_user
+    @user_album.album = @album
     @user_album.save
   end
 
@@ -36,7 +31,7 @@ class UserAlbumsController < ApplicationController
    end
 
   def user_album_params
-    params.require(:user_album).permit(:status, :user_id, :album_id, :vinyl, :cd, :digital)
+    params.require(:user_album).permit(:status, :album_id, :vinyl, :cd, :digital)
   end
 
 
