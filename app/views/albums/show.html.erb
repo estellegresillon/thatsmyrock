@@ -1,0 +1,66 @@
+<% if @album.photo_cover.present? %>
+  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path @album.photo_cover, crop: :fill %>'); height: 50vh; background-position: center;">
+<% else %>
+  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
+<% end  %>
+
+    <h1><%= @album.name %></h1>
+
+</div>
+
+<div class="content">
+  <div class="wrap-show">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="band-description">
+        <h3 class="red-title"><strong><%= @album.name %></strong></h3>
+        <ul class="list-unstyled">
+          <p>Artist : <strong><%= @album.artist.name %></strong></p>
+          <p>Rank : <strong><%= @album.rank %></strong></p>
+          <p>Music style : <strong><%= @album.music_style %></strong></p>
+          <p>Year : <strong><%= @album.year %></strong></p>
+        </br>
+          <h4>The album story :</h4>
+          <p><%= @album.description %></p>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="form-booking">
+        <h3 class="title-booking">Track list</h3>
+        <% if @album.tracks.any? %>
+          <% @album.tracks.each do |r| %>
+            <div class="message-box">
+              <div class="avatar-large">
+                <p><%= r.tracklist_order %></p>
+              </div>
+              <div class="message-name">
+                <h4><%= r.name %></h4>
+              </div>
+              <div class="message-rating">
+                <p class="rating-title"><%= r.duration %></p>
+              </div>
+          </div>
+          <% end %>
+        <% else %>
+          <p class="no-comments">There are no tracks yet.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="downpage-links">
+    <% if @album.previous.presence %>
+      <p><%= link_to "Previous album", @album.previous %></p>
+    <% end %>
+      <p><%= link_to "Go back to list", albums_path %></p>
+    <% if @album.next.presence %>
+      <p><%= link_to "Next album", @album.next %></p>
+    <% end %>
+  </div>
+
+</div>

@@ -1,0 +1,38 @@
+<div class="banner-home" style="background: -webkit-linear-gradient(top, rgba(254,187,187,0.7) 0%,rgba(239,169,136,0.7) 50%,rgba(255,56,56,0.7) 100%), url('https://oneclassblog.com/wp-content/uploads/2018/02/popular-music-performance-top-up-Cropped-1920x830.jpg'); height: 70vh; background-position: center;">
+  <div class="banner-content">
+    <h1>Tittle</h1>
+    <h2>Description</h2>
+    <div class="searchbar-index">
+    <div class="searchbar-home animate fadeIn">
+      <%= form_tag albums_path, method: "get" do %>
+        <%= text_field_tag :name , params[:name], class: "form-control", placeholder: "Name", class: 'datepicker', id: 'searchbar-band' %>
+        <%= text_field_tag :artist , params[:artist], class: "form-control", placeholder: "Artist", id: 'band_address' %>
+        <%= text_field_tag :music_style , params[:music_style], class: "form-control", placeholder: "Genre", id: 'band_address' %>
+        <%= text_field_tag :decade , params[:decade], class: "form-control", placeholder: "Decade", id: 'searchbar-band' %>
+        <%= submit_tag "Discover", class: "btn-search" %>
+      <% end %>
+    </div>
+  </div>
+  </div>
+</div>
+
+<div class="top365">
+  <div class="cards">
+    <% index = 1 %>
+    <% @albums.each_with_index do |b, i| %>
+    <div class="card-bg">
+      <% if b.photo_cover.present? %>
+        <div class="card box" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path b.photo_cover, crop: :fill %>'); background-position: center;">
+      <% else %>
+        <% index =  i + 11 %>
+        <% url = "https://source.unsplash.com/collection/1068/5#{index}x5#{index}" %>
+        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= url %>'); background-position: center;">
+      <% end  %>
+      <h2><%= b.artist.name %></h2>
+      <p><%= link_to b.name, album_path(b.id) %></p>
+      <p><%= b.rank %></p>
+    </div>
+    </div>
+    <% end %>
+  </div>
+</div>
