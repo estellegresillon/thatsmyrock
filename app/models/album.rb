@@ -1,6 +1,15 @@
 class Album < ApplicationRecord
+
   include PgSearch
-  multisearchable :against => [:name, :year, :music_style]
+  pg_search_scope :search_albums,
+  against: [ :name, :year, :music_style ],
+  associated_against: {
+    artist: [ :name ]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
+
 
   has_many :tracks, dependent: :destroy
   belongs_to :artist
