@@ -15,6 +15,10 @@ class Album < ApplicationRecord
   belongs_to :artist
   has_many :user_albums, dependent: :destroy
 
+  mount_uploader :photo_cover, PhotoUploader
+  mount_uploader :photo_show, PhotoUploader
+
+
   scope :next, lambda {|id| where("id > ?",id).order("id ASC") } # this is the default ordering for AR
   scope :previous, lambda {|id| where("id < ?",id).order("id DESC") }
 
