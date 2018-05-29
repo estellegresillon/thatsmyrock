@@ -6,20 +6,33 @@ class UserAlbumsController < ApplicationController
     @user_album = UserAlbum.new(user_album_params)
     @user_album.user = current_user
     @user_album.album = @album
-    @user_album.save
+    if @user_album.save
+      if @user_album.status == "wishlist"
+        redirect_to profile_path(anchor: "anchor-wishlist")
+      elsif @user_album.status == "collected"
+        redirect_to profile_path(anchor: "anchor-collected")
+      end
+    else
+      render "/profile"
+    end
   end
 
 
   def update
     #@user_album.user = current_user
     @user_album.update(user_album_params)
+    if @user_album.status == "wishlist"
+      redirect_to profile_path(anchor: "anchor-wishlist")
+    elsif @user_album.status == "collected"
+      redirect_to profile_path(anchor: "anchor-collected")
+    end
   end
 
   def destroy
     @user_album = UserAlbum.find(params[:id])
     @user_album.destroy
 
-    redirect_to user_albums
+    redirect_to "/profile"
   end
 
 

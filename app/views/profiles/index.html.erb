@@ -28,8 +28,12 @@
 
   <div id="my-collection" class="tab-pane fade in active content">
 
+    <a name="anchor-collected"></a>
     <h3>MY COLLECTION</h3>
     <div class="h_line"></div>
+
+    <p><strong>Hello there !</strong><p>
+    <p>Here you can add the albums you own.<p>
 
     <% if current_user.user_albums.present? %>
         <div class="cards-booking">
@@ -37,6 +41,9 @@
 
             <% if c.status == 'collected' %>
               <div class="card-booking">
+                <div class="delete-review">
+                  <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete %>
+                </div>
                 <p>Group : <strong><%= c.album.name %></strong></p>
                 <p><strong><%= c.album.year %></strong></p>
                 <p>Format : </p>
@@ -56,26 +63,28 @@
 
           <% end %>
         </div>
-
-    <% else %>
-      <p><strong>Hello there !</strong><p></br>
-      <p>Here you can add the albums you own.<p>
-    </div>
     <% end %>
 
   </div>
 
 
-  <div id="my-wishlist" class="tab-pane fade in active content">
+  <div id="my-wishlist" class="tab-pane fade in content">
 
+    <a name="anchor-wishlist"></a>
     <h3>MY WISHLIST</h3>
     <div class="h_line"></div>
+
+    <p><strong>Hello there !</strong><p>
+    <p>Here you can add the albums you own.<p>
 
     <% if current_user.user_albums.present? %>
         <div class="cards-booking">
           <% current_user.user_albums.each do |c| %>
             <% if c.status == 'wishlist' %>
               <div class="card-booking">
+                <div class="delete-review">
+                  <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete %>
+                </div>
                 <p>Group : <strong><%= c.album.name %></strong></p>
                 <p><strong><%= c.album.year %></strong></p>
                 <p>Format : </p>
@@ -94,14 +103,7 @@
             <% end %>
           <% end %>
         </div>
-
-
-    <% else %>
-      <p><strong>Hello there !</strong><p></br>
-      <p>Here you can add the albums you own.<p>
-    </div>
     <% end %>
-
   </div>
 
 </div>
