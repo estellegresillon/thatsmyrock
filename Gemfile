@@ -12,6 +12,9 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.0'
 gem 'redis'
+gem 'carrierwave', '~> 1.2'
+gem 'cloudinary'
+gem 'pg_search'
 
 # media gem
 gem 'cloudinary'
