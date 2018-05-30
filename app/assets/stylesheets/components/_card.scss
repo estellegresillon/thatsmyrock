@@ -1,20 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,100,300,700,500");
-
-.cards {
-  margin-top: 20px;
-  margin-bottom: 50px;
+.card-content {
+  max-width: 1000px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
   justify-content: center;
-  flex-wrap: wrap;
-  align-content: center;
-  .card {
-    flex: 0 0 auto;
-  }
 }
 .card {
   height: 200px;
-  width: 300px;
+  width: 100%;
   box-shadow: 1px 5px 5px rgba(0,0,0,0.3);
   color: white;
   position: relative;
@@ -32,70 +26,65 @@
 }
 .card:hover {
   box-shadow: 3px 7px 10px rgba(0,0,0,0.3);
-  margin-top: -5px;
 }
-.cards-booking {
-  margin-bottom: 20px;
-  margin-top: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  align-content: center;
-  .card-booking {
-    flex: 0 0 auto;
-  }
-}
-.card-booking {
-  height: 250px;
-  width: 280px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-  position: relative;
-  background-color: white;
-  transition: all 0.3s ease;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.card-booking:hover {
-  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
-}
-.card-clients {
-  height: 100px;
+.cards-collected {
   max-width: 1000px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+}
+.card-collected {
+  height: 200px;
+  width: 100%;
+  box-shadow: 1px 5px 5px rgba(0,0,0,0.3);
   position: relative;
   background-color: white;
   transition: all 0.3s ease;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 15px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.card-clients:hover {
-  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
-}
-.card-clients-info {
+  margin: 10px;
+  text-align: center;
+  background-size: cover !important;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  p {
-    margin: 0px 0px 0px;
-  }
-}
-.card-clients-buttons {
-  display: flex;
-  flex-direction: row;
-  padding-right: 20px;
   align-items: center;
+  justify-content: center;
+  -webkit-animation: fadeIn;
+  -webkit-animation-duration: 1s;
 }
+.card-collected:hover {
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+}
+
+.cards-wishlist {
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+}
+.card-wishlist {
+  height: 200px;
+  width: 100%;
+  box-shadow: 1px 5px 5px rgba(0,0,0,0.3);
+  position: relative;
+  background-color: white;
+  transition: all 0.3s ease;
+  margin: 10px;
+  text-align: center;
+  background-size: cover !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: fadeIn;
+  -webkit-animation-duration: 1s;
+}
+.card-wishlist:hover {
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+}
+
+
+
 .card h2 {
   font-family: "Montserrat";
   font-size: 16px;
