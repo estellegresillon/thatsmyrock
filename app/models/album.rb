@@ -18,6 +18,9 @@ class Album < ApplicationRecord
   mount_uploader :photo_cover, PhotoUploader
   mount_uploader :photo_show, PhotoUploader
 
+  after_commit :remove_photo_cover!, on: :destroy
+  after_commit :remove_photo_show!, on: :destroy
+
 
   scope :next, lambda {|id| where("id > ?",id).order("id ASC") } # this is the default ordering for AR
   scope :previous, lambda {|id| where("id < ?",id).order("id DESC") }
