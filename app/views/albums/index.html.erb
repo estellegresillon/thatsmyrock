@@ -4,7 +4,7 @@
     <h2>Description</h2>
     <div class="searchbar-index">
     <div class="searchbar-home animate fadeIn">
-      <%= form_tag albums_path, method: "get" do %>
+      <%= form_tag albums_path, remote: true, method: "get" do %>
         <%= text_field_tag :name , params[:name], class: "form-control", placeholder: "Name or Artist", id: 'searchbar-band' %>
         <%= select_tag :music_style, raw("<option>Anything</option> <option>Rock</option> <option>Rap</option> <option>Soul</option> <option>Electronic</option> <option>Reggae</option>" ) %>
         <%#= select_tag :year, raw("<option> </option> <option value= 1967 1950 2010 >1950s</option> <option></option>") %>
