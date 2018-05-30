@@ -32,6 +32,12 @@
             <%= f.input :album_id, as: :hidden %>
             <%= f.submit 'add to collection', class: 'btn-accept' %>
           <% end %>
+          <%= link_to album_user_albums_path(b, user_album: { status: "wishlist" }), method: :post do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+          <%= link_to album_user_albums_path(b, user_album: { status: "collected" }), method: :post do %>
+            <i class="far fa-star"></i>
+          <% end %>
 
         </ul>
       </div>

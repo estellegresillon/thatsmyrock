@@ -71,3 +71,19 @@
 .form-booking {
   border-radius: 5px;
 }
+
+.card-collected input[type="submit"]
+{
+  background: url(heart-outline.png);
+  background-repeat: no-repeat;
+  border: none;
+  width: 24px;
+}
+
+.card-wishlist input[type="submit"]
+{
+  background: url(star.png);
+  background-repeat: no-repeat;
+  border: none;
+  width: 24px;
+}

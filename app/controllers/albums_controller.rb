@@ -19,6 +19,7 @@ class AlbumsController < ApplicationController
     else
       @albums = Album.search_albums(search_options)
     end
+
   end
 
   def show
