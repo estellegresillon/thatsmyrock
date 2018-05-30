@@ -22,23 +22,14 @@
         </br>
           <h4>The album story :</h4>
           <p><%= @album.description %></p>
-          <%= simple_form_for [ @album, @user_album ] do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'wishlist'} %>
-            <%= f.input :album_id, as: :hidden %>
-            <%= f.submit 'add to wishlist', class: 'btn-accept' %>
+          <% unless current_user.albums.include?(@album) %>
+            <%= link_to album_user_albums_path(@album, user_album: { status: "wishlist" }), method: :post do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+            <%= link_to album_user_albums_path(@album, user_album: { status: "collected" }), method: :post do %>
+              <i class="far fa-star"></i>
+            <% end %>
           <% end %>
-          <%= simple_form_for [ @album, @user_album ] do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'collected'} %>
-            <%= f.input :album_id, as: :hidden %>
-            <%= f.submit 'add to collection', class: 'btn-accept' %>
-          <% end %>
-          <%= link_to album_user_albums_path(b, user_album: { status: "wishlist" }), method: :post do %>
-            <i class="far fa-heart"></i>
-          <% end %>
-          <%= link_to album_user_albums_path(b, user_album: { status: "collected" }), method: :post do %>
-            <i class="far fa-star"></i>
-          <% end %>
-
         </ul>
       </div>
     </div>
