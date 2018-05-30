@@ -24,17 +24,27 @@ CSV.foreach(filepath, csv_options) do |row|
     website_url: row[:website_url],
     wiki_url: row[:wiki_url],
     bio: row[:bio]
+    # photo: row[:photo],
   )
-  # regex = /( |.|;)/
+
   begin
-    photo_title = "#{row[:name].downcase.gsub(' ', '-')}"
+    # photo_title = "#{row[:name].downcase.gsub(' ', '-')}"
+    photo_title = I18n.transliterate(row[:name].gsub('&', 'and').parameterize)
     photo = Cloudinary::Uploader.upload("db/fixtures/images/artists/#{photo_title}.jpg", :use_filename => true, :folder => "thatsmyrock/artists")
     artist.remote_photo_url = photo['url']
   rescue
     puts "No photo for #{row[:name]}"
   end
+
+    row << ['Name', 'Appearance', 'Origin']
+    row << ['Asahi', 'Pale Lager', 'Japan']
+    row << ['Guinness', 'Stout', 'Ireland']
+
     artist.save!
 end
+
+
+
 
 puts "Creating albums..."
 filepath = Rails.root.join('db/fixtures/csv/albums.csv')
@@ -43,6 +53,7 @@ CSV.foreach(filepath, csv_options) do |row|
   # album-name-artist-name.jpg
 
   # 1) Trouver l'artiste correspondatn au nom d'artiste dans le csv
+  puts row[:artist]
   artist = Artist.find_by(name: row[:artist])
   # 2) Créer un album avec l'artiste_id correspondant
   album = Album.new(
@@ -53,11 +64,12 @@ CSV.foreach(filepath, csv_options) do |row|
     music_style: row[:music_style],
     wiki_url: row[:wiki_url],
     description: row[:description]
-    # photo_cover: row[:photo_cover'],
-    # photo_cover: row[:photo_show'],
+    # photo_cover: row[:photo_cover],
+    # photo_show: row[:photo_show],
   )
   begin
-    photo_title = "#{row[:name]}-#{row[:artist]}".downcase.gsub(' ', '-')
+    # photo_title = "#{row[:name]}-#{row[:artist]}".downcase.gsub(' ', '-')
+    photo_title = "#{I18n.transliterate(row[:name].gsub('&', 'and').parameterize)}-#{I18n.transliterate(row[:artist].gsub('&', 'and').parameterize)}"
     photo_cover = Cloudinary::Uploader.upload("db/fixtures/images/artists/#{photo_title}.jpg", :use_filename => true, :folder => "thatsmyrock/albums")
     album.remote_photo_cover_url = photo_cover['url']
     photo_show = Cloudinary::Uploader.upload("db/fixtures/images/artists/#{photo_title}-show.jpg", :use_filename => true, :folder => "thatsmyrock/albums")
