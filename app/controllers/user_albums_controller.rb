@@ -50,7 +50,7 @@ class UserAlbumsController < ApplicationController
    end
 
   def user_album_params
-    params.require(:user_album).permit(:status, :album_id, :vinyl, :cd, :digital)
+    params.require(:user_album).permit(:status, :album_id, :artist_id, :vinyl, :cd, :digital)
   end
 
 

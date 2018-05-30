@@ -1,14 +1,13 @@
-<div class="profile-header-wrapper">
-  <div class="container profile-header-container text-center">
+<% if @avatar_user.present? %>
+  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_tag(@avatar_user, crop: :fill) %>'); height: 50vh; background-position: center;">
+<% else %>
+  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2017/01/03145133/twenty20_ec812a3a-48ad-40af-983b-129484cf6086.jpg'); height: 30vh; background-position: center;">
+<% end  %>
 
-    <div class="profile-header-infos">
-      <% if @avatar_user.present? %>
-        <%= cl_image_tag(@avatar_user, crop: :fill, class: "img-circle") %>
-      <% else %>
-        <%= image_tag "avatar_default.jpg", class: "img-circle" %>
-      <% end  %>
         <h2>Hello, <%= current_user.name.capitalize %></h2>
-    </div>
+
+
+</div>
 
     <div class="tabs">
       <% if @tab == "collected" %>
@@ -60,7 +59,9 @@
                 <div class="delete-review">
                   <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete %>
                 </div>
-                <p>Group : <strong><%= c.album.name %></strong></p>
+                <p>Album : <strong><%= c.album.name %></strong></p>
+                <p>Artist : <strong><%= c.album.artist.name %></strong></p>
+                <p>Rank : <strong><%= c.album.rank %></strong></p>
                 <p><strong><%= c.album.year %></strong></p>
                 <% if c.vinyl == true %>
                   <p><strong> Format : Vinyl </strong></p>
@@ -90,7 +91,7 @@
     <div class="h_line"></div>
 
     <p><strong>Hello there !</strong></p>
-    <p>Here you can add the albums you own.</p>
+    <p>Here you can add the albums you wish to own.</p>
 
     <% if current_user.user_albums.present? %>
         <div class="cards-wishlist">
@@ -100,7 +101,9 @@
                 <div class="delete-review">
                   <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete %>
                 </div>
-                <p>Group : <strong><%= c.album.name %></strong></p>
+                <p>Album : <strong><%= c.album.name %></strong></p>
+                <p>Artist : <strong><%= c.album.artist.name %></strong></p>
+                <p>Rank : <strong><%= c.album.rank %></strong></p>
                 <p><strong><%= c.album.year %></strong></p>
                 <p>Format : </p>
                   <% if c.vinyl == true %>
