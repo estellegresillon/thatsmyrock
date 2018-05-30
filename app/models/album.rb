@@ -8,7 +8,7 @@ class Album < ApplicationRecord
   },
   using: {
     tsearch: { prefix: true }
-  }
+    }
 
 
   has_many :tracks, dependent: :destroy
