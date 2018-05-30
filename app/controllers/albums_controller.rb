@@ -14,6 +14,9 @@ class AlbumsController < ApplicationController
     if params[:music_style].present?
       search_options << params[:music_style]
     end
+    if params[:decenia].present?
+      search_options << params[:decenia]
+    end
     if search_options.blank?
       @albums = Album.all
     else
