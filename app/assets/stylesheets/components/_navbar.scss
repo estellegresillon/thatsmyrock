@@ -35,17 +35,19 @@ i {
 }
 .logout {
   color: white;
+  transition: background-color 0.5s ease;
 }
-/* Basic navbar item */
-.navbar-wagon-item {
-  cursor: pointer;
-  padding: 0 20px;
+.logout:hover {
+  color: white;
+  text-decoration: none;
+  background-color: red;
 }
-
 /* Navbar link */
 .navbar-wagon-link {
   font-size: 14px;
   color: white;
+  transition: background-color 0.5s ease;
+  margin-right: 40px;
   a {
     color: white;
   }
@@ -53,6 +55,7 @@ i {
 .navbar-wagon-link:hover {
   color: white;
   text-decoration: none;
+  background-color: red;
 }
 
 /* Dropdown menu */
