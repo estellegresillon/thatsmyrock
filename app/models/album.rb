@@ -2,7 +2,7 @@ class Album < ApplicationRecord
 
   include PgSearch
   pg_search_scope :search_albums,
-  against: [ :name, :year, :music_style ],
+  against: [ :name, :year, :music_style, :decade ],
   associated_against: {
     artist: [ :name ]
   },
@@ -21,7 +21,7 @@ class Album < ApplicationRecord
   after_commit :remove_photo_cover!, on: :destroy
   after_commit :remove_photo_show!, on: :destroy
 
-
+  scope :ordered_by_rank, -> { reorder(rank: :asc) }
   scope :next, lambda {|id| where("id > ?",id).order("id ASC") } # this is the default ordering for AR
   scope :previous, lambda {|id| where("id < ?",id).order("id DESC") }
 

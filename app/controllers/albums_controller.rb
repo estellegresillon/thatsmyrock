@@ -5,6 +5,9 @@ class AlbumsController < ApplicationController
     if params[:artist].present?
       search_options << params[:artist]
     end
+    if params[:decade].present?
+      search_options << params[:decade]
+    end
     if params[:year].present?
       search_options << params[:year]
     end
@@ -14,13 +17,10 @@ class AlbumsController < ApplicationController
     if params[:music_style].present?
       search_options << params[:music_style]
     end
-    if params[:decenia].present?
-      search_options << params[:decenia]
-    end
     if search_options.blank?
       @albums = Album.all
     else
-      @albums = Album.search_albums(search_options)
+      @albums = Album.search_albums(search_options).ordered_by_rank
     end
   end
 
