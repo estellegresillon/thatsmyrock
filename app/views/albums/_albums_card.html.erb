@@ -1,17 +1,27 @@
-<div class="cards" id="albums_id">
+<div class="card-content" id="albums_id">
     <% index = 1 %>
-    <% @albums.each_with_index do |b, i| %>
+    <% @albums.each_with_index do |album, i| %>
     <div class="card-bg">
-      <% if b.photo_cover.present? %>
-        <div class="card box" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path b.photo_cover, crop: :fill %>'); background-position: center;">
+      <% if album.photo_cover.present? %>
+        <div class="card box" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path album.photo_cover, crop: :fill %>'); background-position: left, width: 20%;">
       <% else %>
         <% index =  i + 11 %>
         <% url = "https://source.unsplash.com/collection/1068/5#{index}x5#{index}" %>
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= url %>'); background-position: center;">
+        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= url %>'); background-position: left, width: 20%;">
       <% end  %>
-      <h2><%= b.artist.name %></h2>
-      <p><%= link_to b.name, album_path(b.id) %></p>
-      <p><%= b.rank %></p>
+      <h2><%= album.artist.name %></h2>
+      <p><%= link_to album.name, album_path(album.id) %></p>
+      <p><%= album.rank %></p>
+      <div class="iconsindex">
+        <% unless current_user.albums.include?(album) %>
+          <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+          <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post do %>
+            <i class="far fa-star"></i>
+          <% end %>
+        <% end %>
+      </div>
     </div>
     </div>
     <% end %>
