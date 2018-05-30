@@ -1,1 +1,7 @@
+function refreshAlbums(innerHTML) {
+  const newAlbums = document.getElementById('albums_id');
+  newAlbums.innerHTML = innerHTML;
+}
+
+refreshAlbums('<%= j render "albums/albums_card", albums: @albums %>')
 

@@ -4,10 +4,9 @@
     <h2>Description</h2>
     <div class="searchbar-index">
     <div class="searchbar-home animate fadeIn">
-      <%= form_tag albums_path, method: "get" do %>
+      <%= form_tag albums_path, remote: true, method: "get" do %>
         <%= text_field_tag :name , params[:name], class: "form-control", placeholder: "Name or Artist", id: 'searchbar-band' %>
         <%= select_tag :music_style, raw("<option> </option> <option>Rock</option> <option>Rap</option> <option>Soul</option> <option>Electronic</option> <option>Reggae</option>" ) %>
-        <%#= select_tag :year, raw("<option> </option> <option value= 1967 1950 2010 >1950s</option> <option></option>") %>
         <%= select_tag :decade, options_for_select([["All"," "], ["1950s", 1950], ["1960s", 1960], ["1970s", 1970], ["1980s", 1980], ["1990s", 1990], ["2000s", 2000], ["2010s", 2010]]) %>
 
         <%= submit_tag "Discover", class: "btn-search" %>
@@ -18,22 +17,5 @@
 </div>
 
 <div class="top365">
-  <div class="cards">
-    <% index = 1 %>
-    <% @albums.each_with_index do |b, i| %>
-    <div class="card-bg">
-      <% if b.photo_cover.present? %>
-        <div class="card box" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path b.photo_cover, crop: :fill %>'); background-position: center;">
-      <% else %>
-        <% index =  i + 11 %>
-        <% url = "https://source.unsplash.com/collection/1068/5#{index}x5#{index}" %>
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= url %>'); background-position: center;">
-      <% end  %>
-      <h2><%= b.artist.name %></h2>
-      <p><%= link_to b.name, album_path(b.id) %></p>
-      <p><%= b.rank %></p>
-    </div>
-    </div>
-    <% end %>
-  </div>
+  <%= render 'albums/albums_card' %>
 </div>
