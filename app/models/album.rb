@@ -1,5 +1,7 @@
 class Album < ApplicationRecord
 
+  self.per_page = 10
+
   include PgSearch
   pg_search_scope :search_albums,
   against: [ :name, :year, :music_style, :decade ],

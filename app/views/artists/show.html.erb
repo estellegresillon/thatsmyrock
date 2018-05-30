@@ -33,7 +33,7 @@
                 <p><%= r.year %></p>
               </div>
               <div class="message-name">
-                <h4><%= r.name %></h4>
+                <h4><%= link_to r.name, album_path(r.id), class: "text-delete" %></h4>
               </div>
               <div class="message-rating">
                 <p class="rating-title"><%= r.rank %></p>
@@ -45,6 +45,9 @@
         <% end %>
       </div>
     </div>
+  </div>
+  <div class="buttons">
+    <%= link_to "Go back", "/", class: "btn-search" %>
   </div>
 </div>
 
