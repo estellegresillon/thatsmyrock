@@ -61,6 +61,7 @@ CSV.foreach(filepath, csv_options) do |row|
     rank: row[:rank],
     name: row[:name],
     year: row[:year],
+    decade: row[:decade],
     music_style: row[:music_style],
     wiki_url: row[:wiki_url],
     description: row[:description]
