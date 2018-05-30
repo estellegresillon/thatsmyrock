@@ -1,0 +1,51 @@
+<% if @artist.photo.present? %>
+  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path @artist.photo, crop: :fill %>'); height: 50vh; background-position: center;">
+<% else %>
+  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
+<% end  %>
+
+    <h1><%= @artist.name %></h1>
+
+</div>
+
+<div class="content">
+  <div class="wrap-show">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="band-description">
+        <h3 class="red-title"><strong><%= @artist.name %></strong></h3>
+        <ul class="list-unstyled">
+          <h4>The artist story :</h4>
+          <p><%= @artist.bio %></p>
+
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-6">
+      <div class="form-booking">
+        <h3 class="title-booking">Album list</h3>
+        <% if @artist.albums.any? %>
+          <% @artist.albums.each do |r| %>
+            <div class="message-box">
+              <div class="avatar-large">
+                <p><%= r.year %></p>
+              </div>
+              <div class="message-name">
+                <h4><%= r.name %></h4>
+              </div>
+              <div class="message-rating">
+                <p class="rating-title"><%= r.rank %></p>
+              </div>
+          </div>
+          <% end %>
+        <% else %>
+          <p class="no-comments">There are no tracks yet.</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
