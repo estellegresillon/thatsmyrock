@@ -3,6 +3,8 @@ ruby '2.4.4'
 
 gem 'faker'
 gem 'jquery-rails'
+gem 'will_paginate', '~> 3.0.5'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 gem 'bootsnap', require: false
 gem 'devise'
@@ -13,7 +15,6 @@ gem 'puma'
 gem 'rails', '5.2.0'
 gem 'redis'
 gem 'carrierwave', '~> 1.2'
-gem 'cloudinary'
 gem 'pg_search'
 
 # media gem

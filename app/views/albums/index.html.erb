@@ -1,7 +1,7 @@
 <div class="banner-home" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%,rgba(0,0,0,0.8) 100%), url('https://cdn-images-1.medium.com/max/1456/1*OU0I3b6SoXyvAGfTQnGoLg.jpeg'); height: 70vh; background-position: center;">
   <div class="banner-content">
-    <h1>Title</h1>
-    <h2>Description</h2>
+    <h1>Experience the best music.</h1>
+    <h2>We record the best albums ever made accross the world</h2>
     <div class="searchbar-index">
     <div class="searchbar-home animate fadeIn">
       <%= form_tag albums_path, method: "get" do %>
@@ -32,14 +32,16 @@
       <h2><%= album.artist.name %></h2>
       <p><%= link_to album.name, album_path(album.id) %></p>
       <p><%= album.rank %></p>
-      <% unless current_user.albums.include?(album) %>
-        <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post do %>
-          <i class="far fa-heart"></i>
+      <div class="iconsindex">
+        <% unless current_user.albums.include?(album) %>
+          <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+          <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post do %>
+            <i class="far fa-star"></i>
+          <% end %>
         <% end %>
-        <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post do %>
-          <i class="far fa-star"></i>
-        <% end %>
-      <% end %>
+      </div>
     </div>
     </div>
     <% end %>

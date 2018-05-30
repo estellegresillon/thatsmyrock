@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logov2.png", alt:"That's My Rock!"%>
+    <%= image_tag "logoblanc.png", alt:"That's My Rock!"%>
   <% end %>
 
   <!-- Right Navigation -->
@@ -11,37 +11,14 @@
 
       <!-- Links when logged in -->
       <%= link_to "Home", "/", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Book a band", "/albums", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Dashboard", "/profile", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+      <% end %>
 
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <div data-toggle="dropdown">
-            <%= image_tag "avatar_default.jpg", class: "avatar" %>
-        </div>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "/profile" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    <% else %>
+      <% else %>
       <!-- Login link (when logged out) -->
+      <%= link_to "Home", "/", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
@@ -60,11 +37,6 @@
         <li>
           <%= link_to "/" do %>
             <i class="fa fa-cog"></i>  <%= t(".settings", default: "Home") %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "/bands" do %>
-            <i class="fas fa-search"></i>  <%= t(".settings", default: "Book a band") %>
           <% end %>
         </li>
         <li>
