@@ -19,6 +19,9 @@ gem 'pg_search'
 # media gem
 gem 'cloudinary'
 
+# importing artist / album photos
+gem 'rubyzip', '>= 1.0.0', require: false
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.0.9'

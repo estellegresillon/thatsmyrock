@@ -5,11 +5,18 @@ namespace :albums do
 
     File.open(filepath, "wb") do |file|
       Album.all.each do |album|
-        photo_file_name = "#{I18n.transliterate(album.name.gsub('&', 'and').parameterize)}-#{I18n.transliterate(album.artist.name.gsub('&', 'and').parameterize)}.jpg"
-        file.write("#{photo_file_name}\n")
+        file.write("#{album.normalized_name}.jpg\n")
       end
     end
 
     puts "Finished! File saved in: #{filepath}"
   end
+
+  # script to import
+  desc "Import albums photos"
+  task import_photos: :environment do
+  end
 end
+
+
+# TO FINISH
