@@ -6,6 +6,7 @@ class UserAlbumsController < ApplicationController
     @user_album = UserAlbum.new(user_album_params)
     @user_album.user = current_user
     @user_album.album = @album
+    @status = @user_album.status
     if @user_album.save
       respond_to do |format|
         format.html { redirect_to albums_path }
