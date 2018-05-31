@@ -12,12 +12,14 @@
       <h2><%= album.artist.name %></h2>
       <p><%= link_to album.name, album_path(album.id) %></p>
       <p><%= album.rank %></p>
-      <div class="iconsindex">
-        <% unless current_user.albums.include?(album) %>
-          <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post do %>
+      <div class="iconsindex" id='<%= "icons_#{album.id}" %>'>
+        <% unless UserAlbum.find_by(user: current_user, album: album, status: "wishlist") %>
+          <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post, remote: :true, data: { status: :wishlist } do %>
             <i class="far fa-heart"></i>
           <% end %>
-          <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post do %>
+        <% end %>
+        <% unless UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
+          <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: :collected } do %>
             <i class="far fa-star"></i>
           <% end %>
         <% end %>

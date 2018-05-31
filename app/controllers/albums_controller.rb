@@ -18,9 +18,9 @@ class AlbumsController < ApplicationController
       search_options << params[:music_style]
     end
     if search_options.blank?
-      @albums = Album.all
+      @albums = Album.all.paginate(page: params[:page])
     else
-      @albums = Album.search_albums(search_options).ordered_by_rank
+      @albums = Album.search_albums(search_options).paginate(page: params[:page]).ordered_by_rank
     end
     respond_to do |format|
         format.html

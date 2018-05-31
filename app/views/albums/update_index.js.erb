@@ -1,0 +1,8 @@
+let wrapper = document.getElementById('<%= "icons_#{@album.id}" %>');
+wrapper.querySelectorAll('a').forEach((e) => {
+  if ('collected' == '<%= @status %>') {
+    wrapper.remove();
+  } else if (e.dataset.status == '<%= @status %>') {
+    e.remove();
+  };
+})

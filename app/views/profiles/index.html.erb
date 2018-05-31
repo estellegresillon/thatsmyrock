@@ -48,9 +48,9 @@
   <p><strong>Hello there !</strong></p>
   <p>Here you can add the albums you own.</p>
 
-  <% if current_user.user_albums.present? %>
+  <% if @user_albums.present? %>
     <div class="cards-collected">
-      <% current_user.user_albums.each do |c| %>
+      <% @user_albums.each do |c| %>
 
         <% if c.status == 'collected' %>
           <div class="card-collected">
