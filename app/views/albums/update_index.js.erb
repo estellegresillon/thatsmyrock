@@ -1,0 +1,24 @@
+// let icons = document.getElementById('<%= "icons_#{@album.id}" %>');
+// console.log(icons.innerHTML);
+// icons.innerHTML = "";
+
+let icons_wrapper = document.getElementById('<%= "icons_#{@album.id}" %>');
+let icons = icons_wrapper.querySelectorAll('a');
+  icons.forEach((icon) => {
+    console.log(icon);
+    //icon.remove();
+  })
+
+// if (icon.innerHTML = '<i class="far fa-heart"></i>') {
+//   console.log("hello heart");
+//   console.log(icon.innerHTML);
+//   icon.remove();
+// } else if {
+//   console.log("hello star");
+//   icons.remove();
+// }
+
+// if clic sur star
+//   icons.innerHTML = "";
+// elsif clic sur coeur
+//   icons.querySelector("a .fa star").remove()
