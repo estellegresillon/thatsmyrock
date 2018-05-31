@@ -1,14 +1,10 @@
-<div class="profile-header-wrapper">
-  <div class="container profile-header-container text-center">
-
-    <div class="profile-header-infos">
-      <% if @avatar_user.present? %>
-        <%= cl_image_tag(@avatar_user, crop: :fill, class: "img-circle") %>
-      <% else %>
-        <%= image_tag "avatar_default.jpg", class: "img-circle" %>
-      <% end  %>
-        <h2>Hello, <%= current_user.name.capitalize %></h2>
-    </div>
+<% if @avatar_user.present? %>
+  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_tag(@avatar_user, crop: :fill) %>'); height: 50vh; background-position: center;">
+<% else %>
+  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2017/01/03145133/twenty20_ec812a3a-48ad-40af-983b-129484cf6086.jpg'); height: 30vh; background-position: center;">
+<% end  %>
+  <h2 class="titlename">Hello, <%= current_user.name.capitalize %></h2>
+</div>
 
     <div class="tabs">
       <% if @tab == "collected" %>
@@ -45,37 +41,42 @@
   <% else %>
     <div id="my-collection" class="tab-pane fade in active content">
   <% end %>
-    <h3>MY COLLECTION</h3>
-    <div class="h_line"></div>
 
-    <p><strong>Hello there !</strong></p>
-    <p>Here you can add the albums you own.</p>
+  <h3 class="titledash">MY COLLECTION</h3>
 
-    <% if current_user.user_albums.present? %>
-        <div class="cards-collected">
-          <% current_user.user_albums.each do |c| %>
 
-            <% if c.status == 'collected' %>
-              <div class="card-collected">
-                <div class="delete-review">
-                  <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete %>
-                </div>
-                <p>Group : <strong><%= c.album.name %></strong></p>
-                <p><strong><%= c.album.year %></strong></p>
-                <% if c.vinyl == true %>
-                  <p><strong> Format : Vinyl </strong></p>
-                <% elsif c.cd == true %>
-                  <p><strong> Format : CD </strong></p>
-                <% elsif c.digital == true %>
-                  <p><strong> Format : Digital </strong></p>
-                <% end %>
-              </div>
+  <p><strong>Hello there !</strong></p>
+  <p>Here you can add the albums you own.</p>
+
+  <% if current_user.user_albums.present? %>
+    <div class="cards-collected">
+      <% current_user.user_albums.each do |c| %>
+
+        <% if c.status == 'collected' %>
+          <div class="card-collected">
+            <div class="delete-review">
+              <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete %>
+            </div>
+            <p>Album : <%= link_to c.album.name, album_path(c.album.id), class: "text-delete" %>
+            <p>Artist : <%= link_to c.album.artist.name, artist_path(c.album.artist.id), class: "text-delete" %>
+            <p>Rank : <strong><%= c.album.rank %></strong></p>
+            <p><strong><%= c.album.year %></strong></p>
+            <% if c.vinyl == true %>
+              <p><strong> Format : Vinyl </strong></p>
+            <% elsif c.cd == true %>
+              <p><strong> Format : CD </strong></p>
+            <% elsif c.digital == true %>
+              <p><strong> Format : Digital </strong></p>
             <% end %>
+          </div>
+        <% end %>
 
-          <% end %>
-        </div>
-    <% end %>
-
+      <% end %>
+    </div>
+  <% end %>
+    <div class="buttons">
+      <%= link_to "Browse albums", "/", class: "btn-search" %>
+    </div>
   </div>
 
   <% if @tab == "wishlist" %>
@@ -86,39 +87,43 @@
     <div id="my-wishlist" class="tab-pane fade in content">
   <% end %>
 
-    <h3>MY WISHLIST</h3>
-    <div class="h_line"></div>
+  <h3 class="titledash">MY WISHLIST</h3>
 
-    <p><strong>Hello there !</strong></p>
-    <p>Here you can add the albums you own.</p>
+  <p><strong>Hello there !</strong></p>
+  <p>Here you can add the albums you wish to own.</p>
 
-    <% if current_user.user_albums.present? %>
-        <div class="cards-wishlist">
-          <% current_user.user_albums.each do |c| %>
-            <% if c.status == 'wishlist' %>
-              <div class="card-wishlist">
-                <div class="delete-review">
-                  <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete %>
-                </div>
-                <p>Group : <strong><%= c.album.name %></strong></p>
-                <p><strong><%= c.album.year %></strong></p>
-                <p>Format : </p>
-                  <% if c.vinyl == true %>
-                    <p><strong> Vinyl </strong></p>
-                  <% elsif c.cd == true %>
-                    <p><strong> CD </strong></p>
-                  <% elsif c.digital == true %>
-                    <p><strong> Digital </strong></p>
-                  <% end %>
-                  <%= simple_form_for c do |f| %>
-                    <%= f.input :status, as: :hidden, input_html: { value: 'collected'} %>
-                    <%= f.submit "", id: 'wishlist' %>
-                  <% end %>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
+  <% if current_user.user_albums.present? %>
+    <div class="cards-wishlist">
+      <% current_user.user_albums.each do |c| %>
+        <% if c.status == 'wishlist' %>
+          <div class="card-wishlist">
+            <div class="delete-review">
+              <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete %>
+            </div>
+            <p>Album : <%= link_to c.album.name, album_path(c.album.id), class: "text-delete" %></p>
+            <p>Artist : <%= link_to c.album.artist.name, artist_path(c.album.artist.id), class: "text-delete" %></p>
+            <p>Rank : <strong><%= c.album.rank %></strong></p>
+            <p><strong><%= c.album.year %></strong></p>
+            <p>Format : </p>
+              <% if c.vinyl == true %>
+                <p><strong> Vinyl </strong></p>
+              <% elsif c.cd == true %>
+                <p><strong> CD </strong></p>
+              <% elsif c.digital == true %>
+                <p><strong> Digital </strong></p>
+              <% end %>
+              <%= simple_form_for c do |f| %>
+                <%= f.input :status, as: :hidden, input_html: { value: 'collected'} %>
+                <%= f.submit "", id: 'wishlist' %>
+              <% end %>
+          </div>
+        <% end %>
+        <% end %>
+      </div>
     <% end %>
+    <div class="buttons">
+      <%= link_to "Browse albums", "/", class: "btn-search" %>
+    </div>
   </div>
 
 </div>

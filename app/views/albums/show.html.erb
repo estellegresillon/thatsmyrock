@@ -15,30 +15,21 @@
       <div class="band-description">
         <h3 class="red-title"><strong><%= @album.name %></strong></h3>
         <ul class="list-unstyled">
-          <p>Artist : <strong><%= @album.artist.name %></strong></p>
+          <p>Artist : <strong><%= @album.artist.name %></strong> - <%= link_to "Visit their page", artist_path(@album.artist.id), class: "text-delete" %></p>
           <p>Rank : <strong><%= @album.rank %></strong></p>
           <p>Music style : <strong><%= @album.music_style %></strong></p>
           <p>Year : <strong><%= @album.year %></strong></p>
         </br>
           <h4>The album story :</h4>
           <p><%= @album.description %></p>
-          <%= simple_form_for [ @album, @user_album ] do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'wishlist'} %>
-            <%= f.input :album_id, as: :hidden %>
-            <%= f.submit 'add to wishlist', class: 'btn-accept' %>
+          <% unless current_user.albums.include?(@album) %>
+            <%= link_to album_user_albums_path(@album, user_album: { status: "wishlist" }), method: :post do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+            <%= link_to album_user_albums_path(@album, user_album: { status: "collected" }), method: :post do %>
+              <i class="far fa-star"></i>
+            <% end %>
           <% end %>
-          <%= simple_form_for [ @album, @user_album ] do |f| %>
-            <%= f.input :status, as: :hidden, input_html: { value: 'collected'} %>
-            <%= f.input :album_id, as: :hidden %>
-            <%= f.submit 'add to collection', class: 'btn-accept' %>
-          <% end %>
-          <%= link_to album_user_albums_path(b, user_album: { status: "wishlist" }), method: :post do %>
-            <i class="far fa-heart"></i>
-          <% end %>
-          <%= link_to album_user_albums_path(b, user_album: { status: "collected" }), method: :post do %>
-            <i class="far fa-star"></i>
-          <% end %>
-
         </ul>
       </div>
     </div>
@@ -70,6 +61,7 @@
 </div>
 
 
+
   <div class="downpage-links">
     <% if @album.previous.presence %>
       <p><%= link_to "Previous album", @album.previous %></p>
@@ -79,5 +71,14 @@
       <p><%= link_to "Next album", @album.next %></p>
     <% end %>
   </div>
-
+  <div class="buttons">
+    <%= link_to "Go back", "/", class: "btn-search" %>
+  </div>
 </div>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">
+ recommandation
+</button>
+
+<%= render 'albums/modal' %>

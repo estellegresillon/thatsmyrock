@@ -28,7 +28,7 @@ CSV.foreach(filepath, csv_options) do |row|
   )
 
   filepath = Rails.root.join("db/fixtures/images/artists/#{artist.normalized_name}.jpg")
-
+  
   if File.exist?(filepath)
     # First, we upload the photo on cloudinary with options to keep filename and have specific folder
     photo = Cloudinary::Uploader.upload(filepath, use_filename: true, folder: "thatsmyrock/artists")
@@ -40,7 +40,6 @@ CSV.foreach(filepath, csv_options) do |row|
 
   artist.save!
 end
-
 
 puts "Creating albums..."
 filepath = Rails.root.join('db/fixtures/csv/albums.csv')

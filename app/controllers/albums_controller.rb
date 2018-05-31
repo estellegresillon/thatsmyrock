@@ -22,7 +22,10 @@ class AlbumsController < ApplicationController
     else
       @albums = Album.search_albums(search_options).ordered_by_rank
     end
-
+    respond_to do |format|
+        format.html
+        format.js
+    end
   end
 
   def show
