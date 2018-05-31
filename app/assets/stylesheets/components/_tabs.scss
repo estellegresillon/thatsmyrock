@@ -1,6 +1,6 @@
 /* Your profile header CSS code here */
 .profile-header-wrapper {
-  background: #f4f4f4;
+  background: white;
 }
 
 .profile-header-infos {
@@ -37,28 +37,31 @@
   color: white;
 }
 .tabs h3 {
-  font-size: 17px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 500;
   margin-top: 0;
   margin-bottom: -3px;
 }
 .tab {
   background: #adafb2;
-  flex: 0 0 25%;
+  flex: 0 0 15%;
   text-align: center;
-  padding: 20px 0;
-}
-.tab:first-child {
-  border-radius: 10px 0 0 0;
-}
-.tab:last-child {
-  border-radius: 0 10px 0 0;
+  padding: 15px 0;
 }
 .tab.active {
   background: white !important;
-  color: #FF0000 !important;
+  color: #adafb2 !important;
 }
 .tab.active:hover {
   background: white !important;
-  color: #FF0000 !important;
+  color: #adafb2 !important;
+}
+
+.titledash {
+  color: red;
+  font-size: 50px;
+}
+
+.titlename {
+  background-color: red;
 }

@@ -7,11 +7,7 @@ class UserAlbumsController < ApplicationController
     @user_album.user = current_user
     @user_album.album = @album
     if @user_album.save
-      if @user_album.status == "wishlist"
-        redirect_to profile_path(tab: "wishlist")
-      elsif @user_album.status == "collected"
-        redirect_to profile_path(tab: "collected")
-      end
+      redirect_to albums_path
     else
       render "/profile"
     end
@@ -50,7 +46,7 @@ class UserAlbumsController < ApplicationController
    end
 
   def user_album_params
-    params.require(:user_album).permit(:status, :album_id, :vinyl, :cd, :digital)
+    params.require(:user_album).permit(:status, :album_id, :artist_id, :vinyl, :cd, :digital)
   end
 
 

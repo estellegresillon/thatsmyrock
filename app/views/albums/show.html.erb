@@ -15,7 +15,7 @@
       <div class="band-description">
         <h3 class="red-title"><strong><%= @album.name %></strong></h3>
         <ul class="list-unstyled">
-          <p>Artist : <strong><%= @album.artist.name %></strong></p>
+          <p>Artist : <strong><%= @album.artist.name %></strong> - <%= link_to "Visit their page", artist_path(@album.artist.id), class: "text-delete" %></p>
           <p>Rank : <strong><%= @album.rank %></strong></p>
           <p>Music style : <strong><%= @album.music_style %></strong></p>
           <p>Year : <strong><%= @album.year %></strong></p>
@@ -71,7 +71,9 @@
       <p><%= link_to "Next album", @album.next %></p>
     <% end %>
   </div>
-
+  <div class="buttons">
+    <%= link_to "Go back", "/", class: "btn-search" %>
+  </div>
 </div>
 
     <!-- Button trigger modal -->

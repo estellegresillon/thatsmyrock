@@ -8,39 +8,39 @@ csv_options = {
   header_converters: :symbol
 }
 
-# puts "Cleaning database..."
-# Artist.destroy_all
+puts "Cleaning database..."
+Artist.destroy_all
 
-# puts "Creating artists..."
-# filepath = Rails.root.join('db/fixtures/csv/artists.csv')
+puts "Creating artists..."
+filepath = Rails.root.join('db/fixtures/csv/artists.csv')
 
-# CSV.foreach(filepath, csv_options) do |row|
-#   artist = Artist.new(
-#     name: row[:name],
-#     country: row[:country],
-#     facebook_url: row[:facebook_url],
-#     instagram_url: row[:instagram_url],
-#     twitter_url: row[:twitter_url],
-#     website_url: row[:website_url],
-#     wiki_url: row[:wiki_url],
-#     bio: row[:bio]
-#   )
+CSV.foreach(filepath, csv_options) do |row|
+  artist = Artist.new(
+    name: row[:name],
+    country: row[:country],
+    facebook_url: row[:facebook_url],
+    instagram_url: row[:instagram_url],
+    twitter_url: row[:twitter_url],
+    website_url: row[:website_url],
+    wiki_url: row[:wiki_url],
+    bio: row[:bio]
+  )
 
-#   # photo_title = "#{row[:name].downcase.gsub(' ', '-')}"
-#   photo_title = I18n.transliterate(row[:name].gsub('&', 'and').parameterize)
-#   filepath    = Rails.root.join("db/fixtures/images/artists/#{photo_title}.jpg")
+  # photo_title = "#{row[:name].downcase.gsub(' ', '-')}"
+  photo_title = I18n.transliterate(row[:name].gsub('&', 'and').parameterize)
+  filepath    = Rails.root.join("db/fixtures/images/artists/#{photo_title}.jpg")
 
-#   if File.exist?(filepath)
-#     # First, we upload the photo on cloudinary with options to keep filename and have specific folder
-#     photo = Cloudinary::Uploader.upload(filepath, use_filename: true, folder: "thatsmyrock/artists")
+  if File.exist?(filepath)
+    # First, we upload the photo on cloudinary with options to keep filename and have specific folder
+    photo = Cloudinary::Uploader.upload(filepath, use_filename: true, folder: "thatsmyrock/artists")
 
-#     # Then, we use the public_id that was returned in photo variable
-#     # We have to set directly the attribute with [:photo] otherwise it uses the uploader and uploads a second time
-#     artist[:photo] = "image/upload/#{photo['public_id']}"
-#   end
+    # Then, we use the public_id that was returned in photo variable
+    # We have to set directly the attribute with [:photo] otherwise it uses the uploader and uploads a second time
+    artist[:photo] = "image/upload/#{photo['public_id']}"
+  end
 
-#   artist.save!
-# end
+  artist.save!
+end
 
 
 
