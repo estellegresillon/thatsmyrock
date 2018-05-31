@@ -17,6 +17,7 @@ filepath = Rails.root.join('db/fixtures/csv/artists.csv')
 CSV.foreach(filepath, csv_options) do |row|
   artist = Artist.new(
     name: row[:name],
+    normalized_name: I18n.transliterate(row[:name].gsub('&', 'and').parameterize),
     country: row[:country],
     facebook_url: row[:facebook_url],
     instagram_url: row[:instagram_url],
@@ -26,10 +27,8 @@ CSV.foreach(filepath, csv_options) do |row|
     bio: row[:bio]
   )
 
-  # photo_title = "#{row[:name].downcase.gsub(' ', '-')}"
-  photo_title = I18n.transliterate(row[:name].gsub('&', 'and').parameterize)
-  filepath    = Rails.root.join("db/fixtures/images/artists/#{photo_title}.jpg")
-
+  filepath = Rails.root.join("db/fixtures/images/artists/#{artist.normalized_name}.jpg")
+  
   if File.exist?(filepath)
     # First, we upload the photo on cloudinary with options to keep filename and have specific folder
     photo = Cloudinary::Uploader.upload(filepath, use_filename: true, folder: "thatsmyrock/artists")
@@ -41,9 +40,6 @@ CSV.foreach(filepath, csv_options) do |row|
 
   artist.save!
 end
-
-
-
 
 puts "Creating albums..."
 filepath = Rails.root.join('db/fixtures/csv/albums.csv')
@@ -60,6 +56,7 @@ CSV.foreach(filepath, csv_options) do |row|
     artist: artist,
     rank: row[:rank],
     name: row[:name],
+    normalized_name: "#{I18n.transliterate(row[:name].gsub('&', 'and').parameterize)}-#{artist.normalized_name}",
     year: row[:year],
     decade: row[:decade],
     music_style: row[:music_style],
@@ -67,11 +64,8 @@ CSV.foreach(filepath, csv_options) do |row|
     description: row[:description]
   )
 
-  # photo_title = "#{row[:name]}-#{row[:artist]}".downcase.gsub(' ', '-')
-  photo_title = "#{I18n.transliterate(row[:name].gsub('&', 'and').parameterize)}-#{I18n.transliterate(row[:artist].gsub('&', 'and').parameterize)}"
-
-  filepath_cover = Rails.root.join("db/fixtures/images/albums/#{photo_title}.jpg")
-  filepath_show = Rails.root.join("db/fixtures/images/albums/#{photo_title}-show.jpg")
+  filepath_cover = Rails.root.join("db/fixtures/images/albums/#{album.normalized_name}.jpg")
+  filepath_show  = Rails.root.join("db/fixtures/images/albums/#{album.normalized_name}-show.jpg")
 
   if File.exist?(filepath_cover)
     # First, we upload the photo on cloudinary with options to keep filename and have specific folder

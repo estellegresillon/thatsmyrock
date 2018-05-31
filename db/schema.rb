@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_125342) do
     t.datetime "updated_at", null: false
     t.bigint "artist_id"
     t.integer "decade"
+    t.string "normalized_name"
     t.index ["artist_id"], name: "index_albums_on_artist_id"
   end
 
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_125342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "website_url"
+    t.string "normalized_name"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
