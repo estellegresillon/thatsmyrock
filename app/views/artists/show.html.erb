@@ -46,9 +46,21 @@
       </div>
     </div>
   </div>
-  <div class="buttons">
-    <%= link_to "Go back", "/", class: "btn-search" %>
+
+  <div class="downpage-links">
+    <% if @artist.previous.presence %>
+      <p><%= link_to "<- Previous artist", @artist.previous %></p>
+    <% end %>
+
+    <div class="buttons">
+      <%= link_to "Go back", "/", class: "btn-search" %>
+    </div>
+    <% if @artist.next.presence %>
+      <p><%= link_to "Next artist ->", @artist.next %></p>
+    <% end %>
   </div>
+
+
 </div>
 
 </div>
