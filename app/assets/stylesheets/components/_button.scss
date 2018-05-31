@@ -34,3 +34,20 @@
   margin-bottom: 20px;
   justify-content: space-around;
 }
+
+.btn-modal {
+    background: white;
+    color: #333333;
+    border-radius: 8px;
+    border: 0.8px solid #ff4e4e;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+    font-family: "Montserrat";
+}
+
+.btn-modal:hover {
+    background-color: #ff4e4e;
+    color: #f9f9f9;
+    box-shadow: 2px 4px 16px rgba(0,0,0,0.2);
+    transition-duration: 0.6s;
+    transition-property: background-color, color;
+}
