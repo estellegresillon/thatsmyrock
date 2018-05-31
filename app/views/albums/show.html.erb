@@ -61,6 +61,7 @@
 </div>
 
 
+
   <div class="downpage-links">
     <% if @album.previous.presence %>
       <p><%= link_to "Previous album", @album.previous %></p>
@@ -72,3 +73,10 @@
   </div>
 
 </div>
+
+    <!-- Button trigger modal -->
+<button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">
+ recommandation
+</button>
+
+<%= render 'albums/modal' %>
