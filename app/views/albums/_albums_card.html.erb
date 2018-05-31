@@ -14,10 +14,10 @@
       <p><%= album.rank %></p>
       <div class="iconsindex">
         <% unless current_user.albums.include?(album) %>
-          <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post do %>
+          <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post, remote: :true do %>
             <i class="far fa-heart"></i>
           <% end %>
-          <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post do %>
+          <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true do %>
             <i class="far fa-star"></i>
           <% end %>
         <% end %>

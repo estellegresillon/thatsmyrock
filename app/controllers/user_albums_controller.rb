@@ -6,10 +6,16 @@ class UserAlbumsController < ApplicationController
     @user_album = UserAlbum.new(user_album_params)
     @user_album.user = current_user
     @user_album.album = @album
-    if @user_album.save
-      redirect_to albums_path
+    if @user_albumr.save
+      respond_to do |format|
+        format.html { redirect_to albums_path }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      render "/profile"
+      respond_to do |format|
+        format.html { render 'albums/index' }
+        format.js  # <-- idem
+      end
     end
   end
 

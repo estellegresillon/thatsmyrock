@@ -5,3 +5,10 @@ function refreshAlbums(innerHTML) {
 
 refreshAlbums('<%= j render "albums/albums_card", albums: @albums %>')
 
+$('#my-albums').append('<%= j render "albums/albums_card", albums: @albums %>');
+<% if @albums.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @albums %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>
