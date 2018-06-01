@@ -3,12 +3,18 @@ function refreshAlbums(innerHTML) {
   newAlbums.innerHTML = innerHTML;
 }
 
-refreshAlbums('<%= j render "albums/albums_card", albums: @albums %>')
-
-$('#my-albums').append('<%= j render "albums/albums_card", albums: @albums %>');
-<% if @albums.next_page %>
-  $('.pagination').replaceWith('<%= j will_paginate @albums %>');
+<% if @search %>
+  const scrollTrigger = document.getElementById('infinite-scrolling');
+  if (scrollTrigger) {
+  scrollTrigger.remove();
+  }
+  refreshAlbums('<%= j render "albums/albums_card", albums: @albums %>');
 <% else %>
-  $(window).off('scroll');
-  $('.pagination').remove();
+  $('#my-albums').append('<%= j render "albums/albums_card", albums: @albums %>');
+  <% if @albums.next_page %>
+    $('.pagination').replaceWith('<%= j will_paginate @albums %>');
+  <% else %>
+    $(window).off('scroll');
+    $('.pagination').remove();
+  <% end %>
 <% end %>

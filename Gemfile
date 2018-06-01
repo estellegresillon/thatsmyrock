@@ -17,7 +17,6 @@ gem 'rails', '5.2.0'
 gem 'redis'
 gem 'carrierwave', '~> 1.2'
 gem 'pg_search'
-gem "pundit"
 
 # media gem
 gem 'cloudinary'
