@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  #skip_before_action :authenticate_user!
 
   def index
     search_options = []

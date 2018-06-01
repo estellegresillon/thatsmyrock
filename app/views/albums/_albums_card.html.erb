@@ -13,16 +13,27 @@
       <p><%= link_to album.name, album_path(album.id) %></p>
       <p><%= album.rank %></p>
       <div class="iconsindex" id='<%= "icons_#{album.id}" %>'>
-        <% unless UserAlbum.find_by(user: current_user, album: album, status: "wishlist") %>
-          <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post, remote: :true, data: { status: :wishlist } do %>
-            <i class="far fa-heart"></i>
+        <% if user_signed_in?  %>
+          <% if UserAlbum.find_by(user: current_user, album: album, status: "wishlist") %>
+            <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: :collected } do %>
+              <i class="far fa-star"></i>
+            <% end %>
+          <% elsif UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
+            <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: :collected } do %>
+              <i class="empty"></i>
+            <% end %>
+          <% else  %>
+            <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post, remote: :true, data: { status: :collected } do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+            <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: :collected } do %>
+              <i class="far fa-star"></i>
+            <% end %>
           <% end %>
-        <% end %>
-        <% unless UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
-          <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: :collected } do %>
-            <i class="far fa-star"></i>
-          <% end %>
-        <% end %>
+        <% else %>
+          <i class="far fa-heart"></i>
+          <i class="far fa-star"></i>
+        <% end  %>
       </div>
     </div>
     </div>
