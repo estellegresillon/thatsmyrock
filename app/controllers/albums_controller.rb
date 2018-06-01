@@ -33,5 +33,4 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     @user_album = UserAlbum.new
   end
-
 end
