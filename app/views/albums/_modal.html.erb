@@ -3,7 +3,7 @@
   href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
   integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
   crossorigin="anonymous">
-
+<% next_album = @album.next %>
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -12,21 +12,19 @@
         <h4 class="modal-title" id="myModalLabel">Our recommandation for <%= @album.name %></h4>
       </div>
           <div class="modal-body">
-            <% next_album = @album.next %>
               <% if next_album.photo_cover.present? %>
                 <div class="card-modal" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path next_album.photo_cover, crop: :fill %>'); background-position: center, width: 20%;">
               <% else %>
                 <% url = "https://source.unsplash.com/collection/1068/5" %>
                   <div class="card-modal" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= url %>'); background-position: center, width: 20%;">
                 <% end  %>
-
-
                 <div class="modal-text">
-                  <ul>
-                    <%= link_to next_album.name, album_path(next_album.id) %>
-                    <%= " - " %>
-                    <%= link_to next_album.artist.name, artist_path(next_album.artist.id) %>
-                  </ul>
+                    <li><%= link_to next_album.name, album_path(next_album.id) %></li>
+                    <li><%= link_to next_album.artist.name, artist_path(next_album.artist.id) %></li>
+                    <li><%= link_to next_album.music_style, albums_path(music_style: next_album.music_style) %></li>
+                    <li><%= link_to next_album.year, albums_path(year: next_album.year) %></li>
+                    <li><%= link_to next_album.decade, albums_path(decade: next_album.decade) %></li>
+                    <li><%= link_to next_album.decade, albums_path(decade: next_album.decade) %></li>
                 </div>
             </div>
           </div>
