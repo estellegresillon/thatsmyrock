@@ -16,14 +16,26 @@
         <ul class="list-unstyled">
           <h4>The artist story :</h4>
           <p><%= @artist.bio %></p>
+      </div>
 
-        </ul>
+     <!--  <div class="show-navigation">
+      <div class="downpage-links">
+        <h3 class="title-red">Discover more artists</h3>
+        <% if @artist.previous.presence %>
+          <p class="previous-element"><strong>Previous</strong> - <%= link_to @artist.previous.name, @artist.previous %></p>
+        <% end %>
+
+        <% if @artist.next.presence %>
+          <p><strong>Next</strong> - <%= link_to @artist.next.name, @artist.next %></p>
+        <% end %>
+      </div>
+    </div> -->
 
     </div>
   </div>
 
 
-
+<div class="content">
 <h3><%= @artist.name %> albums in our top :</h3>
 <% index = 1 %>
   <% @albums.each_with_index do |album, i| %>
@@ -39,8 +51,8 @@
             <% url = "https://source.unsplash.com/collection/1068/5#{index}x5#{index}" %>
             <div class="card-img" style="background-image: url('<%= url %>'); background-position: center, width: 20%;">
           <% end %>
-          <div class="red-dot">
-            <p class="album-rank"><%= album.rank %></p>
+          <div class="red-rank" style="background-image: url('<%= image_path "ic-rank.png", crop: :fill %>'); background-position: center;">
+            <p class="album-rank">#<%= album.rank %></p>
           </div>
            </div>
         </div>
@@ -74,20 +86,15 @@
     </div>
 
 <% end %>
-
+</div>
 
 
   <div class="downpage-links">
-    <% if @artist.previous.presence %>
-      <p><%= link_to "<- Previous artist", @artist.previous %></p>
-    <% end %>
 
     <div class="buttons">
       <%= link_to "Go back", "/", class: "btn-search" %>
     </div>
-    <% if @artist.next.presence %>
-      <p><%= link_to "Next artist ->", @artist.next %></p>
-    <% end %>
+
   </div>
 
 
