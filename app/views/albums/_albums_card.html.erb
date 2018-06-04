@@ -32,7 +32,7 @@
                 <% end %>
               <% end %>
 
-              <% unless UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
+              <% unless UserAlbum.find_by(user: current_user, album: album, status: "collected") %> || UserAlbum.find_by(user: current_user, album: album, status: "wishlist") %>
                 <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: 'collected'} do %>
                   <i data-toggle="tooltip" class="fas fa-plus-square" title="Add to your collection!"></i>
                 <% end %>
@@ -44,7 +44,6 @@
             <% end  %>
           </div>
         </div>
-
       </div>
     </div>
 

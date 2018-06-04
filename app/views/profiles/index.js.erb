@@ -1,0 +1,12 @@
+function myCollection() {
+  const my_collection = document.getElementById("my_collection");
+  my_collection.innerHTML = "<%= j render 'cards_collected', my_collection: @my_collection %>";
+}
+
+function myWishlist() {
+  const my_wishlist = document.getElementById("my_wishlist");
+  my_wishlist.innerHTML = "<%= j render 'cards_wishlist', my_wishlist: @my_wishlist %>";
+}
+
+myCollection();
+myWishlist();
