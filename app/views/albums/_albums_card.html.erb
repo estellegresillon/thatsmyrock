@@ -28,19 +28,19 @@
 
               <% unless UserAlbum.find_by(user: current_user, album: album, status: "wishlist") || UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
                 <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post, remote: :true, data: { status: 'wishlist'} do %>
-                  <i data-toggle="tooltip" class="far fa-heart" title="Add to your wishlist!"></i>
+                  <i data-toggle="tooltip" class="fas fa-heart" title="Add to your wishlist!"></i>
                 <% end %>
               <% end %>
 
               <% unless UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
                 <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: 'collected'} do %>
-                  <i data-toggle="tooltip" class="far fa-star" title="Add to your collection!"></i>
+                  <i data-toggle="tooltip" class="fas fa-plus-square" title="Add to your collection!"></i>
                 <% end %>
               <% end %>
 
             <% else %>
-              <a data-toggle="tooltip" class="far fa-heart" title="Login before adding to wishlist!"></a>
-              <a data-toggle="tooltip" class="far fa-star" title="Login before adding to your collection!"></a>
+              <a data-toggle="tooltip" class="fas fa-heart" title="Login to add the album to your wishlist!"></a>
+              <a data-toggle="tooltip" class="fas fa-plus-square" title="Login to add the album to your collection!"></a>
             <% end  %>
           </div>
         </div>
