@@ -1,35 +1,52 @@
-  <div class="card-content" id="albums_id">
-    <% index = 1 %>
-    <% @albums.each_with_index do |album, i| %>
-    <div class="card-bg">
-      <% if album.photo_cover.present? %>
-        <div class="card box" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path album.photo_cover, crop: :fill %>'); background-position: center, width: 20%;">
-      <% else %>
-        <% index =  i + 11 %>
-        <% url = "https://source.unsplash.com/collection/1068/5#{index}x5#{index}" %>
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= url %>'); background-position: center, width: 20%;">
-      <% end  %>
-      <h2><%= link_to album.artist.name, artist_path(album.artist.id) %></h2>
-      <p><%= link_to album.name, album_path(album.id) %></p>
-      <p><%= album.rank %></p>
-      <div class="iconsindex" id='<%= "icons_#{album.id}" %>'>
-      <% if user_signed_in? %>
-        <% unless UserAlbum.find_by(user: current_user, album: album, status: "wishlist") || UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
-          <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post, remote: :true, data: { status: 'wishlist'} do %>
-            <i data-toggle="tooltip" class="far fa-heart" title="Add to your wishlist!"></i>
+<div class="cards-home" id="albums_id">
+  <% index = 1 %>
+  <% @albums.each_with_index do |album, i| %>
+
+    <div class="card-home">
+      <div class="card-content">
+
+        <div class="card-cover">
+          <% if album.photo_cover.present? %>
+            <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path album.photo_cover, crop: :fill %>'); background-position: center, width: 20%;">
+          <% else %>
+            <% index =  i + 11 %>
+            <% url = "https://source.unsplash.com/collection/1068/5#{index}x5#{index}" %>
+            <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= url %>'); background-position: center, width: 20%;">
           <% end %>
-        <% end %>
-        <% unless UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
-          <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: 'collected'} do %>
-            <i data-toggle="tooltip" class="far fa-star" title="Add to your favorites!"></i>
-          <% end %>
-        <% end %>
-      <% else %>
-        <a data-toggle="tooltip" class="far fa-heart" title="Login before adding to wishlist!"></a>
-        <a data-toggle="tooltip" class="far fa-star" title="Login before adding to your collection!"></a>
-      <% end  %>
+          <div class="red-dot">
+            <p class="album-rank"><%= album.rank %></p>
+          </div>
+           </div>
+        </div>
+
+        <div class="card-descr">
+          <div class="album-name"><%= link_to album.name, album_path(album.id) %></div>
+          <div class="group-name"><%= link_to album.artist.name, artist_path(album.artist.id) %></div>
+          <p class="year-genre"><%= album.music_style %>, <%= album.year %></p>
+          <div class="iconsindex" id='<%= "icons_#{album.id}" %>'>
+            <% if user_signed_in? %>
+
+              <% unless UserAlbum.find_by(user: current_user, album: album, status: "wishlist") || UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
+                <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post, remote: :true, data: { status: 'wishlist'} do %>
+                  <i data-toggle="tooltip" class="far fa-heart" title="Add to your wishlist!"></i>
+                <% end %>
+              <% end %>
+
+              <% unless UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
+                <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: 'collected'} do %>
+                  <i data-toggle="tooltip" class="far fa-star" title="Add to your collection!"></i>
+                <% end %>
+              <% end %>
+
+            <% else %>
+              <a data-toggle="tooltip" class="far fa-heart" title="Login before adding to wishlist!"></a>
+              <a data-toggle="tooltip" class="far fa-star" title="Login before adding to your collection!"></a>
+            <% end  %>
+          </div>
+        </div>
+
       </div>
     </div>
-    </div>
-    <% end %>
+
+<% end %>
 </div>
