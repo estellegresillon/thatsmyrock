@@ -1,0 +1,14 @@
+
+function reviewDelete() {
+  const review_delete = document.getElementById("<%= @user_album.id %>");
+  review_delete.remove();
+}
+
+function reviewUpdate(){
+  const myCollection = document.getElementById("cards-collected-list");
+  myCollection.insertAdjacentHTML('beforeend', '<%= j render "review_update", c: @user_album %>');
+}
+
+reviewDelete();
+reviewUpdate();
+
