@@ -35,5 +35,7 @@ class AlbumsController < ApplicationController
   def show
     @album = Album.find(params[:id])
     @user_album = UserAlbum.new
+    @artist = Artist.find(params[:id])
+    @albums = @artist.albums
   end
 end
