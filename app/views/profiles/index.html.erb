@@ -8,7 +8,7 @@
 
 <div class="content-searchprofile">
   <div class="searchprofile">
-  <h3>What are you looking for ?</h3>
+  <h3>Search in your collection</h3>
   <%= form_tag profile_path, method: "get", remote: true do %>
     <%= text_field_tag :name , params[:name], class: "form-control", placeholder: "Albums or Artist", id: 'searchbar-profile' %>
     <%= submit_tag "Filter", class: "btn-search" %>

@@ -162,12 +162,16 @@ p {
   width: 100%;
   background-color: #f4f4f4;
   .searchprofile {
+    margin-top: 15px;
     width: 60%;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     form {
       display: flex;
       flex-direction: row;
+      margin-left: 20px;
     }
     #searchbar-profile {
       height: 50px;
@@ -180,7 +184,7 @@ p {
       border: 2px solid white;
       box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
       margin-bottom: 20px;
-      margin-right: 2px;
+      margin-right: 4px;
     }
   }
 }

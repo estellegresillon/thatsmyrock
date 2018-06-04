@@ -106,7 +106,7 @@
   justify-content: center;
 }
 .card-collected {
-  height: 150px;
+  height: 125px;
   width: 100%;
   box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
   position: relative;
@@ -116,14 +116,34 @@
   text-align: center;
   background-size: cover !important;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
   -webkit-animation: fadeIn;
   -webkit-animation-duration: 1s;
+  a {
+    font-size: 14px;
+  }
 }
 .card-collected:hover {
   box-shadow: 3px 7px 10px rgba(0,0,0,0.3);
+}
+
+.collection-album-artist {
+  flex: 0 0 50%;
+  margin-top: 15px;
+  margin-left: 15px;
+  text-align: left;
+  line-height: 0.8em;
+}
+.format {
+  flex: 0 0 42%;
+  margin-top: 15px;
+  text-align: left;
+  line-height: 0.8em;
+}
+.delete-review {
+  flex: 0 0 7%;
+  margin-top: 15px;
+  margin-right: 5px;
 }
 
 .cards-wishlist {
@@ -134,7 +154,7 @@
   justify-content: center;
 }
 .card-wishlist {
-  height: 150px;
+  height: 125px;
   width: 100%;
   box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
   position: relative;
@@ -144,11 +164,12 @@
   text-align: center;
   background-size: cover !important;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
   -webkit-animation: fadeIn;
   -webkit-animation-duration: 1s;
+  a {
+    font-size: 14px;
+  }
 }
 .card-wishlist:hover {
   box-shadow: 3px 7px 10px rgba(0,0,0,0.3);
