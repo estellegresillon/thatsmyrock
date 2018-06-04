@@ -1,6 +1,7 @@
 .btn-search {
-  background: -webkit-linear-gradient(left, rgba(255,72,56,1) 0%,rgba(193,29,3,1) 100%);
+  background: red;
   border: none;
+  border-radius: 25px;
   transition: all 0.5s ease;
   width: 220px;
   height: 50px;
@@ -10,10 +11,14 @@
   color: white;
   text-decoration: none;
   margin-left: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.4);
 }
 .btn-search:hover {
-  background: -webkit-linear-gradient(left, rgba(255,135,135,1) 0%,rgba(255,72,56,1) 100%);
+  background: red;
   border: none;
   font-weight: bolder;
   color: white;
@@ -36,25 +41,24 @@
 }
 
 .btn-modal {
-    background: white;
-    color: #333333;
-    border-radius: 8px;
-    border: 0.8px solid #ff4e4e;
+    background: transparent;
+    color: white;
+    width: 220px;
+    font-size: 14px;
+    border-radius: 25px;
+    border: 2px solid white;
     box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
     font-family: "Montserrat";
     padding: 10px 50px;
     text-align: center;
     display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 80%;
     justify-content: space-around;
+    transition: all 0.5s ease;
 }
 
 .btn-modal:hover {
-    background-color: #ff4e4e;
-    color: #f9f9f9;
+    background-color: white;
+    color: black;
     box-shadow: 2px 4px 16px rgba(0,0,0,0.2);
-    transition-duration: 0.6s;
-    transition-property: background-color, color;
+
 }
