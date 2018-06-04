@@ -1,28 +1,28 @@
-<% my_collection.each do |c| %>
-
-  <% if c.status == 'collected' %>
-    <div class="card-collected">
-      <div class="delete-review">
-        <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete %>
+<div id="cards-collected-list">
+  <% my_collection.each do |c| %>
+    <% if c.status == 'collected' %>
+      <div class="card-collected" id="<%= c.id %>">
+        <div class="delete-review">
+          <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete, remote: true %>
+        </div>
+        <p>Album : <%= link_to c.album.name, album_path(c.album.id), class: "text-delete" %>
+        <p>Artist : <%= link_to c.album.artist.name, artist_path(c.album.artist.id), class: "text-delete" %>
+        <p>Rank : <strong><%= c.album.rank %></strong></p>
+        <p><strong><%= c.album.year %></strong></p>
+        <% if c.vinyl == true %>
+          <p><strong> Format : Vinyl </strong></p>
+        <% elsif c.cd == true %>
+          <p><strong> Format : CD </strong></p>
+        <% elsif c.digital == true %>
+          <p><strong> Format : Digital </strong></p>
+        <% end %>
       </div>
-      <p>Album : <%= link_to c.album.name, album_path(c.album.id), class: "text-delete" %>
-      <p>Artist : <%= link_to c.album.artist.name, artist_path(c.album.artist.id), class: "text-delete" %>
-      <p>Rank : <strong><%= c.album.rank %></strong></p>
-      <p><strong><%= c.album.year %></strong></p>
-      <% if c.vinyl == true %>
-        <p><strong> Format : Vinyl </strong></p>
-      <% elsif c.cd == true %>
-        <p><strong> Format : CD </strong></p>
-      <% elsif c.digital == true %>
-        <p><strong> Format : Digital </strong></p>
-      <% end %>
-    </div>
+    <% end %>
   <% end %>
+</div>
 
-<% end %>
 
-
-  <div class="buttons">
+<div class="buttons">
   <%= link_to "Browse albums", "/", class: "btn-search" %>
-  </div>
-  </div>
+</div>
+

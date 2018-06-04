@@ -7,32 +7,32 @@
 </div>
 
 <h3>What are you looking for ?</h3>
-  <%= form_tag profile_path, method: "get", remote: true do %>
+<%= form_tag profile_path, method: "get", remote: true do %>
   <%= text_field_tag :name , params[:name], class: "form-control", placeholder: "Albums or Artist", id: 'searchbar-profile' %>
   <%= submit_tag "Filter", class: "btn-search" %>
 <% end %>
 
-    <div class="tabs">
-      <% if @tab == "collected" %>
-        <a class="tab active" data-toggle="tab" href="#my-collection" id="tabcollected">
-      <% elsif @tab == "wishlist" %>
-        <a class="tab" data-toggle="tab" href="#my-collection" id="tabcollected">
-      <% else %>
-        <a class="tab active" data-toggle="tab" href="#my-collection" id="tabcollected">
-      <% end %>
-        <h3>My Collection</h3>
-      </a>
+<div class="tabs">
+  <% if @tab == "collected" %>
+    <a class="tab active" data-toggle="tab" href="#my-collection" id="tabcollected">
+  <% elsif @tab == "wishlist" %>
+    <a class="tab" data-toggle="tab" href="#my-collection" id="tabcollected">
+  <% else %>
+    <a class="tab active" data-toggle="tab" href="#my-collection" id="tabcollected">
+  <% end %>
+    <h3>My Collection</h3>
+  </a>
 
-      <% if @tab == "wishlist" %>
-        <a class="tab active" data-toggle="tab" href="#my-wishlist" id="tabwishlist">
-      <% elsif @tab == "wishlist" %>
-        <a class="tab" data-toggle="tab" href="#my-wishlist" id="tabwishlist">
-      <% else %>
-       <a class="tab" data-toggle="tab" href="#my-wishlist" id="tabwishlist">
-      <% end %>
-        <h3>My wishlist</h3>
-      </a>
-    </div>
+  <% if @tab == "wishlist" %>
+    <a class="tab active" data-toggle="tab" href="#my-wishlist" id="tabwishlist">
+  <% elsif @tab == "wishlist" %>
+    <a class="tab" data-toggle="tab" href="#my-wishlist" id="tabwishlist">
+  <% else %>
+   <a class="tab" data-toggle="tab" href="#my-wishlist" id="tabwishlist">
+  <% end %>
+    <h3>My wishlist</h3>
+  </a>
+</div>
 
 <div class="tab-content">
   <% if @tab == "collected" %>
@@ -43,14 +43,14 @@
     <div id="my-collection" class="tab-pane fade in active content">
   <% end %>
 
-  <h3 class="titledash">MY COLLECTION</h3>
+    <h3 class="titledash">MY COLLECTION</h3>
 
+    <p><strong>Hello there !</strong></p>
+    <p>Here you can add the albums you own.</p>
 
-  <p><strong>Hello there !</strong></p>
-  <p>Here you can add the albums you own.</p>
-
-  <div class="cards-collected" id="my_collection">
-  <%= render "cards_collected", my_collection: @my_collection %>
+    <div class="cards-collected" id="my_collection">
+      <%= render "cards_collected", my_collection: @my_collection %>
+    </div>
   </div>
 
   <% if @tab == "wishlist" %>
@@ -61,18 +61,15 @@
     <div id="my-wishlist" class="tab-pane fade in content">
   <% end %>
 
-  <h3 class="titledash">MY WISHLIST</h3>
+    <h3 class="titledash">MY WISHLIST</h3>
 
-  <p><strong>Hello there !</strong></p>
-  <p>Here you can add the albums you wish to own.</p>
-
-
-  <div class="cards-wishlist" id="my_wishlist">
-  <%= render "cards_wishlist", my_wishlist: @my_wishlist %>
-  </div>
+    <p><strong>Hello there !</strong></p>
+    <p>Here you can add the albums you wish to own.</p>
 
 
+    <div class="cards-wishlist" id="my_wishlist">
+    <%= render "cards_wishlist", my_wishlist: @my_wishlist %>
+    </div>
   </div>
 </div>
 
-</div>
