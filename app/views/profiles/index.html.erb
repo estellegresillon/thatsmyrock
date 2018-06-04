@@ -3,14 +3,18 @@
 <% else %>
   <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2017/01/03145133/twenty20_ec812a3a-48ad-40af-983b-129484cf6086.jpg'); height: 30vh; background-position: center;">
 <% end  %>
-  <h2 class="titlename">Hello, <%= current_user.name.capitalize %></h2>
+  <h2 class="titlename">Hello, <%= current_user.name %></h2>
 </div>
 
-<h3>What are you looking for ?</h3>
-<%= form_tag profile_path, method: "get", remote: true do %>
-  <%= text_field_tag :name , params[:name], class: "form-control", placeholder: "Albums or Artist", id: 'searchbar-profile' %>
-  <%= submit_tag "Filter", class: "btn-search" %>
-<% end %>
+<div class="content-searchprofile">
+  <div class="searchprofile">
+  <h3>Search in your collection</h3>
+  <%= form_tag profile_path, method: "get", remote: true do %>
+    <%= text_field_tag :name , params[:name], class: "form-control", placeholder: "Albums or Artist", id: 'searchbar-profile' %>
+    <%= submit_tag "Filter", class: "btn-search" %>
+  <% end %>
+  </div>
+</div>
 
 <div class="tabs">
   <% if @tab == "collected" %>
@@ -44,6 +48,7 @@
   <% end %>
 
     <h3 class="titledash">MY COLLECTION</h3>
+    <% if @my_collection.present? %>
 
     <p><strong>Hello there !</strong></p>
     <p>Here you can add the albums you own.</p>
@@ -51,6 +56,15 @@
     <div class="cards-collected" id="my_collection">
       <%= render "cards_collected", my_collection: @my_collection %>
     </div>
+
+    <% else %>
+      <h4><strong>To get started, add albums to your collection !</strong></h4>
+      <p>Adding albums to your collection helps you to never forget again wich album you already own!
+      You can go to any shop you like and check if you already have the album or not.</p>
+      <div class="buttons">
+      <%= link_to "Browse albums", "/", class: "btn-search" %>
+      </div>
+    <% end %>
   </div>
 
   <% if @tab == "wishlist" %>
@@ -62,14 +76,22 @@
   <% end %>
 
     <h3 class="titledash">MY WISHLIST</h3>
+    <% if @my_wishlist.present? %>
 
     <p><strong>Hello there !</strong></p>
     <p>Here you can add the albums you wish to own.</p>
 
-
     <div class="cards-wishlist" id="my_wishlist">
     <%= render "cards_wishlist", my_wishlist: @my_wishlist %>
     </div>
+
+    <% else %>
+      <h4><strong>To get started, add albums to your wishlist !</strong></h4>
+      <p>Bring this list anywhere you want with you and check anytime what you wanted to add to your collection.</p>
+      <div class="buttons">
+      <%= link_to "Browse albums", "/", class: "btn-search" %>
+      </div>
+    <% end %>
   </div>
 </div>
 

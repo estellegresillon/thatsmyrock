@@ -1,12 +1,28 @@
-<% if @album.photo_cover.present? %>
-  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path @album.photo_cover, crop: :fill %>'); height: 50vh; background-position: center;">
+<% if @artist.photo.present? %>
+<div class="banner-album" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('<%= cl_image_path @artist.photo, crop: :fill %>'); height: 50vh; background-position: center;">
 <% else %>
-  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
+<div class="banner-album" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
 <% end  %>
 
-    <h1><%= @album.name %></h1>
+  <div class="banner-elements">
+
+    <% if @album.photo_cover.present? %>
+      <div class="banner-home" style="background-image: url('<%= cl_image_path @album.photo_cover %>'); height: 250px; width: 250px; background-position: center;">
+    <% else %>
+      <div class="banner-home" style="background-image: url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
+    <% end  %>
+      </div>
+
+    <div class="album-title">
+      <h1><%= @album.name %></h1>
+      <button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">
+       Recommandation
+      </button>
+    </div>
 
 </div>
+</div>
+
 
 <div class="content">
   <div class="wrap-show">
@@ -47,11 +63,11 @@
 
         <div class="card-cover">
           <% if album.photo_cover.present? %>
-            <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path album.photo_cover, crop: :fill %>'); background-position: center, width: 20%;">
+            <div class="card-img" style="background-image: url('<%= cl_image_path album.photo_cover, crop: :fill %>'); background-position: center, width: 20%;">
           <% else %>
             <% index =  i + 11 %>
             <% url = "https://source.unsplash.com/collection/1068/5#{index}x5#{index}" %>
-            <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= url %>'); background-position: center, width: 20%;">
+            <div class="card-img" style="background-image: url('<%= url %>'); background-position: center, width: 20%;">
           <% end %>
           <div class="red-dot">
             <p class="album-rank"><%= album.rank %></p>
@@ -103,9 +119,5 @@
 
 </div>
 
-    <!-- Button trigger modal -->
-<button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">
- Recommandation
-</button>
 </div>
 <%= render 'albums/modal' %>
