@@ -22,16 +22,6 @@
         </br>
           <h4>The album story :</h4>
           <p><%= @album.description %></p>
-          <% if user_signed_in?  %>
-            <% unless current_user.albums.include?(@album) %>
-              <%= link_to album_user_albums_path(@album, user_album: { status: "wishlist" }), method: :post do %>
-                <i class="far fa-heart"></i>
-              <% end %>
-              <%= link_to album_user_albums_path(@album, user_album: { status: "collected" }), method: :post do %>
-                <i class="far fa-star"></i>
-              <% end %>
-            <% end %>
-          <% end %>
         </ul>
       </div>
     </div>
