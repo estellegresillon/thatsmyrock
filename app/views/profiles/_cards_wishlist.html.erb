@@ -1,0 +1,26 @@
+<% my_wishlist.each do |c| %>
+<div class="card-wishlist">
+  <div class="delete-review">
+    <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete %>
+  </div>
+  <p>Album : <%= link_to c.album.name, album_path(c.album.id), class: "text-delete" %></p>
+  <p>Artist : <%= link_to c.album.artist.name, artist_path(c.album.artist.id), class: "text-delete" %></p>
+  <p>Rank : <strong><%= c.album.rank %></strong></p>
+  <p><strong><%= c.album.year %></strong></p>
+  <p>Format : </p>
+    <% if c.vinyl == true %>
+      <p><strong> Vinyl </strong></p>
+    <% elsif c.cd == true %>
+      <p><strong> CD </strong></p>
+    <% elsif c.digital == true %>
+      <p><strong> Digital </strong></p>
+    <% end %>
+    <%= simple_form_for c do |f| %>
+      <%= f.input :status, as: :hidden, input_html: { value: 'collected'} %>
+      <%= f.submit "", id: 'wishlist' %>
+    <% end %>
+</div>
+<% end %>
+    <div class="buttons">
+      <%= link_to "Browse albums", "/", class: "btn-search" %>
+    </div>
