@@ -70,15 +70,22 @@
       js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
        djs.parentNode.insertBefore(js, djs);
       }(document, "script", "deezer-widget-loader"));</script>
-      <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=500&color=d70303&layout=&size=medium&type=album&id=12047960" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="500" data-height="500"></div>
+      <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=500&color=d70303&layout=&size=medium&type=album&id=<%= @album.deezer_album_id %>" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="500" data-height="500"></div>
     </div>
   </div>
 </div>
+
 
 <div class="content">
 <h3 class="title-show-album"><%= @artist.name %> albums in our top :</h3>
 <% index = 1 %>
   <% @albums.each_with_index do |album, i| %>
+
+<!-- Amazon links -->
+<a href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= album.normalized_name.gsub('-','+') %> +vinyl" target="_blank">AMAZON: Go to vinyl album</a>
+<br>
+<a href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= album.normalized_name.gsub('-','+') %> +audio+cd" target="_blank">AMAZON: Go to CD audio</a>
+<!-- Amazon links -->
 
     <div class="card-home">
       <div class="card-content">
