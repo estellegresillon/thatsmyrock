@@ -25,6 +25,8 @@
   margin: 0 auto;
   max-width: 1000px;
   min-height: calc(100vh - 520px);
+  align-items: center;
+  justify-content: center;
 }
 .content-all {
   display: flex;
@@ -39,6 +41,15 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+}
+.content-downpage {
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+.content-player {
+  margin: 0 auto;
+  flex: 0 0 50%;
 }
 .user_remember_me {
   margin-right: 10px;
@@ -68,9 +79,9 @@
   box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
 }
 .downpage-links {
-  margin-bottom: 20px;
+  margin-top: 30px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   .btn-search {
   background: red;
@@ -192,17 +203,14 @@ p {
 }
 
 .title-show-album {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
-.player_albums {
-  margin-top: 50px;
-}
 
 .wrap-show {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  width: 100%;
 }
 .show-navigation {
   display: flex;
@@ -220,12 +228,13 @@ p {
 }
 .band-description {
   margin-top: 20px;
-  padding-left: 10px;
+  margin-right: 40px;
 }
 .band-description p {
   font-size: 14px;
   text-align: justify;
   text-justify: inter-word;
+  flex: 0 0 50%;
 }
 .previous-element {
   color: grey;

@@ -15,6 +15,7 @@
 
     <div class="album-title">
       <h1><%= @album.name %></h1>
+      <h2><%= @album.artist.name %></h2>
       <button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">
        Recommandation
       </button>
@@ -33,48 +34,34 @@
         <p>Rank : <strong><%= @album.rank %></strong></p>
         <p>Music style : <strong><%= @album.music_style %></strong></p>
         <p>Year : <strong><%= @album.year %></strong></p>
+        <br>
+        <h4>The album story :</h4>
+        <p><%= @album.description %></p>
+        <p><%= link_to "Read more on wikipedia", @album.wiki_url %>
     </div>
 
-    <div class="show-navigation">
-      <div class="downpage-links">
-        <h3 class="title-red">Browse our top 365</h3>
-        <% if @album.previous.presence %>
-          <p class="previous-element"><strong><%= @album.previous.rank %></strong> - <%= link_to @album.previous.name, @album.previous %></p>
-        <% end %>
-
-        <% if @album.next.presence %>
-          <p><strong><%= @album.next.rank %></strong> - <%= link_to @album.next.name, @album.next %></p>
-        <% end %>
+    <div class="content-player">
+      <h3 class="title-show-album">Listen to the complete album :</h3>
+      <div class="player_albums">
+        <script>
+        (function(d, s, id) {
+        var js, djs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
+         djs.parentNode.insertBefore(js, djs);
+        }(document, "script", "deezer-widget-loader"));</script>
+        <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=500&color=d70303&layout=&size=medium&type=album&id=12047960" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="400" data-height="500">
+        </div>
       </div>
     </div>
 
-  </div>
-
-  <br>
-
-  <h4>The album story :</h4>
-  <p><%= @album.description %></p>
-  <p class="note">- That's My Rock note</p>
 
   </div>
 
-<div class="wrapper-listen">
-  <div class="content">
-  <h3 class="title-show-album">Listen to the complete album :</h3>
-    <div class="player_albums">
-      <script>
-      (function(d, s, id) {
-      var js, djs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
-       djs.parentNode.insertBefore(js, djs);
-      }(document, "script", "deezer-widget-loader"));</script>
-      <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=500&color=d70303&layout=&size=medium&type=album&id=<%= @album.deezer_album_id %>" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="500" data-height="500"></div>
-    </div>
-  </div>
 </div>
 
+<div class="wrapper-listen">
 
 <div class="content">
 <h3 class="title-show-album"><%= @artist.name %> albums in our top :</h3>
@@ -134,12 +121,22 @@
 
 <% end %>
 </div>
-  <div class="downpage-links">
+</div>
 
-    <div class="buttons">
-      <%= link_to "Go back", "/", class: "btn-search" %>
-    </div>
+<div class="content-downpage">
+  <div class="downpage-links">
+    <% if @album.previous.presence %>
+      <p><%= link_to "<- Previous album", @album.previous %></p>
+    <% end %>
+
+     <div class="buttons">
+       <%= link_to "Go back", "/", class: "btn-search" %>
+     </div>
+    <% if @album.next.presence %>
+      <p><%= link_to "Next album ->", @album.next %></p>
+     <% end %>
   </div>
+</div>
 
 </div>
 </div>
