@@ -30,14 +30,17 @@
 
     <div class="band-description">
 
-        <p>Artist : <strong><%= @album.artist.name %></strong> - <%= link_to "Visit their page", artist_path(@album.artist.id), class: "text-delete" %></p>
+        <p class="artist-name-title"><%= link_to @album.artist.name, artist_path(@album.artist.id), class: "text-delete" %></p>
         <p>Rank : <strong><%= @album.rank %></strong></p>
         <p>Music style : <strong><%= @album.music_style %></strong></p>
         <p>Year : <strong><%= @album.year %></strong></p>
         <br>
         <h4>The album story :</h4>
         <p><%= @album.description %></p>
-        <p><%= link_to "Read more on wikipedia", @album.wiki_url %>
+        <p><%= link_to "Read more on wikipedia", @album.wiki_url, target: "_blank" %></p>
+        <br>
+        <p><a href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= @album.normalized_name.gsub('-','+') %> +vinyl" target="_blank">AMAZON: Go to vinyl album</a></p>
+        <p><a href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= @album.normalized_name.gsub('-','+') %> +audio+cd" target="_blank">AMAZON: Go to CD audio</a></p>
     </div>
 
     <div class="content-player">
@@ -61,18 +64,12 @@
 
 </div>
 
-<div class="wrapper-listen">
+<div class="wrapper-grey">
 
 <div class="content">
 <h3 class="title-show-album"><%= @artist.name %> albums in our top :</h3>
 <% index = 1 %>
   <% @albums.each_with_index do |album, i| %>
-
-<!-- Amazon links -->
-<a href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= album.normalized_name.gsub('-','+') %> +vinyl" target="_blank">AMAZON: Go to vinyl album</a>
-<br>
-<a href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= album.normalized_name.gsub('-','+') %> +audio+cd" target="_blank">AMAZON: Go to CD audio</a>
-<!-- Amazon links -->
 
     <div class="card-home">
       <div class="card-content">
