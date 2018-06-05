@@ -1,12 +1,12 @@
 function refreshAlbums(innerHTML) {
-  const newAlbums = document.getElementById('albums_id');
+  const newAlbums = document.getElementById('my-albums');
   newAlbums.innerHTML = innerHTML;
 }
 
 <% if @search %>
   const scrollTrigger = document.getElementById('infinite-scrolling');
   if (scrollTrigger) {
-  scrollTrigger.remove();
+    scrollTrigger.remove();
   }
   refreshAlbums('<%= j render "albums/albums_card", albums: @albums %>');
 <% else %>
