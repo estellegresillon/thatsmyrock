@@ -3,12 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/png" href="https://findicons.com/files/icons/2330/open_source_icons_gcons/32/music_node.png" />
+    <%= favicon_link_tag %>
+    <link rel="shortcut icon" type="image/x-icon" favicon_link_tag="/app/assets/images/favicon.ico" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">
-    <title>That's My Rock!</title>
+    <title>That's My Rock! - Experience the best ever music albums</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="That's My Rock!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.thatsmyrock.com" />
+    <meta property="og:image" content="<%= image_url('thatsmyrock-image-banner-facebook.jpg') %>" />
+    <meta property="og:description" content="Experience the best music! We are tracking the best music around the world and across decades to share with you an awesome rock odyssey." />
+    <meta property="og:site_name" content="That's My Rock!" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="thatsmyrock">
+    <meta name="twitter:title" content="That's My Rock!">
+    <meta name="twitter:description" content="Experience the best ever music albums">
+    <meta name="twitter:creator" content="thatsmyrock" >
+    <meta name="twitter:image:src" content="<%= image_url('thatsmyrock-image-banner-twitter.jpg') %>">
 
   </head>
   <body>
