@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Montserrat:400,100,300,700,500");
 
 .cards-home {
-  width: 55%;
+  width: 900px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   justify-content: center;
 }
 .card-home {
-  height: 200px;
+  height: 190px;
   width: 100%;
   box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
   position: relative;
@@ -34,25 +34,24 @@
   display: flex;
 }
 .card-img {
-  width: 180px;
-  height: 180px;
+  width: 170px;
+  height: 170px;
   margin-left: 10px;
-  margin-right: 20px;
+  display: flex;
+  background-size: cover !important;
+  .red-rank {
+  width: 45px;
+  height: 45px;
+  background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: cover !important;
-  .red-dot {
-  background-color: red;
-  height: 30%;
-  width: 30%;
-  border-radius: 50%;
+  }
   .album-rank {
   color: white;
   font-weight: bolder;
-  font-size: 30px;
+  font-size: 14px;
   text-align: center;
-  }
   }
 }
 .card-descr {
@@ -107,7 +106,7 @@
   justify-content: center;
 }
 .card-collected {
-  height: 150px;
+  height: 125px;
   width: 100%;
   box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
   position: relative;
@@ -117,14 +116,46 @@
   text-align: center;
   background-size: cover !important;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
   -webkit-animation: fadeIn;
   -webkit-animation-duration: 1s;
+  a {
+    font-size: 14px;
+  }
 }
 .card-collected:hover {
   box-shadow: 3px 7px 10px rgba(0,0,0,0.3);
+}
+
+.collection-album-artist {
+  flex: 0 0 50%;
+  margin-top: 15px;
+  margin-left: 15px;
+  text-align: left;
+  line-height: 0.8em;
+}
+.format {
+  flex: 0 0 42%;
+  margin-top: 15px;
+  text-align: left;
+  line-height: 0.8em;
+}
+.delete-review {
+  flex: 0 0 7%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+  margin-right: 5px;
+  #wishlist {
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+  img {
+    margin-top: 4px;
+    margin-right: 20px;
+  }
 }
 
 .cards-wishlist {
@@ -135,7 +166,7 @@
   justify-content: center;
 }
 .card-wishlist {
-  height: 150px;
+  height: 125px;
   width: 100%;
   box-shadow: 1px 3px 5px rgba(0,0,0,0.3);
   position: relative;
@@ -145,11 +176,12 @@
   text-align: center;
   background-size: cover !important;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
   -webkit-animation: fadeIn;
   -webkit-animation-duration: 1s;
+  a {
+    font-size: 14px;
+  }
 }
 .card-wishlist:hover {
   box-shadow: 3px 7px 10px rgba(0,0,0,0.3);

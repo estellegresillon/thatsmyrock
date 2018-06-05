@@ -1,44 +1,82 @@
-<% if @album.photo_cover.present? %>
-  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path @album.photo_cover, crop: :fill %>'); height: 50vh; background-position: center;">
+<% if @artist.photo.present? %>
+<div class="banner-album" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('<%= cl_image_path @artist.photo, crop: :fill %>'); height: 50vh; background-position: center;">
 <% else %>
-  <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
+<div class="banner-album" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
 <% end  %>
 
-    <h1><%= @album.name %></h1>
+  <div class="banner-elements">
+
+    <% if @album.photo_cover.present? %>
+      <div class="cover-album" style="background-image: url('<%= cl_image_path @album.photo_cover %>'); height: 250px; width: 250px; background-position: center;">
+    <% else %>
+      <div class="banner-home" style="background-image: url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
+    <% end  %>
+      </div>
+
+    <div class="album-title">
+      <h1><%= @album.name %></h1>
+      <button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">
+       Recommandation
+      </button>
+    </div>
 
 </div>
+</div>
+
 
 <div class="content">
   <div class="wrap-show">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div class="band-description">
-        <h3 class="red-title"><strong><%= @album.name %></strong></h3>
-        <ul class="list-unstyled">
-          <p>Artist : <strong><%= @album.artist.name %></strong> - <%= link_to "Visit their page", artist_path(@album.artist.id), class: "text-delete" %></p>
-          <p>Rank : <strong><%= @album.rank %></strong></p>
-          <p>Music style : <strong><%= @album.music_style %></strong></p>
-          <p>Year : <strong><%= @album.year %></strong></p>
-        </br>
-          <h4>The album story :</h4>
-          <p><%= @album.description %></p>
-        </ul>
+
+    <div class="band-description">
+
+        <p>Artist : <strong><%= @album.artist.name %></strong> - <%= link_to "Visit their page", artist_path(@album.artist.id), class: "text-delete" %></p>
+        <p>Rank : <strong><%= @album.rank %></strong></p>
+        <p>Music style : <strong><%= @album.music_style %></strong></p>
+        <p>Year : <strong><%= @album.year %></strong></p>
+    </div>
+
+    <div class="show-navigation">
+      <div class="downpage-links">
+        <h3 class="title-red">Browse our top 365</h3>
+        <% if @album.previous.presence %>
+          <p class="previous-element"><strong><%= @album.previous.rank %></strong> - <%= link_to @album.previous.name, @album.previous %></p>
+        <% end %>
+
+        <% if @album.next.presence %>
+          <p><strong><%= @album.next.rank %></strong> - <%= link_to @album.next.name, @album.next %></p>
+        <% end %>
       </div>
     </div>
 
-  <div class="player_albums">
-    <script>
-    (function(d, s, id) {
-    var js, djs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
-     djs.parentNode.insertBefore(js, djs);
-    }(document, "script", "deezer-widget-loader"));</script>
-    <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=500&color=d70303&layout=&size=medium&type=album&id=12047960" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="700" data-height="500"></div>
   </div>
 
-<h3><%= @artist.name %> albums in our top :</h3>
+  <br>
+
+  <h4>The album story :</h4>
+  <p><%= @album.description %></p>
+  <p class="note">- That's My Rock note</p>
+
+  </div>
+
+<div class="wrapper-listen">
+  <div class="content">
+  <h3 class="title-show-album">Listen to the complete album :</h3>
+    <div class="player_albums">
+      <script>
+      (function(d, s, id) {
+      var js, djs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
+       djs.parentNode.insertBefore(js, djs);
+      }(document, "script", "deezer-widget-loader"));</script>
+      <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=500&color=d70303&layout=&size=medium&type=album&id=12047960" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="500" data-height="500"></div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+<h3 class="title-show-album"><%= @artist.name %> albums in our top :</h3>
 <% index = 1 %>
   <% @albums.each_with_index do |album, i| %>
 
@@ -47,16 +85,16 @@
 
         <div class="card-cover">
           <% if album.photo_cover.present? %>
-            <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path album.photo_cover, crop: :fill %>'); background-position: center, width: 20%;">
+            <div class="card-img" style="background-image: url('<%= cl_image_path album.photo_cover, crop: :fill %>'); background-position: center, width: 20%;">
           <% else %>
             <% index =  i + 11 %>
             <% url = "https://source.unsplash.com/collection/1068/5#{index}x5#{index}" %>
-            <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= url %>'); background-position: center, width: 20%;">
+            <div class="card-img" style="background-image: url('<%= url %>'); background-position: center, width: 20%;">
           <% end %>
-          <div class="red-dot">
-            <p class="album-rank"><%= album.rank %></p>
+          <div class="red-rank" style="background-image: url('<%= image_path "ic-rank.png", crop: :fill %>'); background-position: center;">
+            <p class="album-rank">#<%= album.rank %></p>
           </div>
-           </div>
+          </div>
         </div>
 
         <div class="card-descr">
@@ -88,24 +126,15 @@
     </div>
 
 <% end %>
-
+</div>
   <div class="downpage-links">
-    <% if @album.previous.presence %>
-      <p><%= link_to "<- Previous album", @album.previous %></p>
-    <% end %>
+
     <div class="buttons">
       <%= link_to "Go back", "/", class: "btn-search" %>
     </div>
-    <% if @album.next.presence %>
-      <p><%= link_to "Next album ->", @album.next %></p>
-    <% end %>
   </div>
 
 </div>
-
-    <!-- Button trigger modal -->
-<button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">
- Recommandation
-</button>
+</div>
 </div>
 <%= render 'albums/modal' %>

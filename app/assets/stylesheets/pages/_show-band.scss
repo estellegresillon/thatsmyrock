@@ -68,14 +68,14 @@
   box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
 }
 .downpage-links {
-  margin-top: 30px;
   margin-bottom: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   .btn-search {
-  background: -webkit-linear-gradient(left, rgba(255,72,56,1) 0%,rgba(193,29,3,1) 100%);
+  background: red;
   border: none;
+  border-radius: 25px;
   transition: all 0.5s ease;
   width: 220px;
   height: 50px;
@@ -85,15 +85,19 @@
   color: white;
   text-decoration: none;
   margin-left: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
   box-shadow: 0 2px 6px 0 rgba(0,0,0,0.4);
   }
   .btn-search:hover {
-  background: -webkit-linear-gradient(left, rgba(255,135,135,1) 0%,rgba(255,72,56,1) 100%);
-  border: none;
-  font-weight: bolder;
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
+    background: red;
+    border: none;
+    font-weight: bolder;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
   }
   a {
   font-size: 14px;
@@ -102,6 +106,9 @@
   a:hover, a:focus, a:active {
     color: black;
     }
+  }
+  .title-red {
+    color: red;
   }
 }
 a {
@@ -147,4 +154,90 @@ p {
   margin-top: 8px;
   font-family: "Montserrat";
   font-size: 12px;
+}
+.content-searchprofile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #f4f4f4;
+  .searchprofile {
+    margin-top: 15px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    form {
+      display: flex;
+      flex-direction: row;
+      margin-left: 20px;
+    }
+    #searchbar-profile {
+      height: 50px;
+      background-color: white;
+      padding-left: 15px;
+      border-radius: 0px;
+      font-family : "Montserrat";
+      font-size: 14px;
+      min-width: 120px;
+      border: 2px solid white;
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+      margin-right: 4px;
+    }
+  }
+}
+
+.title-show-album {
+  margin-top: 50px;
+}
+
+.player_albums {
+  margin-top: 50px;
+}
+
+.wrap-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.show-navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 150px;
+  border-radius: 5px;
+  background-color: white;
+  padding: 0px 40px 0px 40px;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  h3 {
+    margin-bottom: 20px;
+  }
+}
+.band-description {
+  margin-top: 20px;
+  padding-left: 10px;
+}
+.band-description p {
+  font-size: 14px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+.previous-element {
+  color: grey;
+}
+.note {
+  color: grey;
+  text-transform: italic;
+}
+.wrapper-listen {
+  width: 100%;
+  background-color: #f4f4f4;
+  margin-top: -50px;
+  padding-bottom: 60px;
+
 }

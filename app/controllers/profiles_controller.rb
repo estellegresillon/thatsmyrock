@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
     end
     @my_collection = @user_albums.where(status: 'collected').sort_by { |ua| ua.album.rank }
     @my_wishlist = @user_albums.where(status: 'wishlist').sort_by { |ua| ua.album.rank }
-  end
+    end
 end
 
 
