@@ -14,5 +14,4 @@ class Artist < ApplicationRecord
   def previous
     Artist.previous(self.id).first
   end
-
 end

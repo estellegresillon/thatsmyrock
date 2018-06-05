@@ -34,5 +34,4 @@ class Album < ApplicationRecord
   def previous
     Album.previous(self.id).first
   end
-
 end
