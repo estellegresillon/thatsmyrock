@@ -18,7 +18,7 @@
           <p><%= @artist.bio %></p>
 
           </ul>
-          <p><%= link_to "Read more on wikipedia", @artist.wiki_url %>
+          <p><%= link_to "Read more on wikipedia", @artist.wiki_url, target: "_blank" %>
           <%= button_to "Website", @artist.website_url, :method => :get, :form_class => "btn_artist", form: {target: '_blank'} %>
           <%= button_to "Facebook", @artist.facebook_url, :method => :get, :form_class => "btn_artist", form: {target: '_blank'} %>
           <%= button_to "Instagram", @artist.instagram_url, :method => :get, :form_class => "btn_artist", form: {target: '_blank'} %>
