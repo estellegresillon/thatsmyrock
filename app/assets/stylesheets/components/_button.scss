@@ -104,13 +104,7 @@
   margin-bottom: -6px;
   border-color: #be952c #a68226 #9b7924;
   background: -webkit-linear-gradient(top,#fee6b0,#eeba37);
-}
-.btn-amazon:hover {
-  background: -webkit-linear-gradient(top,#fede97,#ecb21f);
-  text-decoration: none;
-}
-
-.fas {
+  .fas {
   background-color: #232f3e;
   border-radius: 3px;
   width: 34px;
@@ -120,6 +114,11 @@
   align-items: center;
   justify-content: center;
   font-size: 16px;
+  }
+}
+.btn-amazon:hover {
+  background: -webkit-linear-gradient(top,#fede97,#ecb21f);
+  text-decoration: none;
 }
 
 .margin-amazon {
