@@ -1,0 +1,6 @@
+function updateFormat() {
+  let id_format = document.getElementById("<%= @user_album.id %>");
+  let update_format = id_format.querySelector(".iformat");
+  update_format.innerHTML = '<%= j render "user_albums/format", c: @user_album %>';
+}
+updateFormat();

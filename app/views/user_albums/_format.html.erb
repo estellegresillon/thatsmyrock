@@ -1,0 +1,33 @@
+<% if c.digital == false %>
+  <%= simple_form_for c, remote: true do |f| %>
+    <%= f.input :digital, as: :hidden, input_html: { value: true } %>
+    <%= f.submit "", data: {toggle: "tooltip", original_title: "Digital"}, class: "digitalB off"%>
+  <% end %>
+<% else %>
+  <%= simple_form_for c, remote: true do |f| %>
+    <%= f.input :digital, as: :hidden, input_html: { value: false } %>
+    <%= f.submit "", data: {toggle: "tooltip", original_title: "Digital"}, class: "digitalB"%>
+  <% end %>
+<% end %>
+<% if c.vinyl == false %>
+  <%= simple_form_for c, remote: true do |f| %>
+    <%= f.input :vinyl, as: :hidden, input_html: { value: true } %>
+    <%= f.submit "", data: {toggle: "tooltip", original_title: "Vinyl"}, class: "vinylB off"  %>
+  <% end %>
+<% else %>
+  <%= simple_form_for c, remote: true do |f| %>
+    <%= f.input :vinyl, as: :hidden, input_html: { value: false } %>
+    <%= f.submit "", data: {toggle: "tooltip", original_title: "Vinyl" }, class: "vinylB" %>
+  <% end %>
+<% end %>
+<% if c.cd == false %>
+  <%= simple_form_for c, remote: true do |f| %>
+    <%= f.input :cd, as: :hidden, input_html: { value: true } %>
+    <%= f.submit "", data: {toggle: "tooltip", original_title: "CD" }, class: "CDB off" %>
+  <% end %>
+<% else %>
+  <%= simple_form_for c, remote: true do |f| %>
+    <%= f.input :cd, as: :hidden, input_html: { value: false } %>
+    <%= f.submit "", data: {toggle: "tooltip", original_title: "CD" }, class: "CDB"  %>
+  <% end %>
+<% end %>

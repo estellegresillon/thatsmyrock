@@ -116,3 +116,38 @@
 .margin-amazon2 {
   margin-right: 3px;
 }
+
+.iformat {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.digitalB {
+  width: 28px;
+  height: 28px;
+  background: image-url("smartphone.svg") !important;
+  background-repeat: no-repeat !important;
+}
+
+.CDB {
+  width: 28px;
+  height: 28px;
+  background: image-url("compact-disc.svg") !important;
+  background-repeat: no-repeat !important;
+}
+
+
+.vinylB {
+  width: 28px;
+  height: 28px;
+  background: image-url("turntable.svg") !important;
+  background-repeat: no-repeat !important;
+}
+
+.off {
+opacity: 0.2;
+}
+
+
+

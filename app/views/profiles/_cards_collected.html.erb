@@ -1,32 +1,8 @@
 <div id="cards-collected-list">
   <% my_collection.each do |c| %>
-    <% if c.status == 'collected' %>
-      <div class="card-collected" id="<%= c.id %>">
-
-        <div class="collection-album-artist">
-          <p>Album : <strong><%= link_to c.album.name, album_path(c.album.id), class: "text-delete" %></strong>
-          <p>Artist : <strong><%= link_to c.album.artist.name, artist_path(c.album.artist.id), class: "text-delete" %></strong></p>
-          <p>Rank : <strong><%= c.album.rank %></strong></p>
-          <p><%= c.album.music_style %> - <%= c.album.year %></p>
-        </div>
-
-        <div class="format">
-          <p>Format :</p>
-          <% if c.vinyl == true %>
-            <p><strong> Vinyl </strong></p>
-          <% elsif c.cd == true %>
-            <p><strong> CD </strong></p>
-          <% elsif c.digital == true %>
-            <p><strong> Digital </strong></p>
-          <% end %>
-        </div>
-
-        <div class="delete-review">
-          <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete, remote: true, data: {toggle: "tooltip", original_title: "Remove" } %>
-        </div>
-
-      </div>
-    <% end %>
+     <% if c.status == 'collected' %>
+     <%= render "user_albums/review_update", c: c %>
+     <% end %>
   <% end %>
 </div>
 
