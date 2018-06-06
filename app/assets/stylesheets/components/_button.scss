@@ -98,8 +98,9 @@
   border-radius: 3px;
   width: 100%;
   display: flex;
+  padding: 3px 18px 3px 3px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: -6px;
   border-color: #be952c #a68226 #9b7924;
   background: -webkit-linear-gradient(top,#fee6b0,#eeba37);
@@ -107,6 +108,18 @@
 .btn-amazon:hover {
   background: -webkit-linear-gradient(top,#fede97,#ecb21f);
   text-decoration: none;
+}
+
+.fas {
+  background-color: #232f3e;
+  border-radius: 3px;
+  width: 34px;
+  height: 34px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
 }
 
 .margin-amazon {
