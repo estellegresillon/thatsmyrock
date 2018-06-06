@@ -22,7 +22,7 @@
         </div>
 
         <div class="delete-review">
-          <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete, remote: true %>
+          <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete, remote: true, data: {toggle: "tooltip", original_title: "Remove" } %>
         </div>
 
       </div>
