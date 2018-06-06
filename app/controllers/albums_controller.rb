@@ -37,5 +37,6 @@ class AlbumsController < ApplicationController
     @user_album = UserAlbum.new
     @artist = @album.artist
     @albums = @artist.albums
+    @random_album = Album.order("RANDOM()").first
   end
 end
