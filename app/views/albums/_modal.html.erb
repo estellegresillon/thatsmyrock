@@ -7,38 +7,54 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+
+      <div class="close-modal">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Our recommandation for <%= @album.name %></h4>
       </div>
-          <div class="modal-body">
-            <% if @album.deezer_album_id.nil? %>
+      
+      <div class="modal-header">
+        <div class="modal-title">
+          <h4 id="myModalLabel">Our recommandation for <strong><%= @album.name %></strong></h4>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        
+        <div class="modal-video">
+          <% if @album.deezer_album_id.nil? %>
               <div class="card-img" style="background-image: url('<%= cl_image_path @album.next.photo_cover, crop: :fill, width: 170; %>'); background-position: center, width: 20%;">
             <% else %>
-              <script>
-                  (function(d, s, id) {
-                  var js, djs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) return;
-                  js = d.createElement(s); js.id = id;
-                  js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
-                   djs.parentNode.insertBefore(js, djs);
-                  }(document, "script", "deezer-widget-loader"));</script>
-                  <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=d70303&layout=&size=small&type=album&id=<%= @album.next.deezer_album_id %>" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200" data-height="200"></div>
-            <% end %>
-                <div class="modal-text">
-                    <li><%= link_to next_album.name, album_path(next_album.id) %></li>
-                    <li><%= link_to next_album.artist.name, artist_path(next_album.artist.id) %></li>
-                    <li><%= link_to next_album.music_style, albums_path(music_style: next_album.music_style) %></li>
-                    <li><%= link_to next_album.year, albums_path(year: next_album.year) %></li>
-                    <li><%= link_to next_album.decade, albums_path(decade: next_album.decade) %></li>
-                    <li><%= next_album.rank %></li>
-                </div>
-          </div>
-      <div class="modal-footer">
-        <%= button_to "Go on!", album_path(next_album.id), :class => "btn btn-danger", :method => :get %>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <script>
+          (function(d, s, id) {
+          var js, djs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
+           djs.parentNode.insertBefore(js, djs);
+          }(document, "script", "deezer-widget-loader"));</script>
+          <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=d70303&layout=&size=small&type=album&id=<%= @album.next.deezer_album_id %>" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200" data-height="200"></div>
+          <% end %>
+        </div>
+
+        <div class="modal-text">
+          <ul>
+            <li class="album-reco"><strong><%= link_to next_album.name, album_path(next_album.id) %></span></strong></li>
+            <li>by <%= link_to next_album.artist.name, artist_path(next_album.artist.id) %></li>
+            <li><%= link_to next_album.music_style, albums_path(music_style: next_album.music_style) %>, <%= link_to next_album.year, albums_path(year: next_album.year) %></li>
+            <li><strong>More from the <%= link_to next_album.decade, albums_path(decade: next_album.decade) %>'s</strong></li>
+            <li><strong><span style="color: red">Rank : <%= next_album.rank %></span></strong></li>
+          </ul>
+        </div>
+
       </div>
+
+      <div class="modal-footer">
+        <%= button_to "Go on!", album_path(next_album.id), :class => "btn btn-search", :method => :get %>
+        <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+      </div>
+
     </div>
+
   </div>
 </div>
 
