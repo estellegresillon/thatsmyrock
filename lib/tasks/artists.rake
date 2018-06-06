@@ -21,7 +21,7 @@ namespace :artists do
 
     # Download archive file
     puts "Downloading the archive..."
-    url = "http://thatsmyrock.com/artists.zip" # zip containing all artists JPGs
+    url = "http://thatsmyr.cluster015.ovh.net/artists.zip" # zip containing all artists JPGs
 
     archive_file = Tempfile.new(["artists", ".zip"])
     File.open(archive_file, 'wb') { |file| file.write(open(url).read) }
@@ -50,7 +50,7 @@ namespace :artists do
           artist[:photo] = "image/upload/#{photo['public_id']}"
           artist.save
         else
-          puts "Artist not found: #{artist.normalized_name}"
+          puts "Artist not found: #{normalized_name}"
         end
       end
     end
