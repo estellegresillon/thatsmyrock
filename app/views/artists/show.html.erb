@@ -16,14 +16,13 @@
 
           <h4>The artist story :</h4>
           <p><%= @artist.bio %></p>
-          <p><%= link_to "Read more on wikipedia", @artist.wiki_url, target: "_blank" %>
-          <div class="content-downpage">
+          <p><%= link_to "- Read more on wikipedia", @artist.wiki_url, target: "_blank" %></p>
 
+          <div class="content-social">
             <%= button_to "Website", @artist.website_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
             <%= button_to "Facebook", @artist.facebook_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
             <%= button_to "Instagram", @artist.instagram_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
             <%= button_to "Twitter", @artist.twitter_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
-            </p>
           </div>
       </div>
   </div>
@@ -71,7 +70,7 @@
         <div class="card-descr">
           <div class="album-name"><%= link_to album.name, album_path(album.id) %></div>
           <div class="group-name"><%= link_to album.artist.name, artist_path(album.artist.id) %></div>
-          <p class="year-genre"><%= link_to album.music_style, albums_path(music_style: album.music_style) %>, <%= link_to album.year, albums_path(year: album.year) %>></p>
+          <p class="year-genre"><%= link_to album.music_style, albums_path(music_style: album.music_style) %>, <%= link_to album.year, albums_path(year: album.year) %></p>
           <div class="iconsindex" id='<%= "icons_#{album.id}" %>'>
             <% if user_signed_in? %>
 
@@ -101,7 +100,7 @@
 </div>
 
 <div class="content-downpage">
-  <div class="downpage-links">
+
     <div class="buttons">
       <%= link_to "Go back", "/", class: "btn-search" %>
     </div>

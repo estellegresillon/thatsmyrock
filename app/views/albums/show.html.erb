@@ -5,9 +5,8 @@
 <% end  %>
 
   <div class="banner-elements">
-
     <% if @album.photo_cover.present? %>
-      <div class="cover-album" style="background-image: url('<%= cl_image_path @album.photo_cover %>'); height: 250px; width: 250px; background-position: center;">
+      <div class="cover-album" style="background-image: url('<%= cl_image_path @album.photo_cover, width: 250; %>'); height: 250px; width: 250px; background-position: center;">
     <% else %>
       <div class="banner-home" style="background-image: url('https://media.guim.co.uk/67bfc01de64daa10687cc2c7103b9bcd93f22138/0_0_4896_3264/1000.jpg'); height: 50vh; background-position: center;">
     <% end  %>
@@ -15,15 +14,25 @@
 
     <div class="album-title">
       <h1><%= @album.name %></h1>
-      <h2><%= @album.artist.name %></h2>
+      <%= link_to @album.artist.name, artist_path(@album.artist.id) %>
       <button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">
        Recommandation
       </button>
     </div>
-
+  </div>
 </div>
-</div>
 
+<div class="content-nav">
+  <div class="nav-banner">
+    <% if @album.previous.presence %>
+      <p><%= link_to "< Previous album", @album.previous %></p>
+    <% end %>
+
+    <% if @album.next.presence %>
+      <p><%= link_to "Next album >", @album.next %></p>
+     <% end %>
+  </div>
+</div>
 
 <div class="content">
   <div class="wrap-show">
@@ -37,7 +46,7 @@
         <br>
         <h4>The album story :</h4>
         <p><%= @album.description %></p>
-        <p><%= link_to "Read more on wikipedia", @album.wiki_url, target: "_blank" %></p>
+        <p><%= link_to "- Read more on wikipedia", @album.wiki_url, target: "_blank" %></p>
     </div>
 
     <div class="content-player">
@@ -62,8 +71,8 @@
 
 <div class="content-downpage">
   <div class="inline_buttons">
-    <p class="margin-amazon"><a class="btn-amazon" href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= @album.normalized_name.gsub('-','+') %> +vinyl" target="_blank">AMAZON: Go to vinyl album</a></p>
-    <p class="margin-amazon2"><a class="btn-amazon" href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= @album.normalized_name.gsub('-','+') %> +audio+cd" target="_blank">AMAZON: Go to CD audio</a></p>
+    <p class="margin-amazon"><a class="btn-amazon" href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= @album.normalized_name.gsub('-','+') %> +vinyl" target="_blank"><span class="fas fa-shopping-cart"></span>Buy vinyl album</a></p>
+    <p class="margin-amazon2"><a class="btn-amazon" href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= @album.normalized_name.gsub('-','+') %> +audio+cd" target="_blank"><span class="fas fa-shopping-cart"></span>Buy CD audio</a></p>
     <div class="addthis_inline_share_toolbox"></div>
   </div>
 </div>
@@ -80,7 +89,7 @@
 
         <div class="card-cover">
           <% if album.photo_cover.present? %>
-            <div class="card-img" style="background-image: url('<%= cl_image_path album.photo_cover, crop: :fill %>'); background-position: center, width: 20%;">
+            <div class="card-img" style="background-image: url('<%= cl_image_path album.photo_cover, crop: :fill, width: 170; %>'); background-position: center, width: 20%;">
           <% else %>
             <% index =  i + 11 %>
             <% url = "https://source.unsplash.com/collection/1068/5#{index}x5#{index}" %>
@@ -127,14 +136,15 @@
 <div class="content-downpage">
   <div class="downpage-links">
     <% if @album.previous.presence %>
-      <p><%= link_to "<- Previous album", @album.previous %></p>
+      <p><%= link_to "< Previous album", @album.previous %></p>
     <% end %>
 
      <div class="buttons">
        <%= link_to "Go back", "/", class: "btn-search" %>
      </div>
+
     <% if @album.next.presence %>
-      <p><%= link_to "Next album ->", @album.next %></p>
+      <p><%= link_to "Next album >", @album.next %></p>
      <% end %>
   </div>
 </div>
