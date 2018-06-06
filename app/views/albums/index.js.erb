@@ -3,6 +3,7 @@ function refreshAlbums(innerHTML) {
   newAlbums.innerHTML = innerHTML;
 }
 
+
 $('#my-albums').append('<%= j render "albums/albums_card", albums: @albums %>');
 <% if @albums.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate @albums %>');
@@ -10,4 +11,7 @@ $('#my-albums').append('<%= j render "albums/albums_card", albums: @albums %>');
   $(window).off('scroll');
   $('.pagination').remove();
 <% end %>
+
+toolTip();
+
 
