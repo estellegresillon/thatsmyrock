@@ -25,6 +25,18 @@ class UserAlbumsController < ApplicationController
     #@user_album.user = current_user
     @user_album = UserAlbum.find(params[:id])
     @user_album.update(user_album_params)
+    if @user_album.save
+      respond_to do |format|
+        format.html { redirect_to profile_path }
+        format.js  do
+          if params[:user_album][:status]
+            render 'user_albums/update.js.erb'
+          else
+            render 'user_albums/update_format.js.erb'
+          end
+        end
+      end
+    end
   end
 
   def destroy
