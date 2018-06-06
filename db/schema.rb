@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_140322) do
+ActiveRecord::Schema.define(version: 2018_06_06_144929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_06_05_140322) do
     t.integer "decade"
     t.string "normalized_name"
     t.integer "deezer_album_id"
+    t.integer "spotify_album_uri"
     t.index ["artist_id"], name: "index_albums_on_artist_id"
   end
 
