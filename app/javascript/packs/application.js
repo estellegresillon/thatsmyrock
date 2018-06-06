@@ -5,7 +5,5 @@ import { toolTip } from '../components/tooltip';
 
 
 tabActive();
-if(document.getElementById("my-albums")){
-  toolTip();
-};
-
+toolTip();
+global.toolTip = toolTip;

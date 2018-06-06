@@ -20,7 +20,7 @@
                   js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
                    djs.parentNode.insertBefore(js, djs);
                   }(document, "script", "deezer-widget-loader"));</script>
-                  <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=d70303&layout=&size=small&type=album&id=41838521&app_id=281844" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200" data-height="200"></div>
+                  <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=200&height=200&color=d70303&layout=&size=small&type=album&id=<%= @album.next.deezer_album_id %>" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="200" data-height="200"></div>
                 <div class="modal-text">
                     <li><%= link_to next_album.name, album_path(next_album.id) %></li>
                     <li><%= link_to next_album.artist.name, artist_path(next_album.artist.id) %></li>
@@ -37,3 +37,4 @@
     </div>
   </div>
 </div>
+
