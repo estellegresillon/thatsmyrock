@@ -23,9 +23,9 @@
         <div class="delete-review">
           <%= simple_form_for c, remote: true do |f| %>
             <%= f.input :status, as: :hidden, input_html: { value: 'collected'} %>
-            <%= f.submit "", id: 'wishlist' %>
+            <%= f.submit "", id: 'wishlist', data: {toggle: "tooltip", original_title: "Add to your collection!" } %>
           <% end %>
-          <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete, remote: true %>
+          <%= link_to image_tag('x_close.png'), user_album_path(c), method: :delete, remote: true, data: {toggle: "tooltip", original_title: "Remove" } %>
         </div>
 
       </div>
