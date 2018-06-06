@@ -20,7 +20,7 @@ namespace :albums do
 
     #Download archive file
     puts "Downloading the archive..."
-    url = "http://thatsmyrock.com/albums.zip"
+    url = "http://thatsmyr.cluster015.ovh.net/albums.zip"
 
     archive_file = Tempfile.new(["albums", ".zip"])
     File.open(archive_file, 'wb') { |file| file.write(open(url).read) }
@@ -50,7 +50,7 @@ namespace :albums do
           album.save
 
         else
-          puts "Arlbum not found: #{album.normalized_name}"
+          puts "Album not found: #{normalized_name}"
         end
       end
     end
