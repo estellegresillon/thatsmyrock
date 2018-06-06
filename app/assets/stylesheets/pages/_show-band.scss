@@ -48,7 +48,6 @@
   margin: 0 auto;
   max-width: 1000px;
   justify-content: center;
-
 }
 .content-player {
   margin: 0 auto;
@@ -255,7 +254,17 @@ p {
 .wrapper-grey {
   width: 100%;
   background-color: #f4f4f4;
-  margin-top: 0px;
+  margin-top: 20px;
   padding-bottom: 60px;
+  padding-top: 20px;
+}
 
+.inline_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  a {
+    margin-right: 20px;
+  }
 }

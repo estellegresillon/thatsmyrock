@@ -24,9 +24,9 @@
                 <div class="modal-text">
                     <li><%= link_to next_album.name, album_path(next_album.id) %></li>
                     <li><%= link_to next_album.artist.name, artist_path(next_album.artist.id) %></li>
-                    <li><%= next_album.music_style %></li>
-                    <li><%= next_album.year %></li>
-                    <li><%= next_album.decade %></li>
+                    <li><%= link_to next_album.music_style, albums_path(music_style: next_album.music_style) %></li>
+                    <li><%= link_to next_album.year, albums_path(year: next_album.year) %></li>
+                    <li><%= link_to next_album.decade, albums_path(decade: next_album.decade) %></li>
                     <li><%= next_album.rank %></li>
                 </div>
           </div>
@@ -37,14 +37,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-<%#= link_to next_album.music_style, albums_path(music_style: next_album.music_style) %>
-<%#= link_to next_album.year, albums_path(year: next_album.year) %> <!-- Liens qui renvoient sur la homepage avec pré-chargement de la search-bar -->
-<%#= link_to next_album.decade, albums_path(decade: next_album.decade) %>
-
-
-
-
