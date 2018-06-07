@@ -1,13 +1,9 @@
-let wrapper = document.getElementById('<%= "icons_#{@album.id}" %>');
-wrapper.querySelectorAll('a').forEach((icon) => {
-  if ('collected' == '<%= @status %>') {
-    wrapper.remove();
-  } else if (icon.dataset.status == '<%= @status %>') {
-    icon.remove();
-  };
-  if ('wishlist' == '<%= @status %>') {
-    wrapper.remove();
-  } else if (icon.dataset.status == '<%= @status %>') {
-    icon.remove();
-  };
-})
+let icons_album = document.getElementById('<%= "icons_#{@album.id}" %>');
+icons_album.innerHTML = "<%= j render 'albums/icons_album', album: @album %>";
+
+
+
+
+
+
+

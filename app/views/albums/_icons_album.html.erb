@@ -1,0 +1,38 @@
+<% if user_signed_in? %>
+  <% user_album = UserAlbum.find_by(user: current_user, album: album) %>
+
+  <% if user_album && user_album.status == "wishlist" %>
+    <%# il est dans la whishlist ie on peut l'enlever ou ajouter a la collection  %>
+    <%= link_to user_album_path(user_album), method: :delete, remote: :true do %>
+      <i data-toggle="tooltip" class="fas fa-heart " title="Remove from your wishlist!"></i>
+    <% end %>
+
+    <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: 'collected'} do %>
+      <i data-toggle="tooltip" class="fas fa-plus-square off" title="Add to your collection!"></i>
+    <% end %>
+
+  <% elsif user_album && user_album.status == "collected" %>
+    <%# il est dans la collection ie on peut l'enlever ou ajouter a la whishlisr  %>
+    <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post, remote: :true, data: { status: 'wishlist'} do %>
+      <i data-toggle="tooltip" class="fas fa-heart off" title="Add to your wishlist!"></i>
+    <% end %>
+
+    <%= link_to user_album_path(user_album), method: :delete, remote: :true do %>
+      <i data-toggle="tooltip" class="fas fa-plus-square " title="Remove from your collection!"></i>
+    <% end %>
+
+  <% else %>
+    <%# pas de user album ie on peut ajouter a la whishlist ou a la collection  %>
+    <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post, remote: :true, data: { status: 'wishlist'} do %>
+      <i data-toggle="tooltip" class="fas fa-heart off" title="Add to your wishlist!"></i>
+    <% end %>
+
+    <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: 'collected'} do %>
+      <i data-toggle="tooltip" class="fas fa-plus-square off" title="Add to your collection!"></i>
+    <% end %>
+  <% end %>
+
+<% else %>
+  <a data-toggle="tooltip" class="fas fa-heart off" title="Login to add the album to your wishlist!"></a>
+  <a data-toggle="tooltip" class="fas fa-plus-square off" title="Login to add the album to your collection!"></a>
+<% end  %>

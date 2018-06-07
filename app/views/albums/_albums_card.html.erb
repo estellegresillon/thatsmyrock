@@ -24,24 +24,7 @@
           <div class="group-name"><%= link_to album.artist.name, artist_path(album.artist.id) %></div>
           <p class="year-genre"><%= link_to album.music_style, albums_path(music_style: album.music_style) %>, <%= link_to album.year, albums_path(year: album.year) %></p>
           <div class="iconsindex" id='<%= "icons_#{album.id}" %>'>
-            <% if user_signed_in? %>
-
-              <% unless UserAlbum.find_by(user: current_user, album: album, status: "wishlist") || UserAlbum.find_by(user: current_user, album: album, status: "collected") %>
-                <%= link_to album_user_albums_path(album, user_album: { status: "wishlist" }), method: :post, remote: :true, data: { status: 'wishlist'} do %>
-                  <i data-toggle="tooltip" class="fas fa-heart" title="Add to your wishlist!"></i>
-                <% end %>
-              <% end %>
-
-              <% unless UserAlbum.find_by(user: current_user, album: album, status: "collected") || UserAlbum.find_by(user: current_user, album: album, status: "wishlist") %>
-                <%= link_to album_user_albums_path(album, user_album: { status: "collected" }), method: :post, remote: :true, data: { status: 'collected'} do %>
-                  <i data-toggle="tooltip" class="fas fa-plus-square" title="Add to your collection!"></i>
-                <% end %>
-              <% end %>
-
-            <% else %>
-              <a data-toggle="tooltip" class="fas fa-heart" title="Login to add the album to your wishlist!"></a>
-              <a data-toggle="tooltip" class="fas fa-plus-square" title="Login to add the album to your collection!"></a>
-            <% end  %>
+            <%= render 'albums/icons_album', album: album %>
           </div>
         </div>
       </div>
