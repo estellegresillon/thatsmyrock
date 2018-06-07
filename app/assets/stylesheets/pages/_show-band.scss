@@ -44,6 +44,20 @@
   align-items: center;
   justify-content: center;
 }
+.content-album {
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 1000px;
+  align-items: center;
+  justify-content: center;
+}
+.content-artist {
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 1000px;
+  align-items: center;
+  justify-content: center;
+}
 .content-all {
   display: flex;
   align-items: center;
@@ -72,6 +86,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 .content-social {
   display: flex;
@@ -281,11 +296,14 @@ p {
 .wrapper-grey {
   width: 100%;
   background-color: #f4f4f4;
-  margin-top: 20px;
   padding-bottom: 60px;
   padding-top: 20px;
 }
 
 .title-buttons {
   margin-top: 10px;
+}
+.player_unavailable {
+  display: flex;
+  align-items: center;
 }

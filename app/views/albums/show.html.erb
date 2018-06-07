@@ -1,7 +1,10 @@
 <!-- app/views/offers/show.html.erb -->
 <% content_for :meta_title, "#{@album.name} - #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, "Discover and listen #{@album.name} album of #{@album.artist.name}" %>
+<% if  %>
+ <% @album.photo_cover.url != nil %>
 <% content_for :meta_image, cl_image_path(@album.photo_cover) %>
+<% end  %>
 
 <% if @artist.photo.present? %>
 <div class="banner-album" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.7) 100%), url('<%= cl_image_path @artist.photo, crop: :fill %>'); height: 50vh; background-position: center;">
@@ -39,7 +42,7 @@
   </div>
 </div>
 
-<div class="content">
+<div class="content-album">
   <div class="wrap-show">
 
     <div class="band-description">
@@ -49,7 +52,6 @@
         <p>Music style : <strong><%= @album.music_style %></strong></p>
         <p>Year : <strong><%= @album.year %></strong></p>
         <br>
-        <!-- h4>The album story :</h4> -->
         <% if  %>
           <% @album.description != nil %>
           <p><%= @album.description %></p>
@@ -59,17 +61,24 @@
 
     <div class="content-player">
       <h3 class="title-show-album">Listen to the complete album</h3>
-      <div class="player_albums">
-        <script>
-        (function(d, s, id) {
-        var js, djs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
-         djs.parentNode.insertBefore(js, djs);
-        }(document, "script", "deezer-widget-loader"));</script>
-        <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=500&color=d70303&layout=&size=medium&type=album&id=<%= @album.deezer_album_id %>" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="400" data-height="500">
-        </div>
+      <% if  %>
+      <% @album.deezer_album_id != nil %>
+        <div class="player_albums">
+          <script>
+          (function(d, s, id) {
+          var js, djs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "https://e-cdns-files.dzcdn.net/js/widget/loader.js";
+           djs.parentNode.insertBefore(js, djs);
+          }(document, "script", "deezer-widget-loader"));</script>
+          <div class="deezer-widget-player" data-src="https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=500&color=d70303&layout=&size=medium&type=album&id=<%= @album.deezer_album_id %>" data-scrolling="no" data-frameborder="0" data-allowTransparency="true" data-width="400" data-height="500">
+          </div>
+        <% else  %>
+          <div class="player_unavailable">
+            <p>Playlist not available at the moment.</p>
+          </div>
+        <% end  %>
       </div>
     </div>
 
