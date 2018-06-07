@@ -88,9 +88,13 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  padding-top: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
   .fas {
     margin: 5px;
-    font-size: 14px;
+    font-size: 30px;
     text-decoration: none;
   }
 }
