@@ -23,8 +23,8 @@
     <div class="album-title">
       <h1><%= @album.name %></h1>
       <%= link_to @album.artist.name, artist_path(@album.artist.id) %>
-      <button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">
-       Recommandation
+      <button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal" id="btn-reco">
+       Smart recommandation
       </button>
     </div>
   </div>
