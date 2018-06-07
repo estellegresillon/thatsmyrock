@@ -3,11 +3,17 @@ class UserAlbumsController < ApplicationController
 
   def create
     @album = Album.find(params[:album_id])
-    @user_album = UserAlbum.new(user_album_params)
-    @user_album.user = current_user
-    @user_album.album = @album
+
+    # @user_album = UserAlbum.new(user_album_params)
+
+    @user_album = UserAlbum.find_or_initialize_by(user_id: current_user.id, album_id: @album.id)
+    @user_album.assign_attributes(user_album_params)
+
+    # @user_album.user = current_user
+    # @user_album.album = @album
     @status = @user_album.status
-    if @user_album.save
+
+    if @user_album.save!
       respond_to do |format|
         format.html { redirect_to albums_path }
         format.js  { render 'albums/update_index.js.erb' }
@@ -41,7 +47,19 @@ class UserAlbumsController < ApplicationController
 
   def destroy
     @user_album = UserAlbum.find(params[:id])
+    @album = @user_album.album
     @user_album.destroy
+    if @user_album.destroy
+      respond_to do |format|
+        format.html { redirect_to albums_path }
+        format.js  { render 'albums/update_index.js.erb' }
+      end
+    else
+      respond_to do |format|
+        format.html { render 'albums/index' }
+        format.js  # <-- idem
+      end
+    end
   end
 
 
