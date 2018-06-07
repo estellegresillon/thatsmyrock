@@ -1,3 +1,11 @@
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, "#{@artist.name} on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Discover all albums from #{@artist.name}" %>
+<% if  %>
+ <% @artist.photo.url != nil %>
+  <% content_for :meta_image, cl_image_path(@artist.photo) %>
+<% end %>
+
 <% if @artist.photo.present? %>
   <div class="banner-home" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= cl_image_path @artist.photo, crop: :fill %>'); height: 50vh; background-position: center;">
 <% else %>
@@ -9,20 +17,40 @@
 </div>
 
 <div class="content">
+
   <div class="wrap-show">
 
       <div class="band-description">
-        <h3 class="red-title"><strong><%= @artist.name %></strong></h3>
+<!--         <h3 class="red-title"><strong><#%= @artist.name %></strong></h3> -->
 
-          <h4>The artist story :</h4>
-          <p><%= @artist.bio %></p>
-          <p><%= link_to "- Read more on wikipedia", @artist.wiki_url, target: "_blank" %></p>
+          <!-- <h4>The artist story :</h4> -->
+          <% if  %>
+          <% @artist.bio != nil %>
+            <p><%= @artist.bio %></p>
+            <p><%= link_to "Read more on wikipedia", @artist.wiki_url, target: "_blank" %></p>
+          <% end %>
 
           <div class="content-social">
-            <%= button_to "Website", @artist.website_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
-            <%= button_to "Facebook", @artist.facebook_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
-            <%= button_to "Instagram", @artist.instagram_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
+
+            <% if  %>
+              <% @artist.website_url != nil %>
+              <%= button_to "Website", @artist.website_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
+            <% end %>
+
+            <% if  %>
+              <% @artist.facebook_url != nil %>
+              <%= button_to "Facebook", @artist.facebook_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
+            <% end %>
+
+            <% if  %>
+              <% @artist.instagram_url != nil %>
+              <%= button_to "Instagram", @artist.instagram_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
+            <% end %>
+
+            <% if  %>
+              <% @artist.twitter_url != nil %>
             <%= button_to "Twitter", @artist.twitter_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
+            <% end %>
           </div>
       </div>
   </div>
@@ -30,13 +58,13 @@
       <!-- <div class="show-navigation">
       <div class="downpage-links">
         <h3 class="title-red">Discover more artists</h3>
-        <% if @artist.previous.presence %>
-          <p class="previous-element"><strong>Previous</strong> - <%= link_to @artist.previous.name, @artist.previous %></p>
-        <% end %>
+        <#% if @artist.previous.presence %>
+          <p class="previous-element"><strong>Previous</strong> - <#%= link_to @artist.previous.name, @artist.previous %></p>
+        <#% end %>
 
-        <% if @artist.next.presence %>
-          <p><strong>Next</strong> - <%= link_to @artist.next.name, @artist.next %></p>
-        <% end %>
+        <#% if @artist.next.presence %>
+          <p><strong>Next</strong> - <#%= link_to @artist.next.name, @artist.next %></p>
+        <#% end %>
       </div>
     </div> -->
 </div>
@@ -46,7 +74,7 @@
 <div class="wrapper-grey">
 
 <div class="content">
-<h3><%= @artist.name %> albums in our top :</h3>
+<h3>Albums part of the 365 best ever list from <%= @artist.name %></h3>
 <% index = 1 %>
   <% @albums.each_with_index do |album, i| %>
 
