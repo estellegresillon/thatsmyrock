@@ -27,6 +27,15 @@
     <meta name="twitter:creator" content="thatsmyrock" >
     <meta name="twitter:image:src" content="<%= image_url('thatsmyrock-image-banner-twitter.jpg') %>">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120539932-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-120539932-1');
+    </script>
+
   </head>
   <body>
     <%= render 'shared/navbar' %>
