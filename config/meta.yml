@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "That's My Rock!"
+meta_title: "That's My Rock!"
+meta_description: "Experience the best music! We are tracking the best music around the world and across decades to share with you an awesome rock odyssey."
+meta_image: "thatsmyrock-image-banner-facebook.jpg"                       # should exist in `app/assets/images/`
+twitter_account: "@thatsmyrock"   # required for Twitter Cards

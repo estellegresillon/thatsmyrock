@@ -12,20 +12,40 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
 
     <!-- Facebook Open Graph data -->
-    <meta property="og:title" content="That's My Rock!" />
+<!--     <meta property="og:title" content="That's My Rock!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.thatsmyrock.com" />
-    <meta property="og:image" content="<%= image_url('thatsmyrock-image-banner-facebook.jpg') %>" />
+    <meta property="og:image" content="<%#= image_url('thatsmyrock-image-banner-facebook.jpg') %>" />
     <meta property="og:description" content="Experience the best music! We are tracking the best music around the world and across decades to share with you an awesome rock odyssey." />
-    <meta property="og:site_name" content="That's My Rock!" />
+    <meta property="og:site_name" content="That's My Rock!" /> -->
 
     <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
+<!--     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="thatsmyrock">
     <meta name="twitter:title" content="That's My Rock!">
     <meta name="twitter:description" content="Experience the best ever music albums">
     <meta name="twitter:creator" content="thatsmyrock" >
-    <meta name="twitter:image:src" content="<%= image_url('thatsmyrock-image-banner-twitter.jpg') %>">
+    <meta name="twitter:image:src" content="<%#= image_url('thatsmyrock-image-banner-twitter.jpg') %>"> -->
+
+
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:title" content="<%= meta_title %>">
+    <meta name="twitter:description" content="<%= meta_description %>">
+    <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+    <meta name="twitter:image:src" content="<%= meta_image %>">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120539932-1"></script>
