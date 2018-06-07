@@ -1,6 +1,6 @@
   <div class="banner-home" style="background: -webkit-linear-gradient(top, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%,rgba(0,0,0,0.8) 100%), url('<%= image_path "header_beatles.jpg", crop: :fill %>'); height: 80vh; background-position: center;">
   <div class="banner-content">
-    <h1>Experience the best music.</h1>
+    <h1>Experience the best music</h1>
     <h2>We record the best albums ever made accross the world</h2>
     <div class="searchbar-index">
     <div class="searchbar-home animate fadeIn">
@@ -16,6 +16,8 @@
   </div>
 </div>
 
+<a href="#" class="go-top"><i class="fas fa-angle-up"></i></a>
+
 <div class="top365" id="my-albums">
   <%= render 'albums/albums_card' %>
 </div>
@@ -26,3 +28,4 @@
   </div>
   <%= image_tag 'loader.gif', class: 'hidden', id: 'loader' %>
 </div>
+

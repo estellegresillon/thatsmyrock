@@ -48,15 +48,14 @@
 
       <div class="modal-footer">
         <%= button_to "Go on!", album_path(next_album.id), :class => "btn btn-search", :method => :get %>
-        <button type="button" class="btn-close-modal" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn-close-modal" data-dismiss="modal">Another one !</button> -->
+        <button type="button" class="btn-modal" data-toggle="modal" data-target="#myModal">
+       Another one!
+      </button>
       </div>
 
     </div>
 
   </div>
 </div>
-
-<!-- SPOTIFY, IN CASE OF....
-<iframe src="https://open.spotify.com/embed?uri=spotify:album:20YQiWvyD8Yi7Xge7ukVrm" width="250" height="330" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-
-spotify:album:20YQiWvyD8Yi7Xge7ukVrm -->
+<%= render 'albums/modal' %>

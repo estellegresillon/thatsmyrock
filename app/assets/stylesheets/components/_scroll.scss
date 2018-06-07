@@ -1,0 +1,22 @@
+.go-top {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  height: 50px;
+  width: 50px;
+  text-decoration: none;
+  color: grey;
+  border: 3px solid grey;
+  font-size: 32px;
+  display: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-top:hover {
+  text-decoration: none;
+  color: black;
+  border: 3px solid black;
+}

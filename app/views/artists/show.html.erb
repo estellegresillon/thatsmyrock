@@ -16,59 +16,24 @@
 
 </div>
 
-<div class="content">
 
+ <% if  %>
+<% @artist.bio != nil %>
+<div class="content-artist">
   <div class="wrap-show">
-
-      <div class="band-description">
-<!--         <h3 class="red-title"><strong><#%= @artist.name %></strong></h3> -->
-
-          <!-- <h4>The artist story :</h4> -->
-          <% if  %>
-          <% @artist.bio != nil %>
-            <p><%= @artist.bio %></p>
-            <p><%= link_to "Read more on wikipedia", @artist.wiki_url, target: "_blank" %></p>
-          <% end %>
-
-          <div class="content-social">
-
-            <% if  %>
-              <% @artist.website_url != nil %>
-              <%= button_to "Website", @artist.website_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
-            <% end %>
-
-            <% if  %>
-              <% @artist.facebook_url != nil %>
-              <%= button_to "Facebook", @artist.facebook_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
-            <% end %>
-
-            <% if  %>
-              <% @artist.instagram_url != nil %>
-              <%= button_to "Instagram", @artist.instagram_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
-            <% end %>
-
-            <% if  %>
-              <% @artist.twitter_url != nil %>
-            <%= button_to "Twitter", @artist.twitter_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
-            <% end %>
-          </div>
+    <div class="band-description">
+      <p><%= @artist.bio %></p>
+      <p><%= link_to "Read more on wikipedia", @artist.wiki_url, target: "_blank" %></p>
+      <div class="content-social">
+        <%= button_to "Website", @artist.website_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
+        <%= button_to "Facebook", @artist.facebook_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
+        <%= button_to "Instagram", @artist.instagram_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
+        <%= button_to "Twitter", @artist.twitter_url, :method => :get, :form_class => "btn_artist", class: "btn-social", form: {target: '_blank'} %>
       </div>
+    </div>
   </div>
-
-      <!-- <div class="show-navigation">
-      <div class="downpage-links">
-        <h3 class="title-red">Discover more artists</h3>
-        <#% if @artist.previous.presence %>
-          <p class="previous-element"><strong>Previous</strong> - <#%= link_to @artist.previous.name, @artist.previous %></p>
-        <#% end %>
-
-        <#% if @artist.next.presence %>
-          <p><strong>Next</strong> - <#%= link_to @artist.next.name, @artist.next %></p>
-        <#% end %>
-      </div>
-    </div> -->
 </div>
-
+<% end %>
 
 
 <div class="wrapper-grey">
