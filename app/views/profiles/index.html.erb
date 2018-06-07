@@ -11,7 +11,7 @@
   <h3>Search in your collection</h3>
   <%= form_tag profile_path, method: "get", remote: true do %>
     <%= text_field_tag :name , params[:name], class: "form-control", placeholder: "Albums or Artist", id: 'searchbar-profile' %>
-    <%= submit_tag "Filter", class: "btn-search" %>
+    <%= submit_tag "Filter", class: "btn-home" %>
   <% end %>
   </div>
 </div>
