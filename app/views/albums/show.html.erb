@@ -49,13 +49,16 @@
         <p>Music style : <strong><%= @album.music_style %></strong></p>
         <p>Year : <strong><%= @album.year %></strong></p>
         <br>
-        <h4>The album story :</h4>
-        <p><%= @album.description %></p>
-        <p><%= link_to "- Read more on wikipedia", @album.wiki_url, target: "_blank" %></p>
+        <!-- h4>The album story :</h4> -->
+        <% if  %>
+          <% @album.description != nil %>
+          <p><%= @album.description %></p>
+          <p><%= link_to "Read more on wikipedia", @album.wiki_url, target: "_blank" %></p>
+        <% end %>
     </div>
 
     <div class="content-player">
-      <h3 class="title-show-album">Listen to the complete album :</h3>
+      <h3 class="title-show-album">Listen to the complete album</h3>
       <div class="player_albums">
         <script>
         (function(d, s, id) {
@@ -74,18 +77,21 @@
 
 </div>
 
+
 <div class="content-downpage">
+<!--   <h3 class="title-show-album">Buy <%#= @album.name %> album on Amazon</h3> -->
   <div class="inline_buttons">
     <p class="margin-amazon"><a class="btn-amazon" href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= @album.normalized_name.gsub('-','+') %> +vinyl" target="_blank"><span class="fas fa-shopping-cart"></span>Buy vinyl album</a></p>
     <p class="margin-amazon2"><a class="btn-amazon" href="https://www.amazon.com/s/ref=nb_sb_ss_i_1_21?url=search-alias%3Daps&field-keywords=<%= @album.normalized_name.gsub('-','+') %> +audio+cd" target="_blank"><span class="fas fa-shopping-cart"></span>Buy CD audio</a></p>
     <div class="addthis_inline_share_toolbox"></div>
   </div>
 </div>
+</div>
 
 <div class="wrapper-grey">
 
 <div class="content">
-<h3 class="title-show-album"><%= @artist.name %> albums in our top :</h3>
+<h3 class="title-show-album">Other best ever album from <%= @artist.name %></h3>
 <% index = 1 %>
   <% @albums.each_with_index do |album, i| %>
 
