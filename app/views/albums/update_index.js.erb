@@ -3,13 +3,11 @@ wrapper.querySelectorAll('a').forEach((icon) => {
   if ('collected' == '<%= @status %>') {
     wrapper.remove();
   } else if (icon.dataset.status == '<%= @status %>') {
-    console.log(icon)
     icon.remove();
   };
   if ('wishlist' == '<%= @status %>') {
     wrapper.remove();
   } else if (icon.dataset.status == '<%= @status %>') {
-    console.log(icon)
     icon.remove();
   };
 })
