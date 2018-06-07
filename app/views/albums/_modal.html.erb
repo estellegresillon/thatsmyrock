@@ -7,8 +7,14 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
+      <div class="algo-div">
 
-      <div class="close-modal">
+      <%= image_tag "tmr_modal_algo.gif", id: "algo-modal" %>
+      </div>
+
+
+      <div class="recommandation-modal" style="display: none">
+         <div class="close-modal">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
 
@@ -54,8 +60,14 @@
       </button>
       </div>
 
+      </div>
+
+
+
     </div>
 
   </div>
 </div>
+
+<%= javascript_pack_tag 'timerAlgo' %>
 
