@@ -11,7 +11,7 @@
 
       <!-- Links when logged in -->
       <%= link_to "Home", "/", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Dashboard", "/profile", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Profile", "/profile", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to destroy_user_session_path, method: :delete, class: "logout" do %>
         <%= t(".sign_out", default: "Log out") %>
       <% end %>
