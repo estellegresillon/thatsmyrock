@@ -77,8 +77,9 @@
 
 .card-wishlist input[type="submit"]
 {
-  background: image-url("add.png");
-  background-repeat: no-repeat;
+  background: image-url("add.svg") !important;
+  background-repeat: no-repeat !important;
   border: none;
   width: 16px;
+  height: 16px;
 }
