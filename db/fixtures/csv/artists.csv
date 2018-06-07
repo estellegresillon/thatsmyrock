@@ -1,305 +1,384 @@
 ﻿name;country;facebook_url;instagram_url;twitter_url;website_url;wiki_url;bio;photo
-13th Floor Elevators;;;;;;;;
-2Pac;;;;;;;;
-A Tribe Called Quest;;;;;;;;
-AC/DC;;;;;;;;
-Aerosmith;;;;;;;;
-Al Green;;;;;;;;
-Alice Cooper;;;;;;;;
-Alice in Chains;;;;;;;;
-Amy Winehouse;;;;;;;;
-Aphex Twin;;;;;;;;
-Arcade Fire;;;;;;;;
-Arctic Monkeys;;;;;;;;
-Aretha Franklin;;;;;;;;
-Beastie Boys;;;;;;;;
-Beck;;;;;;;;
-Belle and Sebastian;;;;;;;;
-Big Brother and the Holding Company;;;;;;;;
-Big Star;;;;;;;;
-Black Sabbath;;;;;;;;
-Blind Faith;;;;;;;;
-Bloc Party;;;;;;;;
-Blondie;;;;;;;;
-Blood, Sweat and Tears;;;;;;;;
-Bluesbreakers;;;;;;;;
-Blur;;;;;;;;
-Bo Diddley;;;;;;;;
-Bob Dylan;American;;;;;;;
-Bob Marley;;;;;;;;
-Bob Marley and the Wailers;;;;;;;;
-Bon Iver;;;;;;;;
-Bon Jovi;;;;;;;;
-Bonnie 'Prince' Billy;;;;;;;;
-Brian Eno;;;;;;;;
-Brian Wilson;;;;;;;;
-Bruce Springsteen;;;;;;;;
-Buffalo Springfield;;;;;;;;
-Captain Beefheart;;;;;;;;
-Carole King;;;;;;;;
-Cat Stevens;;;;;;;;
-Cheap Trick;;;;;;;;
-Chuck Berry;;;;;;;;
-Cocteau Twins;;;;;;;;
-Coldplay;;;;;;;;
-Cream;;;;;;;;
-Creedence Clearwater Revival;;;;;;;;
-Crosby, Stills & Nash;;;;;;;;
-Crosby, Stills, Nash and Young;;;;;;;;
-Crowded House;;;;;;;;
-Curtis Mayfield;;;;;;;;
-David Bowie;England;;;;;;;
-De La Soul;;;;;;;;
-Deep Purple;;;;;;;;
-Def Leppard;;;;;;;;
-Depeche Mode;;;;;;;;
-Derek and the Dominos;;;;;;;;
-Devo;;;;;;;;
-Dexys Midnight Runners;;;;;;;;
-Dire Straits;;;;;;;;
-Dj Shadow;;;;;;;;
-Dr. Dre;;;;;;;;
-Dr. John;;;;;;;;
-Eagles;;;;;;;;
-Echo and the Bunnymena;;;;;;;;
-Elastica;;;;;;;;
-Elliott Smith;;;;;;;;
-Elton John;;;;;;;;
-Elvis Costello and The Attractions;;;;;;;;
-Elvis Presley;;;;;;;;
-Eminem;;;;;;;;
-Eric B. & Rakim;;;;;;;;
-Eric Clapton;;;;;;;;
-Eurythmics;;;;;;;;
-Fat Boy Slim;;;;;;;;
-Fleetwood Mac;;;;;;;;
-Foo Fighters;;;;;;;;
-Frank Ocean;;;;;;;;
-Frank Zappa;;;;;;;;
-Franz Ferdinand;;;;;;;;
-Fugees;;;;;;;;
-Funkadelic;;;;;;;;
-Gang of Four;;;;;;;;
-Garbage;;;;;;;;
-Genesis;;;;;;;;
-George Harrison;;;;;;;;
-Gorillaz;;;;;;;;
-Gram Parsons;;;;;;;;
-Grandmaster Flash & the Furious Five;;;;;;;;
-Grateful Dead;;;;;;;;
-Green Day;;;;;;;;
-Guns N' Roses;;;;;;;;
-Happy Mondays;;;;;;;;
-Hole;;;;;;;;
-Hüsker Dü;;;;;;;;
-Ian Dury;;;;;;;;
-Iggy Pop;;;;;;;;
-Ike and Tina Turner;;;;;;;;
-Interpol;;;;;;;;
-INXS;;;;;;;;
-Iron Maiden;;;;;;;;
-Jackson Browne;;;;;;;;
-James Brown;;;;;;;;
-James Taylor;;;;;;;;
-Jamiroquai;;;;;;;;
-Jane's Addiction;;;;;;;;
-Janis Joplin;;;;;;;;
-Jay Z;;;;;;;;
-Jeff Buckley;;;;;;;;
-Jefferson Airplane;;;;;;;;
-Jethro Tull;;;;;;;;
-Jimi Hendrix;;;;;;;;
-Joan Baez;;;;;;;;
-John Lennon;;;;;;;;
-Johnny Cash;;;;;;;;
-Joni Mitchell;;;;;;;;
-Joy Division;;;;;;;;
-Justin Timberlake;;;;;;;;
-Kanye West;;;;;;;;
-Kate Bush;;;;;;;;
-Kendrick Lamar;;;;;;;;
-King Crimson;;;;;;;;
-Kiss;;;;;;;;
-Lauryn Hill;;;;;;;;
-LCD Soundsystem;;;;;;;;
-Led Zeppelin;England;;;;;;;
-Leonard Cohen;;;;;;;;
-Linkin Park;;;;;;;;
-Little Richard;;;;;;;;
-Liz Phair;;;;;;;;
-Lloyd Cole and the Commotions;;;;;;;;
-Lou Reed;;;;;;;;
-Love;;;;;;;;
-Lynyrd Skynyrd;;;;;;;;
-Madonna;;;;;;;;
-Manic Street Preachers;;;;;;;;
-Marianne Faithfull;;;;;;;;
-Marilyn Manson;;;;;;;;
-Marvin Gaye;;;;;;;;
-Massive Attack;;;;;;;;
-MC 5;;;;;;;;
-Meat Loaf;;;;;;;;
-Megadeth;;;;;;;;
-Mercury Rev;;;;;;;;
-Metallica;;;;;;;;
-MGMT;;;;;;;;
-Michael Jackson;;;;;;;;
-Moby;;;;;;;;
-Moby Grape;;;;;;;;
-Morrissey;;;;;;;;
-Motörhead;;;;;;;;
-Mott the Hoople;;;;;;;;
-Muse;;;;;;;;
-My Bloody Valentine;;;;;;;;
-Nas;;;;;;;;
-Neil Young;;;;;;;;
-Neil Young & Crazy Horse;;;;;;;;
-New Order;;;;;;;;
-Nick Cave and the Bad Seeds;;;;;;;;
-Nick Drake;;;;;;;;
-Nine Inch Nails;;;;;;;;
-Nirvana;American;;;;;;;
-No Doubt;;;;;;;;
-NWA;;;;;;;;
-Oasis;;;;;;;;
-Otis Redding;;;;;;;;
-OutKast;;;;;;;;
-Parliament;;;;;;;;
-Patty Smith;;;;;;;;
-Paul Simon;;;;;;;;
-Pavement;;;;;;;;
-Pearl Jam;;;;;;;;
-Pere Ubu;;;;;;;;
-Peter Gabriel;;;;;;;;
-Phil Spector;;;;;;;;
-Pink Floyd;;;;;;;;
-Pixies;;;;;;;;
-PJ Harvey;;;;;;;;
-Portishead;;;;;;;;
-Prefab Sprout;;;;;;;;
-Primal Scream;;;;;;;;
-Prince;;;;;;;;
-Public Enemy;;;;;;;;
-Public Image Ltd.;;;;;;;;
-Pulp;;;;;;;;
-Queen;;;;;;;;
-Quicksilver Messenger Service;;;;;;;;
-Radiohead;;;;;;;;
-Rage against the machine;;;;;;;;
-Ramones;;;;;;;;
-Randy Newman;;;;;;;;
-Ray Charles;;;;;;;;
-Red Hot Chili Peppers;;;;;;;;
-REM;;;;;;;;
-Ride;;;;;;;;
-Rihanna;;;;;;;;
-Robert Wyatt;;;;;;;;
-Rod Stewart;;;;;;;;
-Roxy Music;;;;;;;;
-Run-DMC;;;;;;;;
-Ry Cooder;;;;;;;;
-Ryan Adams;;;;;;;;
-Santana;;;;;;;;
-Scott Walker;;;;;;;;
-Simon and Garfunkel;;;;;;;;
-Simple Minds;;;;;;;;
-Siouxsie and the Banshees;;;;;;;;
-Slint;;;;;;;;
-Sly and the Family Stone;;;;;;;;
-Small Faces;;;;;;;;
-Snoop Doggy Dogg;;;;;;;;
-Soft Machine;;;;;;;;
-Sonic Youth;;;;;;;;
-Soundgarden;;;;;;;;
-Sparks;;;;;;;;
-Steely Dan;;;;;;;;
-Stevie Ray Vaughan;;;;;;;;
-Stevie Wonder;;;;;;;;
-Suede;;;;;;;;
-Sufjan Stevens;;;;;;;;
-Suicide;;;;;;;;
-Supergrass;;;;;;;;
-Supertramp;;;;;;;;
-Syd Barrett;;;;;;;;
-System of a Down;;;;;;;;
-T. Rex;;;;;;;;
-Talk Talk;;;;;;;;
-Talking Heads;;;;;;;;
-Tame Impala;;;;;;;;
-Tears for Fears;;;;;;;;
-Television;;;;;;;;
-The Allman Brothers Band;;;;;;;;
-The B-52's;;;;;;;;
-The Band;;;;;;;;
-The Beach Boys;American;;;;;;;
+13th Floor Elevators;;;;;;;;13th-floor-elevators.jpg
+2Pac;;;;;;;;2pac.jpg
+A Tribe Called Quest;;;;;;;;a-tribe-called-quest.jpg
+AC/DC;;;;;;;;ac-dc.jpg
+Aerosmith;;;;;;;;aerosmith.jpg
+Al Green;;;;;;;;al-green.jpg
+Alice Cooper;;;;;;;;alice-cooper.jpg
+Alice in Chains;;;;;;;;alice-in-chains.jpg
+Amy Winehouse;;;;;;;;amy-winehouse.jpg
+Aphex Twin;;;;;;;;aphex-twin.jpg
+Arcade Fire;;;;;;;;arcade-fire.jpg
+Arctic Monkeys;;;;;;;;arctic-monkeys.jpg
+Aretha Franklin;;;;;;;;aretha-franklin.jpg
+Beastie Boys;;;;;;;;beastie-boys.jpg
+Beck;;;;;;;;beck.jpg
+Belle and Sebastian;;;;;;;;belle-and-sebastian.jpg
+Big Brother and the Holding Company;;;;;;;;big-brother-and-the-holding-company.jpg
+Big Star;;;;;;;;big-star.jpg
+Black Sabbath;;;;;;;;black-sabbath.jpg
+Blind Faith;;;;;;;;blind-faith.jpg
+Bloc Party;;;;;;;;bloc-party.jpg
+Blondie;;;;;;;;blondie.jpg
+Blood, Sweat and Tears;;;;;;;;blood-sweat-and-tears.jpg
+Bluesbreakers;;;;;;;;bluesbreakers.jpg
+Blur;;;;;;;;blur.jpg
+Bo Diddley;;;;;;;;bo-diddley.jpg
+Bob Dylan;American;https://www.facebook.com/bobdylan/;;https://twitter.com/bobdylan;https://www.bobdylan.com/;https://en.wikipedia.org/wiki/Bob_Dylan;"Bob Dylan (born Robert Allen Zimmerman, May 24, 1941) is an American singer-songwriter, author, and painter who has been an influential figure in popular music and culture for more than five decades. Much of his most celebrated work dates from the 1960s, when he became a reluctant ""voice of a generation"" with songs such as ""Blowin' in the Wind"" and ""The Times They Are a-Changin'"" that became anthems for the Civil Rights Movement and anti-war movement. In 1965, he controversially abandoned his early fan-base in the American folk music revival, recording a six-minute single, ""Like a Rolling Stone"", which enlarged the scope of popular music.
+
+Dylan's lyrics incorporate a wide range of political, social, philosophical, and literary influences. They defied existing pop-music conventions and appealed to the burgeoning counterculture. Initially inspired by the performances of Little Richard and the songwriting of Woody Guthrie, Robert Johnson, and Hank Williams, Dylan has amplified and personalized musical genres. In his recording career, Dylan has explored many of the traditions in American song—from folk, blues, and country to gospel, and rock and roll, and from rockabilly to English, Scottish, and Irish folk music, embracing even jazz and the Great American Songbook. Dylan performs on guitar, keyboards, and harmonica. Backed by a changing lineup of musicians, he has toured steadily since the late 1980s on what has been dubbed ""the Never Ending Tour"". His accomplishments as a recording artist and performer have been central to his career, but his songwriting is considered his greatest contribution.";bob-dylan.jpg
+Bob Marley;;;;;;;;bob-marley.jpg
+Bob Marley and the Wailers;;;;;;;;bob-marley-and-the-wailers.jpg
+Bon Iver;;;;;;;;bon-iver.jpg
+Bon Jovi;;;;;;;;bon-jovi.jpg
+Bonnie 'Prince' Billy;;;;;;;;bonnie-prince-billy.jpg
+Brian Eno;;;;;;;;brian-eno.jpg
+Brian Wilson;;;;;;;;brian-wilson.jpg
+Bruce Springsteen;;;;;;;;bruce-springsteen.jpg
+Buffalo Springfield;;;;;;;;buffalo-springfield.jpg
+Captain Beefheart;;;;;;;;captain-beefheart.jpg
+Carole King;;;;;;;;carole-king.jpg
+Cat Stevens;;;;;;;;cat-stevens.jpg
+Cheap Trick;;;;;;;;cheap-trick.jpg
+Chuck Berry;;;;;;;;chuck-berry.jpg
+Cocteau Twins;;;;;;;;cocteau-twins.jpg
+Coldplay;;;;;;;;coldplay.jpg
+Cream;;;;;;;;cream.jpg
+Creedence Clearwater Revival;;;;;;;;creedence-clearwater-revival.jpg
+Crosby, Stills & Nash;;;;;;;;crosby-stills-and-nash.jpg
+Crosby, Stills, Nash and Young;;;;;;;;crosby-stills-nash-and-young.jpg
+Crowded House;;;;;;;;crowded-house.jpg
+Curtis Mayfield;;;;;;;;curtis-mayfield.jpg
+David Bowie;England;https://www.facebook.com/davidbowie/;https://www.instagram.com/davidbowie/;https://twitter.com/DavidBowieReal;https://www.davidbowie.com/;https://en.wikipedia.org/wiki/David_Bowie;David Robert Jones (8 January 1947 – 10 January 2016), known professionally as David Bowie (/ˈboʊi/), was an English singer-songwriter and actor. He was a leading figure in popular music for over five decades, acclaimed by critics and fellow musicians for his innovative work. His career was marked by reinvention and visual presentation, his music and stagecraft significantly influencing popular music. During his lifetime, his record sales, estimated at 140 million albums worldwide, made him one of the world's best-selling music artists. In the UK, he was awarded nine platinum album certifications, eleven gold and eight silver, releasing eleven number-one albums. In the US, he received five platinum and nine gold certifications. He was inducted into the Rock and Roll Hall of Fame in 1996.;david-bowie.jpg
+De La Soul;;;;;;;;de-la-soul.jpg
+Deep Purple;;;;;;;;deep-purple.jpg
+Def Leppard;;;;;;;;def-leppard.jpg
+Depeche Mode;;;;;;;;depeche-mode.jpg
+Derek and the Dominos;;;;;;;;derek-and-the-dominos.jpg
+Devo;;;;;;;;devo.jpg
+Dexys Midnight Runners;;;;;;;;dexys-midnight-runners.jpg
+Dire Straits;;;;;;;;dire-straits.jpg
+Dj Shadow;;;;;;;;dj-shadow.jpg
+Dr. Dre;;;;;;;;dr-dre.jpg
+Dr. John;;;;;;;;dr-john.jpg
+Eagles;;;;;;;;eagles.jpg
+Echo and the Bunnymena;;;;;;;;echo-and-the-bunnymena.jpg
+Elastica;;;;;;;;elastica.jpg
+Elliott Smith;;;;;;;;elliott-smith.jpg
+Elton John;;;;;;;;elton-john.jpg
+Elvis Costello and The Attractions;;;;;;;;elvis-costello-and-the-attractions.jpg
+Elvis Presley;;;;;;;;elvis-presley.jpg
+Eminem;;;;;;;;eminem.jpg
+Eric B. & Rakim;;;;;;;;eric-b-and-rakim.jpg
+Eric Clapton;;;;;;;;eric-clapton.jpg
+Eurythmics;;;;;;;;eurythmics.jpg
+Fat Boy Slim;;;;;;;;fat-boy-slim.jpg
+Fleetwood Mac;;;;;;;;fleetwood-mac.jpg
+Foo Fighters;;;;;;;;foo-fighters.jpg
+Frank Ocean;;;;;;;;frank-ocean.jpg
+Frank Zappa;;;;;;;;frank-zappa.jpg
+Franz Ferdinand;;;;;;;;franz-ferdinand.jpg
+Fugees;;;;;;;;fugees.jpg
+Funkadelic;;;;;;;;funkadelic.jpg
+Gang of Four;;;;;;;;gang-of-four.jpg
+Garbage;;;;;;;;garbage.jpg
+Genesis;;;;;;;;genesis.jpg
+George Harrison;;;;;;;;george-harrison.jpg
+Gorillaz;;;;;;;;gorillaz.jpg
+Gram Parsons;;;;;;;;gram-parsons.jpg
+Grandmaster Flash & the Furious Five;;;;;;;;grandmaster-flash-and-the-furious-five.jpg
+Grateful Dead;;;;;;;;grateful-dead.jpg
+Green Day;;;;;;;;green-day.jpg
+Guns N' Roses;;;;;;;;guns-n-roses.jpg
+Happy Mondays;;;;;;;;happy-mondays.jpg
+Hole;;;;;;;;hole.jpg
+Hüsker Dü;;;;;;;;husker-du.jpg
+Ian Dury;;;;;;;;ian-dury.jpg
+Iggy Pop;;;;;;;;iggy-pop.jpg
+Ike and Tina Turner;;;;;;;;ike-and-tina-turner.jpg
+Interpol;;;;;;;;interpol.jpg
+INXS;;;;;;;;inxs.jpg
+Iron Maiden;;;;;;;;iron-maiden.jpg
+Jackson Browne;;;;;;;;jackson-browne.jpg
+James Brown;;;;;;;;james-brown.jpg
+James Taylor;;;;;;;;james-taylor.jpg
+Jamiroquai;;;;;;;;jamiroquai.jpg
+Jane's Addiction;;;;;;;;jane-s-addiction.jpg
+Janis Joplin;;;;;;;;janis-joplin.jpg
+Jay Z;;;;;;;;jay-z.jpg
+Jeff Buckley;;;;;;;;jeff-buckley.jpg
+Jefferson Airplane;;;;;;;;jefferson-airplane.jpg
+Jethro Tull;;;;;;;;jethro-tull.jpg
+Jimi Hendrix;American;https://www.facebook.com/JimiHendrix/;https://www.instagram.com/jimihendrix/;https://twitter.com/JimiHendrix;https://jimihendrix.com/;https://en.wikipedia.org/wiki/Jimi_Hendrix;"James Marshall ""Jimi"" Hendrix (born Johnny Allen Hendrix; November 27, 1942 – September 18, 1970) was an American rock guitarist, singer, and songwriter. Although his mainstream career spanned only four years, he is widely regarded as one of the most influential electric guitarists in the history of popular music, and one of the most celebrated musicians of the 20th century. The Rock and Roll Hall of Fame describes him as ""arguably the greatest instrumentalist in the history of rock music"".
+
+Born in Seattle, Washington, Hendrix began playing guitar at the age of 15. In 1961, he enlisted in the U.S. Army and trained as a paratrooper in the 101st Airborne Division; he was granted an honorable discharge the following year. Soon afterward, he moved to Clarksville, Tennessee, and began playing gigs on the Chitlin' Circuit, earning a place in the Isley Brothers' backing band and later with Little Richard, with whom he continued to work through mid-1965. He then played with Curtis Knight and the Squires before moving to England in late 1966 after being discovered by Linda Keith, who in turn interested bassist Chas Chandler of the Animals in becoming his first manager. Within months, Hendrix had earned three UK top ten hits with the Jimi Hendrix Experience: ""Hey Joe"", ""Purple Haze"", and ""The Wind Cries Mary"". He achieved fame in the U.S. after his performance at the Monterey Pop Festival in 1967, and in 1968 his third and final studio album, Electric Ladyland, reached number one in the U.S.; it was Hendrix's most commercially successful release and his first and only number one album. The world's highest-paid performer, he headlined the Woodstock Festival in 1969 and the Isle of Wight Festival in 1970, before his accidental death from barbiturate-related asphyxia on September 18, 1970, at the age of 27.";jimi-hendrix.jpg
+Joan Baez;;;;;;;;joan-baez.jpg
+John Lennon;;;;;;;;john-lennon.jpg
+Johnny Cash;;;;;;;;johnny-cash.jpg
+Joni Mitchell;;;;;;;;joni-mitchell.jpg
+Joy Division;;;;;;;;joy-division.jpg
+Justin Timberlake;;;;;;;;justin-timberlake.jpg
+Kanye West;;;;;;;;kanye-west.jpg
+Kate Bush;;;;;;;;kate-bush.jpg
+Kendrick Lamar;;;;;;;;kendrick-lamar.jpg
+King Crimson;;;;;;;;king-crimson.jpg
+Kiss;;;;;;;;kiss.jpg
+Lauryn Hill;;;;;;;;lauryn-hill.jpg
+LCD Soundsystem;;;;;;;;lcd-soundsystem.jpg
+Led Zeppelin;England;https://www.facebook.com/ledzeppelin/;https://www.instagram.com/ledzeppelin/;https://twitter.com/ledzeppelin;http://www.ledzeppelin.com/;https://en.wikipedia.org/wiki/Led_Zeppelin;"Led Zeppelin were an English rock band formed in London in 1968. The group consisted of guitarist Jimmy Page, singer Robert Plant, bassist and keyboardist John Paul Jones, and drummer John Bonham. The band's heavy, guitar-driven sound has led them to be cited as one of the progenitors of heavy metal. Their style drew from a wide variety of influences, including blues, psychedelia, and folk music.
+
+After changing their name from the New Yardbirds, Led Zeppelin signed a deal with Atlantic Records that afforded them considerable artistic freedom. Although the group were initially unpopular with critics, they achieved significant commercial success with albums such as Led Zeppelin (1969), Led Zeppelin II (1969), Led Zeppelin III (1970), Led Zeppelin IV (1971), Houses of the Holy (1973), Physical Graffiti (1975), Presence (1976) and In Through the Out Door (1979). Their fourth album, which features the song ""Stairway to Heaven"", is among the most popular and influential works in rock music, and it helped to secure the group's popularity.";led-zeppelin.jpg
+Leonard Cohen;;;;;;;;leonard-cohen.jpg
+Linkin Park;;;;;;;;linkin-park.jpg
+Little Richard;;;;;;;;little-richard.jpg
+Liz Phair;;;;;;;;liz-phair.jpg
+Lloyd Cole and the Commotions;;;;;;;;lloyd-cole-and-the-commotions.jpg
+Lou Reed;;;;;;;;lou-reed.jpg
+Love;;;;;;;;love.jpg
+Lynyrd Skynyrd;;;;;;;;lynyrd-skynyrd.jpg
+Madonna;;;;;;;;madonna.jpg
+Manic Street Preachers;;;;;;;;manic-street-preachers.jpg
+Marianne Faithfull;;;;;;;;marianne-faithfull.jpg
+Marilyn Manson;;;;;;;;marilyn-manson.jpg
+Marvin Gaye;;;;;;;;marvin-gaye.jpg
+Massive Attack;;;;;;;;massive-attack.jpg
+MC 5;;;;;;;;mc-5.jpg
+Meat Loaf;;;;;;;;meat-loaf.jpg
+Megadeth;;;;;;;;megadeth.jpg
+Mercury Rev;;;;;;;;mercury-rev.jpg
+Metallica;;;;;;;;metallica.jpg
+MGMT;;;;;;;;mgmt.jpg
+Michael Jackson;;;;;;;;michael-jackson.jpg
+Moby;;;;;;;;moby.jpg
+Moby Grape;;;;;;;;moby-grape.jpg
+Morrissey;;;;;;;;morrissey.jpg
+Motörhead;;;;;;;;motorhead.jpg
+Mott the Hoople;;;;;;;;mott-the-hoople.jpg
+Muse;;;;;;;;muse.jpg
+My Bloody Valentine;;;;;;;;my-bloody-valentine.jpg
+Nas;;;;;;;;nas.jpg
+Neil Young;;;;;;;;neil-young.jpg
+Neil Young & Crazy Horse;;;;;;;;neil-young-and-crazy-horse.jpg
+New Order;;;;;;;;new-order.jpg
+Nick Cave and the Bad Seeds;;;;;;;;nick-cave-and-the-bad-seeds.jpg
+Nick Drake;;;;;;;;nick-drake.jpg
+Nine Inch Nails;;;;;;;;nine-inch-nails.jpg
+Nirvana;American;https://www.facebook.com/Nirvana/;https://www.instagram.com/nirvana/;https://twitter.com/Nirvana;http://www.nirvana.com/;https://en.wikipedia.org/wiki/Nirvana_(band);"Nirvana was an American rock band formed by lead singer and guitarist Kurt Cobain and bassist Krist Novoselic in Aberdeen, Washington, in 1987. Nirvana went through a succession of drummers, the longest-lasting and best-known being Dave Grohl, who joined in 1990. Despite releasing only three full-length studio albums in their seven-year career, Nirvana has come to be regarded as one of the most influential and important alternative bands in history. Though the band dissolved in 1994 after the death of Cobain, their music maintains a popular following and continues to influence modern rock and roll culture.
+
+In the late 1980s, Nirvana established itself as part of the Seattle grunge scene, releasing its first album, Bleach, for the independent record label Sub Pop in 1989. They developed a sound that relied on dynamic contrasts, often between quiet verses and loud, heavy choruses. After signing to major label DGC Records, Nirvana found unexpected success with ""Smells Like Teen Spirit"", the first single from the band's second album Nevermind (1991). Nirvana's sudden success widely popularized alternative rock, and Cobain found himself referred to in the media as the ""spokesman of a generation"", with Nirvana considered the ""flagship band"" of Generation X. Nirvana's third studio album, In Utero (1993), released to critical acclaim, featured an abrasive, less mainstream sound and challenged the group's audience.";nirvana.jpg
+No Doubt;;;;;;;;no-doubt.jpg
+NWA;;;;;;;;nwa.jpg
+Oasis;;;;;;;;oasis.jpg
+Otis Redding;;;;;;;;otis-redding.jpg
+OutKast;;;;;;;;outkast.jpg
+Parliament;;;;;;;;parliament.jpg
+Patty Smith;;;;;;;;patty-smith.jpg
+Paul Simon;;;;;;;;paul-simon.jpg
+Pavement;;;;;;;;pavement.jpg
+Pearl Jam;;;;;;;;pearl-jam.jpg
+Pere Ubu;;;;;;;;pere-ubu.jpg
+Peter Gabriel;;;;;;;;peter-gabriel.jpg
+Phil Spector;;;;;;;;phil-spector.jpg
+Pink Floyd;England;https://www.facebook.com/pinkfloyd/;https://www.instagram.com/pinkfloyd/;https://twitter.com/pinkfloyd;http://www.pinkfloyd.com/;https://en.wikipedia.org/wiki/Pink_Floyd;"Pink Floyd were an English rock band formed in London in 1965. They achieved international acclaim with their progressive and psychedelic music. Distinguished by their use of philosophical lyrics, sonic experimentation, extended compositions, and elaborate live shows, they are one of the most commercially successful and influential groups in popular music history.
+
+Pink Floyd were founded by students Syd Barrett on guitar and lead vocals, Nick Mason on drums, Roger Waters on bass and vocals, and Richard Wright on keyboards and vocals. They gained popularity performing in London's underground music scene during the late 1960s, and under Barrett's leadership released two charting singles and a successful debut album, The Piper at the Gates of Dawn (1967). Guitarist and vocalist David Gilmour joined in December 1967; Barrett left in April 1968 due to deteriorating mental health. Waters became the band's primary lyricist and conceptual leader, devising the concepts behind their albums The Dark Side of the Moon (1973), Wish You Were Here (1975), Animals (1977), The Wall (1979) and The Final Cut (1983). The Dark Side of the Moon and The Wall became two of the best-selling albums of all time.";pink-floyd.jpg
+Pixies;;;;;;;;pixies.jpg
+PJ Harvey;;;;;;;;pj-harvey.jpg
+Portishead;;;;;;;;portishead.jpg
+Prefab Sprout;;;;;;;;prefab-sprout.jpg
+Primal Scream;;;;;;;;primal-scream.jpg
+Prince;;;;;;;;prince.jpg
+Public Enemy;;;;;;;;public-enemy.jpg
+Public Image Ltd.;;;;;;;;public-image-ltd.jpg
+Pulp;;;;;;;;pulp.jpg
+Queen;;;;;;;;queen.jpg
+Quicksilver Messenger Service;;;;;;;;quicksilver-messenger-service.jpg
+Radiohead;England;https://www.facebook.com/radiohead/;https://www.instagram.com/radiohead/;https://twitter.com/radiohead;https://www.radiohead.com/deadairspace;https://en.wikipedia.org/wiki/Radiohead;"Radiohead are an English rock band from Abingdon, Oxfordshire, formed in 1985. The band consists of Thom Yorke (vocals, guitar, piano, keyboards), brothers Jonny Greenwood (lead guitar, keyboards, other instruments) and Colin Greenwood (bass), Ed O'Brien (guitar, backing vocals) and Philip Selway (drums, percussion). They have worked with producer Nigel Godrich and cover artist Stanley Donwood since 1994.
+
+After signing to EMI in 1991, Radiohead released their debut single ""Creep"" in 1992. It became a worldwide hit after the release of their debut album, Pablo Honey (1993). Their popularity and critical standing rose in the United Kingdom with the release of their second album, The Bends (1995). Radiohead's third album, OK Computer (1997), propelled them to international fame; noted for its complex production and themes of modern alienation, it is often acclaimed as a landmark record of the 1990s and one of the best albums in popular music. The group's next albums Kid A (2000) and Amnesiac (2001), recorded simultaneously, marked a dramatic change in style, incorporating influences from experimental electronic music, 20th-century classical music, krautrock, and jazz. Kid A divided listeners but was named the best album of the decade by Rolling Stone, Pitchfork and the Times.";radiohead.jpg
+Rage against the machine;;;;;;;;rage-against-the-machine.jpg
+Ramones;;;;;;;;ramones.jpg
+Randy Newman;;;;;;;;randy-newman.jpg
+Ray Charles;;;;;;;;ray-charles.jpg
+Red Hot Chili Peppers;;;;;;;;red-hot-chili-peppers.jpg
+REM;;;;;;;;rem.jpg
+Ride;;;;;;;;ride.jpg
+Rihanna;;;;;;;;rihanna.jpg
+Robert Wyatt;;;;;;;;robert-wyatt.jpg
+Rod Stewart;;;;;;;;rod-stewart.jpg
+Roxy Music;;;;;;;;roxy-music.jpg
+Run-DMC;;;;;;;;run-dmc.jpg
+Ry Cooder;;;;;;;;ry-cooder.jpg
+Ryan Adams;;;;;;;;ryan-adams.jpg
+Santana;;;;;;;;santana.jpg
+Scott Walker;;;;;;;;scott-walker.jpg
+Simon and Garfunkel;;;;;;;;simon-and-garfunkel.jpg
+Simple Minds;;;;;;;;simple-minds.jpg
+Siouxsie and the Banshees;;;;;;;;siouxsie-and-the-banshees.jpg
+Slint;;;;;;;;slint.jpg
+Sly and the Family Stone;;;;;;;;sly-and-the-family-stone.jpg
+Small Faces;;;;;;;;small-faces.jpg
+Snoop Doggy Dogg;;;;;;;;snoop-doggy-dogg.jpg
+Soft Machine;;;;;;;;soft-machine.jpg
+Sonic Youth;;;;;;;;sonic-youth.jpg
+Soundgarden;;;;;;;;soundgarden.jpg
+Sparks;;;;;;;;sparks.jpg
+Steely Dan;;;;;;;;steely-dan.jpg
+Stevie Ray Vaughan;;;;;;;;stevie-ray-vaughan.jpg
+Stevie Wonder;;;;;;;;stevie-wonder.jpg
+Suede;;;;;;;;suede.jpg
+Sufjan Stevens;;;;;;;;sufjan-stevens.jpg
+Suicide;;;;;;;;suicide.jpg
+Supergrass;;;;;;;;supergrass.jpg
+Supertramp;;;;;;;;supertramp.jpg
+Syd Barrett;;;;;;;;syd-barrett.jpg
+System of a Down;;;;;;;;system-of-a-down.jpg
+T. Rex;;;;;;;;t-rex.jpg
+Talk Talk;;;;;;;;talk-talk.jpg
+Talking Heads;;;;;;;;talking-heads.jpg
+Tame Impala;;;;;;;;tame-impala.jpg
+Tears for Fears;;;;;;;;tears-for-fears.jpg
+Television;;;;;;;;television.jpg
+The Allman Brothers Band;;;;;;;;the-allman-brothers-band.jpg
+The B-52's;;;;;;;;the-b-52-s.jpg
+The Band;;;;;;;;the-band.jpg
+The Beach Boys;American;https://www.facebook.com/thebeachboys/;;https://twitter.com/TheBeachBoys;https://www.thebeachboys.com/;https://en.wikipedia.org/wiki/The_Beach_Boys;"The Beach Boys are an American rock band formed in Hawthorne, California, in 1961. The group's original lineup consisted of brothers Brian, Dennis, and Carl Wilson; their cousin Mike Love; and their friend Al Jardine. Distinguished by their vocal harmonies and early surf songs, they are one of the most influential acts of the rock era.[1] The band drew on the music of jazz-based vocal groups, 1950s rock and roll, and black R&B to create their unique sound, and with Brian as composer, arranger, producer, and de facto leader, often incorporated classical or jazz elements and unconventional recording techniques in innovative ways.
+
+The Beach Boys began as a garage band, managed by the Wilsons' father Murry, with Brian's musicianship dominating their creative direction. In 1963, they gained national prominence with a string of top-ten hits reflecting a southern California youth culture of surfing, cars, and romance, later dubbed the ""California Sound"". After 1964, they abandoned beachgoing themes for more personal lyrics and ambitious orchestrations. In 1966, the Pet Sounds album and ""Good Vibrations"" single raised the group's prestige as rock innovators and established the band as symbols of the nascent counterculture era. Following the dissolution of the group's Smile project in 1967, Brian gradually ceded production and songwriting duties to the rest of the band, reducing his input because of mental health and substance abuse issues. The group's commercial momentum subsequently faltered, and despite efforts to maintain an experimental sound, they were dismissed by early rock critics as the archetypal ""pop music cop-outs"".";the-beach-boys.jpg
 The Beatles;England;https://www.facebook.com/thebeatles;https://www.instagram.com/thebeatles;https://twitter.com/thebeatles;https://www.thebeatles.com/;https://en.wikipedia.org/wiki/The_Beatles;"The Beatles were an English rock band formed in Liverpool in 1960. With members John Lennon, Paul McCartney, George Harrison and Ringo Starr, they became widely regarded as the foremost and most influential music band. Rooted in skiffle, beat and 1950s rock and roll, the Beatles later experimented with several musical styles, ranging from pop ballads and Indian music to psychedelia and hard rock, often incorporating classical elements and unconventional recording techniques in innovative ways. In 1963 their enormous popularity first emerged as ""Beatlemania""; as the group's music grew in sophistication, led by primary songwriters Lennon and McCartney, the band were integral to pop music's evolution into an art form and to the development of the counterculture of the 1960s";the-beatles.jpg
-The Birds;;;;;;;;
-The Cars;;;;;;;;
-The Chemical Brothers;;;;;;;;
-The Clash;England;;;;;;;
-The Coral;;;;;;;;
-The Cramps;;;;;;;;
-The Crickets;;;;;;;;
-The Cure;;;;;;;;
-The Dandy Warhols;;;;;;;;
-The Doors;American;;;;;;;
-The Fall;;;;;;;;
-The Flaming Lips;;;;;;;;
-The Flying Burrito Brothers;;;;;;;;
-The Go-Betweens;;;;;;;;
-The Gun Club;;;;;;;;
-The Human League;;;;;;;;
-The Jam;;;;;;;;
-The Jesus and Mary Chain;;;;;;;;
-The Jimi Hendrix Experience;;;;;;;;
-The Killers;;;;;;;;
-The Kinks;;;;;;;;
-The La's;;;;;;;;
-The Libertines;;;;;;;;
-The Mamas and the Papas;;;;;;;;
-The Meters;;;;;;;;
-The Modern Lovers;;;;;;;;
-The Monks;;;;;;;;
-The New York Dolls;;;;;;;;
-The Notorious B.I.G.;;;;;;;;
-The Offspring;;;;;;;;
-The Pogues;;;;;;;;
-The Police;;;;;;;;
-The Pretenders;;;;;;;;
-The Pretty Things;;;;;;;;
-The Prodigy;;;;;;;;
-The Replacements;;;;;;;;
-The Rolling Stones;;;;;;;;
-The Sex Pistols;;;;;;;;
-The Smashing Pumpkins;;;;;;;;
-The Smiths;;;;;;;;
-The Specials;;;;;;;;
-The Stone Agea;;;;;;;;
-The Stone Roses;;;;;;;;
-The Stooges;;;;;;;;
-The Strokes;;;;;;;;
-The Velvet Underground;American;;;;;;;
-The Verve;;;;;;;;
-The White Stripes;;;;;;;;
-The Who;;;;;;;;
-The XX;;;;;;;;
-The Yardbirds;;;;;;;;
-The Zombies;;;;;;;;
-Tim Buckley;;;;;;;;
-Todd Rundgren;;;;;;;;
-Tom Petty;;;;;;;;
-Tom Waits;;;;;;;;
-Tricky;;;;;;;;
-U2;;;;;;;;
-Vampire Weekend;;;;;;;;
-Van Halen;;;;;;;;
-Van Morrison;;;;;;;;
-Violent Femmes;;;;;;;;
-Weezer;;;;;;;;
-Wilco;;;;;;;;
-Wings;;;;;;;;
-Wire;;;;;;;;
-Wu-Tang Clan;;;;;;;;
-XTC;;;;;;;;
-Yes;;;;;;;;
-ZZ Top;;;;;;;;
+The Birds;;;;;;;;the-birds.jpg
+The Cars;;;;;;;;the-cars.jpg
+The Chemical Brothers;;;;;;;;the-chemical-brothers.jpg
+The Clash;England;https://www.facebook.com/theclash/;;https://twitter.com/TheClash;http://www.theclash.com/;https://en.wikipedia.org/wiki/The_Clash;"The Clash were an English rock band formed in London in 1976 as a key player in the original wave of British punk rock. They have also contributed to the post-punk and new wave movements that emerged in the wake of punk and employed elements of a variety of genres including reggae, dub, funk, ska and rockabilly. For most of their recording career, the Clash consisted of lead vocalist and rhythm guitarist Joe Strummer, lead guitarist and lead vocalist Mick Jones, bassist Paul Simonon, and drummer Nicky ""Topper"" Headon. Headon left the group in 1982, and internal friction led to Jones' departure the following year. The group continued with new members, but finally disbanded in early 1986.
+
+The Clash achieved commercial success in the United Kingdom with the release of their self-titled debut album, The Clash, in 1977. Their third album, London Calling, released in the UK in December 1979, earned them popularity in the United States when it was released there the following month. It was declared the best album of the 1980s a decade later by Rolling Stone. In 1982 they reached new heights of success with the release of Combat Rock, which spawned the US top 10 hit ""Rock the Casbah"", helping the album to achieve a 2× Platinum certification there. Their final album, Cut the Crap, was released in 1985.";the-clash.jpg
+The Coral;;;;;;;;the-coral.jpg
+The Cramps;;;;;;;;the-cramps.jpg
+The Crickets;;;;;;;;the-crickets.jpg
+The Cure;;;;;;;;the-cure.jpg
+The Dandy Warhols;;;;;;;;the-dandy-warhols.jpg
+The Doors;American;https://www.facebook.com/thedoors/;https://www.instagram.com/thedoors/;https://twitter.com/TheDoors;https://www.thedoors.com/;https://en.wikipedia.org/wiki/The_Doors;"The Doors were an American rock band formed in 1965 in Los Angeles, with vocalist Jim Morrison, keyboardist Ray Manzarek, guitarist Robby Krieger, and John Densmore on drums. The band got its name, at Morrison's suggestion from the title of Aldous Huxley's book The Doors of Perception, which itself was a reference to a quote made by William Blake, ""If the doors of perception were cleansed, everything would appear to man as it is, infinite."" They were unique and among the most controversial and influential rock acts of the 1960s, mostly because of Morrison's lyrics and charismatic but unpredictable stage persona. After Morrison's death in 1971, the remaining members continued as a trio until disbanding in 1973.";the-doors.jpg
+The Fall;;;;;;;;the-fall.jpg
+The Flaming Lips;;;;;;;;the-flaming-lips.jpg
+The Flying Burrito Brothers;;;;;;;;the-flying-burrito-brothers.jpg
+The Go-Betweens;;;;;;;;the-go-betweens.jpg
+The Gun Club;;;;;;;;the-gun-club.jpg
+The Human League;;;;;;;;the-human-league.jpg
+The Jam;;;;;;;;the-jam.jpg
+The Jesus and Mary Chain;;;;;;;;the-jesus-and-mary-chain.jpg
+The Jimi Hendrix Experience;;;;;;;;the-jimi-hendrix-experience.jpg
+The Killers;;;;;;;;the-killers.jpg
+The Kinks;;;;;;;;the-kinks.jpg
+The La's;;;;;;;;the-la-s.jpg
+The Libertines;;;;;;;;the-libertines.jpg
+The Mamas and the Papas;;;;;;;;the-mamas-and-the-papas.jpg
+The Meters;;;;;;;;the-meters.jpg
+The Modern Lovers;;;;;;;;the-modern-lovers.jpg
+The Monks;;;;;;;;the-monks.jpg
+The New York Dolls;;;;;;;;the-new-york-dolls.jpg
+The Notorious B.I.G.;;;;;;;;the-notorious-b-i-g.jpg
+The Offspring;;;;;;;;the-offspring.jpg
+The Pogues;;;;;;;;the-pogues.jpg
+The Police;;;;;;;;the-police.jpg
+The Pretenders;;;;;;;;the-pretenders.jpg
+The Pretty Things;;;;;;;;the-pretty-things.jpg
+The Prodigy;;;;;;;;the-prodigy.jpg
+The Replacements;;;;;;;;the-replacements.jpg
+The Rolling Stones;England;https://www.facebook.com/therollingstones/;https://www.instagram.com/therollingstones/;https://twitter.com/RollingStones;http://www.rollingstones.com/;https://en.wikipedia.org/wiki/The_Rolling_Stones;The Rolling Stones are an English rock band formed in London, England in 1962. The first stable line-up consisted of Brian Jones (guitar, harmonica), Mick Jagger (lead vocals), Keith Richards (guitar, backing vocals), Bill Wyman (bass), Charlie Watts (drums), and Ian Stewart (piano). Stewart was removed from the official line-up in 1963 but continued as a touring member until his death in 1985. Brian Jones was the original leader of the group, however, the band's primary songwriters, Jagger and Richards, assumed leadership after Andrew Loog Oldham became the group's manager and their musical focus shifted from covering blues songs to writing original material, a decision Jones did not agree with. Jones left the band less than a month before his death in 1969, having already been replaced by Mick Taylor, who remained until 1974. After Taylor left the band, Ronnie Wood took his place in 1975 and has been on guitar in tandem with Richards ever since. Following Wyman's departure in 1993, Darryl Jones joined as their touring bassist. Touring keyboardists for the band have been Nicky Hopkins (1967–1982), Ian McLagan (1978–1981), Billy Preston (through the mid-1970s) and Chuck Leavell (1982–present).;the-rolling-stones.jpg
+The Sex Pistols;;;;;;;;the-sex-pistols.jpg
+The Smashing Pumpkins;;;;;;;;the-smashing-pumpkins.jpg
+The Smiths;;;;;;;;the-smiths.jpg
+The Specials;;;;;;;;the-specials.jpg
+The Stone Agea;;;;;;;;the-stone-agea.jpg
+The Stone Roses;;;;;;;;the-stone-roses.jpg
+The Stooges;;;;;;;;the-stooges.jpg
+The Strokes;;;;;;;;the-strokes.jpg
+The Velvet Underground;American;https://www.facebook.com/TheVelvetUnderground/;;;http://www.velvetundergroundmusic.com/;https://en.wikipedia.org/wiki/The_Velvet_Underground;"The Velvet Underground was an American rock band formed in 1964 in New York City by singer/guitarist Lou Reed, multi-instrumentalist John Cale, guitarist Sterling Morrison, and drummer Angus MacLise (replaced by Moe Tucker in 1965). The band was initially active between 1965 and 1973, and was briefly managed by the pop artist Andy Warhol, serving as the house band at the Factory and Warhol's Exploding Plastic Inevitable events from 1966 to 1967. Their debut album, The Velvet Underground & Nico (with German-born singer and model Nico), was released in 1967 to critical indifference and poor sales, but over time has been critically acclaimed; it was called the ""most prophetic rock album ever made"" by Rolling Stone in 2003.
+
+The band's integration of rock and the avant-garde achieved little commercial success during their existence, but they are now recognized as one of the most influential bands in rock, underground, experimental, and alternative music. The provocative subject matter, musical experimentation, and often nihilistic attitudes explored in the band's work would prove influential in the development of punk rock and new wave music. In 2004, Rolling Stone ranked the band No. 19 on its list of the ""100 Greatest Artists of All Time"". In 2017, a study of AllMusic's catalog indicated the Velvet Underground as the 5th most frequently cited artist influence in its database. The band was inducted into the Rock and Roll Hall of Fame in 1996 by Patti Smith.";the-velvet-underground.jpg
+The Verve;;;;;;;;the-verve.jpg
+The White Stripes;;;;;;;;the-white-stripes.jpg
+The Who;;;;;;;;the-who.jpg
+The XX;;;;;;;;the-xx.jpg
+The Yardbirds;;;;;;;;the-yardbirds.jpg
+The Zombies;;;;;;;;the-zombies.jpg
+Tim Buckley;;;;;;;;tim-buckley.jpg
+Todd Rundgren;;;;;;;;todd-rundgren.jpg
+Tom Petty;;;;;;;;tom-petty.jpg
+Tom Waits;;;;;;;;tom-waits.jpg
+Tricky;;;;;;;;tricky.jpg
+U2;;;;;;;;u2.jpg
+Vampire Weekend;;;;;;;;vampire-weekend.jpg
+Van Halen;;;;;;;;van-halen.jpg
+Van Morrison;;;;;;;;van-morrison.jpg
+Violent Femmes;;;;;;;;violent-femmes.jpg
+Weezer;;;;;;;;weezer.jpg
+Wilco;;;;;;;;wilco.jpg
+Wings;;;;;;;;wings.jpg
+Wire;;;;;;;;wire.jpg
+Wu-Tang Clan;;;;;;;;wu-tang-clan.jpg
+XTC;;;;;;;;xtc.jpg
+Yes;;;;;;;;yes.jpg
+ZZ Top;;;;;;;;zz-top.jpg
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
+;;;;;;;;
