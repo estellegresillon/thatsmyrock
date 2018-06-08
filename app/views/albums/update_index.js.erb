@@ -1,6 +1,8 @@
 let icons_album = document.getElementById('<%= "icons_#{@album.id}" %>');
 icons_album.innerHTML = "<%= j render 'albums/icons_album', album: @album %>";
 
+toolTip();
+
 
 
 

@@ -59,6 +59,7 @@
   flex-direction: column;
   margin-left: 20px;
   text-align: left;
+  flex-grow: 2;
 }
 .album-name {
   a {
@@ -81,25 +82,37 @@
   font-family: "Montserrat";
   font-weight: 300;
   color: grey;
-
 }
 
 .iconsindex {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  padding-top: 10px;
-  position: absolute;
   top: 0;
   right: 0;
+  a {
+    text-decoration: none;
+  }
+  p {
+    font-size: 14px;
+    color: white;
+    margin-right: 12px;
+    background-color: red;
+    padding: 2px 12px 2px 5px;
+    border-radius: 16px;
+    }
   .fas {
     margin: 5px;
-    font-size: 30px;
     text-decoration: none;
   }
 }
 
-
+.iconflex {
+  flex-grow: 0;
+  width: 225px;
+  height: 170px;
+  min-width: 225px;
+}
 
 
 .cards-collected {

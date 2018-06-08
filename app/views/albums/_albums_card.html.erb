@@ -24,8 +24,10 @@
           <div class="group-name"><%= link_to album.artist.name, artist_path(album.artist.id) %></div>
           <p class="year-genre"><%= link_to album.music_style, albums_path(music_style: album.music_style) %>, <%= link_to album.year, albums_path(year: album.year) %></p>
         </div>
-        <div class="iconsindex" id='<%= "icons_#{album.id}" %>'>
-          <%= render 'albums/icons_album', album: album %>
+        <div class="iconflex">
+          <div class="iconsindex" id='<%= "icons_#{album.id}" %>'>
+            <%= render 'albums/icons_album', album: album %>
+          </div>
         </div>
       </div>
     </div>
