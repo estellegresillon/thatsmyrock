@@ -8,7 +8,7 @@ gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'coffee-rails'
 
 gem 'bootsnap', require: false
-gem 'devise'
+gem 'devise', '~> 4.6.0'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
@@ -25,7 +25,7 @@ gem 'cloudinary'
 gem 'rubyzip', '>= 1.0.0', require: false
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'sass-rails'
 gem 'simple_form'
